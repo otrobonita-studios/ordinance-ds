@@ -60,7 +60,8 @@
       "source": "pages/tables.html",
       "group": "build",
       "order": 2.25,
-      "icon": "queue-list"
+      "icon": "queue-list",
+      "under": "components.html"
     },
     {
       "file": "patterns.html",
@@ -68,7 +69,8 @@
       "source": "pages/patterns.html",
       "group": "build",
       "order": 2.5,
-      "icon": "rectangle-group"
+      "icon": "rectangle-group",
+      "under": "components.html"
     },
     {
       "file": "plugins.html",

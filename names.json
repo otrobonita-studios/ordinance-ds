@@ -1,7 +1,7 @@
 {
   "blocks": {
     "ord-shell": { "elements": ["side", "bar", "brand", "open", "help"], "modifiers": [] },
-    "ord-menu": { "elements": ["group", "head", "list", "item", "note", "close", "icon", "sub"], "modifiers": [] },
+    "ord-menu": { "elements": ["group", "head", "list", "item", "note", "close", "icon", "sub", "branch", "more", "toggle"], "modifiers": [] },
     "ord-help": { "elements": ["head", "title", "close", "body", "lead", "topic"], "modifiers": [] },
     "ord-page": { "elements": ["head", "lede", "foot"], "modifiers": [] },
     "ord-skip": { "elements": [], "modifiers": [] },

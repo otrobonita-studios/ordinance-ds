@@ -14,6 +14,10 @@
   "rows": [
     {
       "date": "14 Nov 2026",
+      "what": "The page Parts is now Components, with Tables and Patterns under it. A page with pages under it opens and closes them in the menu."
+    },
+    {
+      "date": "14 Nov 2026",
       "what": "Added: the page Before an audit, with seven habits, six questions for a new tool, and two lists of patterns."
     },
     {
