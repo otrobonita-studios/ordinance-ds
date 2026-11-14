@@ -27,7 +27,7 @@
       "needs": "Node.js"
     },
     {
-      "command": "node scripts/browser-test.mjs",
+      "command": "node scripts/browser-tests.mjs",
       "what": "The layout, the menu, the help, the keyboard, the focus, the size of controls, text spacing, forced colours and the data. It runs in a real browser under the security headers.",
       "needs": "Chrome or Edge"
     },

@@ -8,7 +8,7 @@ No time for an answer is promised yet.
 
 ## What holds today
 
-Each line is enforced by `node scripts/check.mjs`, or tested by `node scripts/browser-test.mjs`.
+Each line is enforced by `node scripts/check.mjs`, or tested by `node scripts/browser-tests.mjs`.
 
 | Area | Fact | Where to check |
 |---|---|---|

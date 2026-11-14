@@ -28,7 +28,7 @@ A framework of HTML and CSS for teams that work under rules. It is a set of toke
 - When you change the shell, a part, the help or a script, also run the browser test. It needs Chrome or Edge:
 
   ```powershell
-  node scripts/browser-test.mjs
+  node scripts/browser-tests.mjs
   ```
 
 - The build and the checks have no dependency. Do not add a package.
