@@ -67,13 +67,15 @@ function checkTokens() {
 }
 
 // ---------------------------------------------------------------- contrast
-let lowest = Infinity;
+// the lowest measured value among the pairs for text (at least 7:1), and among the pairs for an edge (at least 3:1)
+const lowest = { text: Infinity, edge: Infinity };
 function checkContrast() {
   const bad = rule('contrast');
   const pairs = measuredPairs();
   for (const p of pairs) for (const theme of ['light', 'dark']) {
     if (p[theme] === null) { bad('tokens/contrast.json', `${p.text} on ${p.on}: unknown colour`); continue; }
-    lowest = Math.min(lowest, p[theme]);
+    const kind = p.min >= 7 ? 'text' : 'edge';
+    lowest[kind] = Math.min(lowest[kind], p[theme]);
     if (p[theme] < p.min) bad('tokens/contrast.json', `${theme}: ${p.text} on ${p.on} is ${p[theme].toFixed(2)}:1, and must be at least ${p.min}:1`);
   }
   for (const t of lightTokens()) if (t.type === 'color' && t.path !== 'color.line' && !pairs.some((p) => p.text === t.path || p.on === t.path)) bad('tokens/contrast.json', `${t.path} is in no pair, so nothing measures it`);
@@ -361,4 +363,4 @@ if (problems.length) {
   process.exit(1);
 }
 const ruleCount = RULES.length + plugins.reduce((n, p) => n + (p.rules || []).length, 0);
-console.log(`OK ${ruleCount} rules, ${plugins.length} plugins, ${built.pages.length} pages, ${lightTokens().length} tokens, lowest contrast ${lowest.toFixed(2)}:1, ${Object.keys(built.files).length} built files`);
+console.log(`OK ${ruleCount} rules, ${plugins.length} plugins, ${built.pages.length} pages, ${lightTokens().length} tokens, lowest contrast ${lowest.text.toFixed(2)}:1 for text and ${lowest.edge.toFixed(2)}:1 for an edge, ${Object.keys(built.files).length} built files`);

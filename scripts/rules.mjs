@@ -2,7 +2,7 @@
 // the check fails when a rule here has no code, or code has no rule here. A plugin adds its own rules in its manifest.
 export const RULES = [
   { id: 'names', rule: 'Every name is registered', does: 'It compares each class, data attribute and token in the stylesheet and the pages with the registers.' },
-  { id: 'contrast', rule: 'Text reaches a contrast of 7:1', does: 'It measures every listed colour pair in the light theme and in the dark theme.' },
+  { id: 'contrast', rule: 'Text reaches a contrast of 7:1, and the edge of a control 3:1', does: 'It measures every listed colour pair in the light theme and in the dark theme. Each pair has its own least value in the list.' },
   { id: 'tokens', rule: 'Colours and sizes come from tokens', does: 'It refuses a colour value, a pixel size above one, and an unknown token in the source of the stylesheet.' },
   { id: 'no-inline', rule: 'A page has no inline style or script', does: 'It refuses a style attribute, a style element, a script that is written into a page, and an event attribute.' },
   { id: 'same-origin', rule: 'Nothing loads from another server', does: 'It refuses an import and a remote address in the stylesheet, and a remote file in a page.' },
