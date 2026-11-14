@@ -22,6 +22,7 @@
 - [ ] `node scripts/build.mjs` and `node scripts/check.mjs` pass
 - [ ] `node --test` passes
 - [ ] `node scripts/browser-tests.mjs` passes (when a page, the stylesheet or a script changed)
+- [ ] `npm run lint` passes in `tools/lint` (when a script changed)
 - [ ] `node scripts/history-check.mjs main..HEAD` passes
 - [ ] The change holds no secret, no personal data and no path of a computer
 - [ ] No commit and no text here names a tool or an AI agent. I am responsible for this change.

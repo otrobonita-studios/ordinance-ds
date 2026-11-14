@@ -12,7 +12,7 @@ Each line is enforced by `node scripts/check.mjs`, or tested by `node scripts/br
 
 | Area | Fact | Where to check |
 |---|---|---|
-| Dependencies | The build and the checks use Node.js and no package. One test, in `tests/base-ui`, installs three packages with exact versions. | `package.json`, `tests/base-ui/package.json` |
+| Dependencies | The build and the checks use Node.js and no package. One test, in `tests/base-ui`, and the linter, in `tools/lint`, install packages with exact versions and a lock file, without install scripts. Neither is part of the built site. | `package.json`, `tests/base-ui/package.json`, `tools/lint/package.json` |
 | Third-party files | Three typefaces and one set of icons. Each file is listed with its SHA-256 value, and the check compares them. | `third-party.json`, the rule `third-party` |
 | Code in pages | No inline style, no inline script and no event attribute. | The rule `no-inline` |
 | Requests | The stylesheet and the pages load nothing from another server. | The rule `same-origin`, the browser test |

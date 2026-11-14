@@ -77,3 +77,29 @@ jobs:
       - name: Test with Base UI
         working-directory: tests/base-ui
         run: npm test
+
+  # The linter for the scripts. Its packages are in the folder tools/lint, so the folder of the framework itself has
+  # no package. It is a job of its own, for the same reason as the job above.
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      TOKEN: ${{ github.token }}
+      REPOSITORY: ${{ github.repository }}
+      REF: ${{ github.ref }}
+    steps:
+      - name: Get the change
+        run: |
+          header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          echo "::add-mask::$header"
+          git init --quiet .
+          git -c "http.extraheader=$header" fetch --quiet --depth 1 "https://github.com/$REPOSITORY" "$REF"
+          git checkout --quiet FETCH_HEAD
+      - name: Install the linter, without the scripts of its packages
+        working-directory: tools/lint
+        run: npm ci --ignore-scripts
+      - name: Known weaknesses in the packages of the linter
+        working-directory: tools/lint
+        run: npm audit --audit-level=moderate
+      - name: Lint the scripts
+        working-directory: tools/lint
+        run: npm run lint

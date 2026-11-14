@@ -62,7 +62,6 @@ export function thirdParty(plugins) {
   return [...own.map((c) => ({ ...c, from: 'core' })), ...plugins.flatMap((p) => (p.thirdParty || []).map((c) => ({ ...c, from: p.id })))];
 }
 export function sbom(plugins) {
-  const site = readJson('site.json');
   const components = thirdParty(plugins).map((c) => ({
     type: 'library', 'bom-ref': `${c.name}@${c.version}`, name: c.name, version: c.version,
     licenses: [{ license: { id: c.licence } }],

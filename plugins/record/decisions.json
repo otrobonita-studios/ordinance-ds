@@ -21,6 +21,12 @@
   ],
   "rows": [
     {
+      "no": "D-28",
+      "decision": "The scripts are read by a well-known linter, which lives in a folder of its own with its own packages.",
+      "why": "A reviewer looks for a linter by name. In its own folder, it adds no package to the build, the check or the site.",
+      "date": "14 Nov 2026"
+    },
+    {
       "no": "D-27",
       "decision": "A commit and a pull request name the responsible person only, and no tool or AI agent.",
       "why": "A person answers for every change. The name of a tool in the record would blur who that is.",

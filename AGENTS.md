@@ -31,7 +31,8 @@ A framework of HTML and CSS for teams that work under rules. It is a set of toke
   node scripts/browser-tests.mjs
   ```
 
-- The build and the checks have no dependency. Do not add a package.
+- When you change a script, also run the linter. In the folder `tools/lint`: `npm ci --ignore-scripts` once, and then `npm run lint`.
+- The build and the checks have no dependency. Do not add a package. The linter and the Base UI test have packages in folders of their own, and nothing else may.
 - A file from another project goes in `third-party/`, listed with its project, version, licence, source and SHA-256 value. The check refuses a file that is not listed.
 - A new part of the site is a plugin: one folder in `plugins/`, complete with its pages, help and data. A page links only to pages of its own plugin.
 - A page has no inline style, no inline script and no event attribute. A script is a file that a plugin declares.

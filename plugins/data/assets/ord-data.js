@@ -7,7 +7,7 @@
                  { type: 'array', items, max } { type: 'object', props: { key: schema } }, each with optional: true */
 (function (root) {
   'use strict';
-  var LIMITS = { characters: 262144, string: 400, list: 2000 };
+  const LIMITS = { characters: 262144, string: 400, list: 2000 };
 
   function DataError(path, why) {
     this.name = 'DataError';
@@ -44,9 +44,9 @@
     }
     if (schema.type === 'object') {
       if (typeof value !== 'object' || Array.isArray(value)) throw new DataError(path, 'must be an object');
-      var out = {};
+      const out = {};
       Object.keys(schema.props).forEach(function (key) {
-        var v = validate(value[key], schema.props[key], path ? path + '.' + key : key);
+        const v = validate(value[key], schema.props[key], path ? path + '.' + key : key);
         if (v !== undefined) out[key] = v;
       });
       return out; // a key that the schema does not name is left out
@@ -56,13 +56,13 @@
 
   function parse(text, schema) {
     if (typeof text !== 'string' || text.length > LIMITS.characters) throw new DataError('', 'is too large');
-    var raw;
+    let raw;
     try { raw = JSON.parse(text); } catch (e) { throw new DataError('', 'is not valid JSON'); }
     return validate(raw, schema);
   }
 
   function read(id, schema, doc) {
-    var el = (doc || root.document).getElementById(id);
+    const el = (doc || root.document).getElementById(id);
     if (!el) throw new DataError(id, 'is not on the page');
     if (el.tagName !== 'SCRIPT' || el.getAttribute('type') !== 'application/json') throw new DataError(id, 'must be a JSON block');
     return parse(el.textContent, schema);
@@ -70,7 +70,7 @@
 
   /* The one place in Ordinance DS that asks a server. The address must be on the site's own origin. */
   function load(path, schema) {
-    var url;
+    let url;
     try { url = new URL(path, root.location.href); } catch (e) { return Promise.reject(new DataError(String(path), 'is not an address')); }
     if (url.origin !== root.location.origin) return Promise.reject(new DataError(String(path), 'is on another server, and is refused'));
     return root.fetch(url.href, { credentials: 'same-origin', redirect: 'error', headers: { Accept: 'application/json' } })
@@ -83,25 +83,25 @@
 
   /* A table from checked data: { caption, columns: [{ key, label, numeric }], rows }. Every text is set as text. */
   function table(box, spec) {
-    var doc = box.ownerDocument;
-    var make = function (tag, text, cls) { var n = doc.createElement(tag); if (text !== undefined) n.textContent = String(text); if (cls) n.className = cls; return n; };
-    var t = make('table', undefined, 'ord-table');
+    const doc = box.ownerDocument;
+    const make = function (tag, text, cls) { const n = doc.createElement(tag); if (text !== undefined) n.textContent = String(text); if (cls) n.className = cls; return n; };
+    const t = make('table', undefined, 'ord-table');
     t.appendChild(make('caption', spec.caption));
-    var head = doc.createElement('tr');
-    spec.columns.forEach(function (c) { var th = make('th', c.label, c.numeric ? 'ord-table__num' : ''); th.setAttribute('scope', 'col'); head.appendChild(th); });
-    var thead = doc.createElement('thead'); thead.appendChild(head); t.appendChild(thead);
-    var body = doc.createElement('tbody');
+    const head = doc.createElement('tr');
+    spec.columns.forEach(function (c) { const th = make('th', c.label, c.numeric ? 'ord-table__num' : ''); th.setAttribute('scope', 'col'); head.appendChild(th); });
+    const thead = doc.createElement('thead'); thead.appendChild(head); t.appendChild(thead);
+    const body = doc.createElement('tbody');
     spec.rows.forEach(function (r) {
-      var tr = doc.createElement('tr');
+      const tr = doc.createElement('tr');
       spec.columns.forEach(function (c, i) {
-        var cell = make(i === 0 ? 'th' : 'td', r[c.key], c.numeric ? 'ord-table__num' : '');
+        const cell = make(i === 0 ? 'th' : 'td', r[c.key], c.numeric ? 'ord-table__num' : '');
         if (i === 0) cell.setAttribute('scope', 'row');
         tr.appendChild(cell);
       });
       body.appendChild(tr);
     });
     t.appendChild(body);
-    var scroll = make('div', undefined, 'ord-table-scroll');
+    const scroll = make('div', undefined, 'ord-table-scroll');
     scroll.appendChild(t);
     box.replaceChildren(scroll);
     return t;

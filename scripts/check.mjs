@@ -158,9 +158,9 @@ function pageProblems(build) {
     if (levels.filter((l) => l === 1).length !== 1 || levels[0] !== 1) structure(file, 'a page has exactly one h1, and it comes first');
     levels.forEach((l, i) => { if (i && l > levels[i - 1] + 1) structure(file, `a heading jumps from h${levels[i - 1]} to h${l}`); });
     if (!/^<a class="ord-skip" href="#content">/.test(html.slice(html.indexOf('<body>') + 7)) || !/<main\b[^>]*\sid="content"/.test(html)) structure(file, 'the first link of a page must skip to the content');
-    for (const m of html.matchAll(/<img\b(?![^>]*\salt=)[^>]*>/gi)) structure(file, 'an image without alt text');
+    for (const _m of html.matchAll(/<img\b(?![^>]*\salt=)[^>]*>/gi)) structure(file, 'an image without alt text');
     for (const m of html.matchAll(/<table\b[\s\S]*?<\/table>/g)) { if (!/<caption>/.test(m[0])) structure(file, 'a table without a caption'); if (!/<th scope="col"/.test(m[0])) structure(file, 'a table without column heads'); }
-    for (const m of html.matchAll(/<button\b(?![^>]*\stype=)[^>]*>/g)) structure(file, 'a button without a type');
+    for (const _m of html.matchAll(/<button\b(?![^>]*\stype=)[^>]*>/g)) structure(file, 'a button without a type');
     const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
     for (const id of new Set(ids)) if (ids.filter((x) => x === id).length > 1) structure(file, `the id ${id} is used twice`);
     for (const m of html.matchAll(/\spopovertarget="([^"]+)"/g)) if (!new RegExp(`\\sid="${m[1]}" popover`).test(html)) structure(file, `popovertarget ${m[1]} names no popover`);

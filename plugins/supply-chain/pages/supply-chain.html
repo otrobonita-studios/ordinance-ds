@@ -10,6 +10,7 @@
 <!-- ord:core third-party -->
 <p class="ord-clause__text">The build and the checks use Node.js and no package.</p>
 <p class="ord-clause__text">One test uses packages: the test with Base UI, in the folder <code>tests/base-ui</code>. Its three packages have exact versions, and a lock file holds their checksums. They are never part of the built site.</p>
+<p class="ord-clause__text">The linter for the scripts is in the folder <code>tools/lint</code>, with its own packages and its own lock file. It runs in the pipeline and on the computer of a developer. The build and the check do not use it.</p>
 </div>
 </section>
 

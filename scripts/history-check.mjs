@@ -53,7 +53,7 @@ for (const c of commits) {
   if (c.parents.length > 1) notes.push(`${c.hash.slice(0, 7)}  a merge commit: fine, when the main branch does not require one line of history`);
 
   // the lines that the commit added
-  let patch = '';
+  let patch;
   try { patch = git('show', c.hash, '--format=', '--unified=0', '--no-color', '--text', '--', '.', ':(exclude)*package-lock.json', ':(exclude)*.woff2'); } catch { fail(c, 'the change could not be read'); continue; }
   let file = '';
   for (const line of patch.split('\n')) {
@@ -84,7 +84,7 @@ for (const n of notes) console.log(`NOTE  ${n}`);
 console.log(`\n${commits.length} commits read.`);
 console.log(`Commits that carry a signature: ${signed} of ${commits.length}. This command does not verify a signature; the code host does.`);
 console.log(`Names and addresses in the history (they become public with the first push):`);
-for (const [p, n] of people) console.log(`  ${p.replace(/<(.).*(@.*)>/, '<$1…$2>')}${MAIL_OK.test(p.slice(p.indexOf('<') + 1, -1)) ? '' : '  (a personal address)'}`);
+for (const [p] of people) console.log(`  ${p.replace(/<(.).*(@.*)>/, '<$1…$2>')}${MAIL_OK.test(p.slice(p.indexOf('<') + 1, -1)) ? '' : '  (a personal address)'}`);
 if (personal.length) console.log('A personal address in the history cannot be removed after a push. Your code host can give you an address that hides it.');
 const n = new Set(problems).size;
 console.log(`\n${n ? `${n} problems in the history` : 'OK: no secret, no path of a computer, no address of a person, no name of a tool and no large file in the history'}`);
