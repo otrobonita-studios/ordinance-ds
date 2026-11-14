@@ -21,6 +21,12 @@
   ],
   "rows": [
     {
+      "no": "D-33",
+      "decision": "The line under the name is: Build for a future audit from the first commit. Because in an audit, every commit counts.",
+      "why": "An audit reads the history of a product, change by change. So the work for it starts with the first commit, and not in the month before.",
+      "date": "14 Nov 2026"
+    },
+    {
       "no": "D-32",
       "decision": "Under the strict security policy, Base UI components are rendered in the browser.",
       "why": "On a server, Base UI writes style attributes, and the policy blocks them.",
