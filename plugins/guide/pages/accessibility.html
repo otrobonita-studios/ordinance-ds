@@ -1,6 +1,6 @@
 <header class="ord-page__head">
 <h1>Accessibility</h1>
-<p class="ord-page__lede">The accessibility rules are built into the tokens and the parts. The check measures what a script can measure.</p>
+<p class="ord-page__lede">The accessibility rules are built into the tokens and the components. The check measures what a script can measure.</p>
 </header>
 
 <section class="ord-clause" aria-labelledby="c1">
@@ -50,12 +50,12 @@
 <span class="ord-clause__number">3</span>
 <div class="ord-clause__body">
 <h2 id="c3">State as attributes</h2>
-<p class="ord-clause__text">A part shows its state with an attribute, such as <code>aria-current</code> or <code>data-tone</code>. Component frameworks set state in the same way.</p>
+<p class="ord-clause__text">A component shows its state with an attribute, such as <code>aria-current</code> or <code>data-tone</code>. Component frameworks set state in the same way.</p>
 <p class="ord-clause__text">A test proves it with Base UI, a set of React components without styles. It is in the folder <code>tests/base-ui</code>.</p>
 <ul class="ord-list">
 <li>A Base UI switch, tab and button take the class names of Ordinance DS.</li>
 <li>They set <code>data-checked</code>, <code>data-disabled</code> and <code>aria-selected</code>, and the stylesheet has a rule for each.</li>
-<li>On a server, Base UI writes <code>style</code> attributes, which the security policy blocks. So a product renders these parts in the browser.</li>
+<li>On a server, Base UI writes <code>style</code> attributes, which the security policy blocks. So a product renders these components in the browser.</li>
 </ul>
 <p class="ord-clause__text">The packages of the test are in its own folder. The site and the build do not use them.</p>
 </div>

@@ -18,7 +18,7 @@
   "rows": [
     {
       "site": "This site",
-      "what": "The pages that document the framework. The build writes them from the same parts.",
+      "what": "The pages that document the framework. The build writes them from the same components.",
       "status": {
         "text": "Built",
         "tone": "accent"

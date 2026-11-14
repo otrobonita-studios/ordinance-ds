@@ -31,15 +31,15 @@
     },
     {
       "cls": "ord-u-end",
-      "does": "In a row, the part moves to the end."
+      "does": "In a row, the component moves to the end."
     },
     {
       "cls": "ord-u-full",
-      "does": "The part takes the whole width."
+      "does": "The component takes the whole width."
     },
     {
       "cls": "ord-u-measure",
-      "does": "The part is no wider than a line of reading text."
+      "does": "The component is no wider than a line of reading text."
     },
     {
       "cls": "ord-u-text-end",

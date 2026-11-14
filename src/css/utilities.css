@@ -1,7 +1,7 @@
 /* Utilities: one class does one thing. They exist so that nobody needs a style attribute, which the check refuses
    and the security policy blocks. Every value is a token. The set is small on purpose: when a page needs the same
-   three utilities again and again, that is a part, and it gets a name. The layer is the last one, so a utility wins
-   over a part without !important. */
+   three utilities again and again, that is a component, and it gets a name. The layer is the last one, so a utility wins
+   over a component without !important. */
 @layer ord.utilities {
   .ord-u-mt-0 { margin-top: 0; }
   .ord-u-mt-2 { margin-top: var(--ord-space-2); }

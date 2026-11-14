@@ -15,8 +15,8 @@ import { root, read, readJson, exists, esc, walk, cssName, cssValue, lightTokens
 import { RULES } from './rules.mjs';
 import { HEADERS } from './headers.mjs';
 
-const LAYERS = '@layer ord.reset, ord.tokens, ord.base, ord.parts, ord.utilities;';
-const CSS_SOURCES = ['base.css', 'parts.css', 'shell.css', 'utilities.css'];
+const LAYERS = '@layer ord.reset, ord.tokens, ord.base, ord.components, ord.utilities;';
+const CSS_SOURCES = ['base.css', 'components.css', 'shell.css', 'utilities.css'];
 
 /* ---------------------------------------------------------------- the stylesheet */
 export function fontFaces() {
@@ -46,7 +46,7 @@ export function tokensCss() {
     `  @media (prefers-reduced-motion: reduce) { :root { ${still} } }`,
     '}',
     '/* One rule for each colour token, so that a page can show the colour without a style attribute. */',
-    '@layer ord.parts {',
+    '@layer ord.components {',
     ...swatches,
     '}',
   ].join('\n');

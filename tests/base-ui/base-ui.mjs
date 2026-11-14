@@ -1,4 +1,4 @@
-// A test with a component framework: Base UI parts take the Ordinance DS classes, and the stylesheet styles their states.
+// A test with a component framework: Base UI components take the Ordinance DS classes, and the stylesheet styles their states.
 // Run it in this folder:  npm ci --ignore-scripts  and then  npm test
 // The packages here are for this test only. They are not part of the site, and the build does not use them.
 import { test } from 'node:test';
@@ -57,7 +57,7 @@ test('a disabled Base UI button is styled like a disabled plain button', () => {
 
 // A fact to know, kept as a test so that a change in Base UI is seen: on the server, Base UI writes style attributes.
 // The strict security policy blocks a style attribute, and the Ordinance DS check refuses one in a page. So under the strict
-// policy, Base UI parts are rendered in the browser, where styles are set through the DOM, which the policy allows.
+// policy, Base UI components are rendered in the browser, where styles are set through the DOM, which the policy allows.
 test('Base UI writes style attributes when it renders on the server', () => {
   const html = renderToStaticMarkup(h(Switch.Root, { className: 'ord-switch' }, h(Switch.Thumb, { className: 'ord-switch__thumb' })));
   assert.match(html, /\sstyle="/);

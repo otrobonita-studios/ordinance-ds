@@ -1,7 +1,7 @@
 /* The shell: the menu beside a centred page. It needs no script.
    The menu is a native popover. On a narrow screen the Menu button opens it over the page, and Escape or a click
    outside closes it. On a wide screen the same element stands beside the page and the button is not shown. */
-@layer ord.parts {
+@layer ord.components {
   .ord-shell { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 100dvh; }
   .ord-shell__side { border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); }
   .ord-shell__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ord-space-3); padding: var(--ord-space-2) var(--ord-space-3); }
@@ -37,7 +37,7 @@
 
 /* The help of a page: a panel at the right edge. It is a native popover that stays open while the reader works,
    and its Close button closes it. On a wide screen the page makes room for it, so the help covers nothing. */
-@layer ord.parts {
+@layer ord.components {
   .ord-menu__icon { flex: none; width: 1.25rem; height: 1.25rem; margin-right: var(--ord-space-2); }
   .ord-help { position: fixed; inset: 0 0 0 auto; width: min(24rem, 100vw); height: 100dvh; max-height: none; margin: 0; padding: 0; overflow-y: auto; border: 0; border-left: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); color: var(--ord-color-text); }
   .ord-help__head { display: flex; align-items: center; justify-content: space-between; gap: var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4); border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); }
@@ -56,7 +56,7 @@
   @media print { .ord-help { display: none; } }
 }
 
-@layer ord.parts {
+@layer ord.components {
   .ord-shell__help { margin-left: auto; }
   .ord-help__close { flex: none; }
 }

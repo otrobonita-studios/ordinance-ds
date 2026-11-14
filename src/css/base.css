@@ -1,4 +1,4 @@
-/* Base: the page before any part is used. Every value is a token. */
+/* Base: the page before any component is used. Every value is a token. */
 @layer ord.reset {
   *, *::before, *::after { box-sizing: border-box; }
   body, h1, h2, h3, h4, p, ul, ol, dl, dd, figure, table { margin: 0; }

@@ -78,19 +78,19 @@
       }
     ]
   },
-  "parts.html": {
-    "lead": "This page shows each part and lists every registered name.",
+  "components.html": {
+    "lead": "This page shows each component and lists every registered name.",
     "topics": [
       {
-        "title": "A part",
+        "title": "A component",
         "text": [
-          "A part is a block of HTML with a registered class."
+          "A component is a block of HTML with a registered class."
         ]
       },
       {
         "title": "State",
         "text": [
-          "A part shows a state with an attribute, such as `data-tone`. It never uses a class for a state."
+          "A component shows a state with an attribute, such as `data-tone`. It never uses a class for a state."
         ]
       }
     ]
@@ -186,7 +186,7 @@
     ]
   },
   "patterns.html": {
-    "lead": "This page shows whole pages that are made from the parts.",
+    "lead": "This page shows whole pages that are made from the components.",
     "topics": [
       {
         "title": "Made-up data",
@@ -203,7 +203,7 @@
     ]
   },
   "tables.html": {
-    "lead": "This page shows every variant of the table part.",
+    "lead": "This page shows every variant of the table component.",
     "topics": [
       {
         "title": "Made-up data",

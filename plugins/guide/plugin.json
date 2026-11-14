@@ -47,9 +47,9 @@
       "icon": "swatch"
     },
     {
-      "file": "parts.html",
-      "title": "Parts",
-      "source": "pages/parts.html",
+      "file": "components.html",
+      "title": "Components",
+      "source": "pages/components.html",
       "group": "build",
       "order": 2,
       "icon": "squares-2x2"
