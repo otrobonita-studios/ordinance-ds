@@ -14,6 +14,10 @@
   "rows": [
     {
       "date": "14 Nov 2026",
+      "what": "The pipeline measures how much of the code the unit tests run, and fails under a fixed share."
+    },
+    {
+      "date": "14 Nov 2026",
       "what": "The browser tests are their own command and their own step in the pipeline. Before, the unit tests ran them without saying so."
     },
     {

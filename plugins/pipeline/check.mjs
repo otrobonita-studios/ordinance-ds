@@ -6,7 +6,7 @@ export function check({ plugin, read, exists }) {
   const bad = (why, where = file) => out.push({ rule: 'pipeline', file: where, why });
   const yml = read(file).replace(/^\s*#.*$/gm, '');
   if (/^\s*-?\s*uses:/m.test(yml)) bad('a "uses:" line: the template runs commands only');
-  for (const cmd of ['node scripts/build.mjs', 'node scripts/check.mjs', 'node --test', 'node scripts/browser-tests.mjs', 'node --check', 'node scripts/history-check.mjs', 'npm ci --ignore-scripts', 'npm audit']) if (!yml.includes(cmd)) bad(`does not run "${cmd}"`);
+  for (const cmd of ['node scripts/build.mjs', 'node scripts/check.mjs', 'node --test', '--experimental-test-coverage', 'node scripts/browser-tests.mjs', 'node --check', 'node scripts/history-check.mjs', 'npm ci --ignore-scripts', 'npm audit']) if (!yml.includes(cmd)) bad(`does not run "${cmd}"`);
   if (!/permissions:\s*\n\s*contents: read/.test(yml)) bad('must limit the permissions of the pipeline to reading');
   // the token is a header for one command, never a part of an address that a log or a config file can keep
   if (/https?:\/\/[^\s"']*@/.test(yml) || /x-access-token:\$\{\{/.test(yml)) bad('a token in an address: send it as a header');
