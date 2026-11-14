@@ -1,0 +1,59 @@
+{
+  "caption": "Choices that are easy to defend, each with its condition",
+  "columns": [
+    {
+      "key": "area",
+      "label": "Area"
+    },
+    {
+      "key": "choice",
+      "label": "Choice"
+    },
+    {
+      "key": "why",
+      "label": "Why it is easy to defend"
+    },
+    {
+      "key": "condition",
+      "label": "Only if"
+    }
+  ],
+  "rows": [
+    {
+      "area": "Controls",
+      "choice": "Native HTML, such as dialog and popover. Components without styles, such as Base UI or Radix Primitives.",
+      "why": "The keyboard and the roles are built in. State is an attribute, and no style is written at run time.",
+      "condition": "The styles are static CSS, and no data is written into the page as HTML."
+    },
+    {
+      "area": "Styles and tokens",
+      "choice": "Static CSS in layers. Tokens in the Design Tokens format. A utility framework whose output is a static file.",
+      "why": "No script is needed, so the strict policy for styles holds.",
+      "condition": "No style attribute, and no CSS that is put together from text at run time."
+    },
+    {
+      "area": "Icons and typefaces",
+      "choice": "Open icon sets as SVG in the page. Open typefaces as files on your own server.",
+      "why": "No request leaves your server, and the licences are open.",
+      "condition": "Each file is listed with its checksum and its licence."
+    },
+    {
+      "area": "Secrets",
+      "choice": "A secrets manager, with short-lived identities for the pipeline.",
+      "why": "Each read is logged, and a key can be changed in one place.",
+      "condition": "A scan for secrets runs on every change."
+    },
+    {
+      "area": "Supply chain",
+      "choice": "A lock file, an install without scripts, and a bill of materials in the CycloneDX format.",
+      "why": "A reviewer can compare what runs with what was approved.",
+      "condition": "The pipeline fails on a known serious weakness, and on a step that is not pinned."
+    },
+    {
+      "area": "Logs and measurements",
+      "choice": "An open standard, such as OpenTelemetry, with a filter before anything leaves.",
+      "why": "The data has one known shape, and it is not tied to one company.",
+      "condition": "The filter allows only named fields, and removes personal data."
+    }
+  ]
+}

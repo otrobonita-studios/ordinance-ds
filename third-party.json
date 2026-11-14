@@ -79,6 +79,10 @@
           "sha256": "dc4fab6a62dcebe7c1c31096a7062151363b803b62919ba47ef32ba37ad127df"
         },
         {
+          "path": "third-party/icons/check-badge.svg",
+          "sha256": "07e01228aa61b9de8c652120eb097b0f29a37110a59d89613704a8e798982418"
+        },
+        {
           "path": "third-party/icons/circle-stack.svg",
           "sha256": "a3e20dd4b182fd428ab2b66c65ced2f91b5c9a4f49e39ac96c9c1e04772d23e6"
         },
