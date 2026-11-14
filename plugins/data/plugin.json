@@ -1,0 +1,31 @@
+{
+  "id": "data",
+  "title": "Data",
+  "purpose": "One way for a page to get data: checked against a schema, and written as text.",
+  "permissions": [
+    "page",
+    "script",
+    "network:same-origin"
+  ],
+  "pages": [
+    {
+      "file": "data.html",
+      "title": "Data",
+      "source": "pages/data.html",
+      "group": "build",
+      "order": 5,
+      "icon": "circle-stack",
+      "scripts": [
+        "ord-data.js",
+        "data-demo.js"
+      ]
+    }
+  ],
+  "data": [
+    "gateway.json"
+  ],
+  "assets": [
+    "assets/ord-data.js",
+    "assets/data-demo.js"
+  ]
+}

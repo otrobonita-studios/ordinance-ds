@@ -1,0 +1,43 @@
+{
+  "caption": "Settings of the code host for the main branch",
+  "columns": [
+    {
+      "key": "setting",
+      "label": "Setting"
+    },
+    {
+      "key": "why",
+      "label": "What it gives the record"
+    }
+  ],
+  "rows": [
+    {
+      "setting": "A change reaches the main branch only through a pull request",
+      "why": "Every change has one place with its reason, its discussion and its approval."
+    },
+    {
+      "setting": "A second person must approve",
+      "why": "Nobody approves their own change. The record names both people."
+    },
+    {
+      "setting": "The check must pass before a merge",
+      "why": "The record shows that the rules held at every change."
+    },
+    {
+      "setting": "Nobody can rewrite or delete the history of the main branch",
+      "why": "A record that can be changed afterwards proves nothing."
+    },
+    {
+      "setting": "Commits are signed",
+      "why": "The record shows that a commit comes from the account that it names."
+    },
+    {
+      "setting": "The rules also apply to administrators",
+      "why": "An exception for the owner is the first thing that a review looks for."
+    },
+    {
+      "setting": "The scan for secrets blocks a push",
+      "why": "A secret is stopped before it enters the history."
+    }
+  ]
+}

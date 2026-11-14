@@ -1,0 +1,71 @@
+<header class="ord-page__head">
+<h1>Accessibility</h1>
+<p class="ord-page__lede">The accessibility rules are built into the tokens and the parts. The check measures what a script can measure.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Contrast</h2>
+<p class="ord-clause__text">Text must reach a contrast of 7:1, and the edge of a control 3:1. These are criteria 1.4.6 and 1.4.11 of WCAG 2.2.</p>
+<!-- ord:core contrast -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Keyboard and structure</h2>
+<ul class="ord-list">
+<li>The first link of a page skips to the content (2.4.1, Bypass Blocks).</li>
+<li>The focus has a visible outline (2.4.7, Focus Visible).</li>
+<li>The menu and the help open with the keyboard (2.1.1, Keyboard).</li>
+<li>A button is at least 24 px high (2.5.8, Target Size).</li>
+<li>A page says its language and has a title (3.1.1 and 2.4.2).</li>
+<li>Headings come in order, and a table has a caption (1.3.1, Info and Relationships).</li>
+<li>A status has words, and a link is underlined (1.4.1, Use of Color).</li>
+</ul>
+<p class="ord-clause__text">The check reads every built page for the points below. The file <code>scripts/a11y.mjs</code> holds them.</p>
+<ul class="ord-list">
+<li>Every link, button and picture has a name, and a link says where it leads (4.1.2 and 2.4.4).</li>
+<li>Every form control has a label, and a group of controls has a legend (3.3.2, Labels or Instructions).</li>
+<li>Every reference, such as <code>aria-labelledby</code>, names an element that exists (1.3.1).</li>
+<li>Every head cell of a table has a scope (1.3.1).</li>
+<li>The keyboard follows the order of the page: no <code>tabindex</code> above 0, and no <code>autofocus</code> (2.4.3, Focus Order).</li>
+<li>The page does not stop zoom, and it does not reload by itself (1.4.4 and 2.2.1).</li>
+</ul>
+<p class="ord-clause__text">The browser test then measures what only a browser knows.</p>
+<ul class="ord-list">
+<li>The browser gives every control a name in its accessibility tree (4.1.2).</li>
+<li>Every control is at least 24 px wide and high (2.5.8).</li>
+<li>The Tab key reaches every control. Each one shows its focus, and nothing covers it (2.4.7 and 2.4.11).</li>
+<li>Every page fits a screen of 320 px without scrolling sideways (1.4.10, Reflow).</li>
+<li>With wider spacing of lines, letters and words, no text is cut off (1.4.12, Text Spacing).</li>
+<li>In the forced-colours mode of the system, a control keeps its edge and the focus keeps its outline.</li>
+</ul>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">State as attributes</h2>
+<p class="ord-clause__text">A part shows its state with an attribute, such as <code>aria-current</code> or <code>data-tone</code>. Component frameworks set state in the same way.</p>
+<p class="ord-clause__text">A test proves it with Base UI, a set of React components without styles. It is in the folder <code>tests/base-ui</code>.</p>
+<ul class="ord-list">
+<li>A Base UI switch, tab and button take the class names of Ordinance DS.</li>
+<li>They set <code>data-checked</code>, <code>data-disabled</code> and <code>aria-selected</code>, and the stylesheet has a rule for each.</li>
+<li>On a server, Base UI writes <code>style</code> attributes, which the security policy blocks. So a product renders these parts in the browser.</li>
+</ul>
+<p class="ord-clause__text">The packages of the test are in its own folder. The site and the build do not use them.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">What a script cannot see</h2>
+<p class="ord-clause__text">A script cannot judge whether a text is clear, or whether an order makes sense.</p>
+<p class="ord-clause__text">A person must still test each product with a keyboard and with a screen reader.</p>
+</div>
+</section>

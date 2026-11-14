@@ -1,0 +1,24 @@
+{
+  "decisions.html": {
+    "lead": "This page records each decision with its reason.",
+    "topics": [
+      {
+        "title": "Why reasons are kept",
+        "text": [
+          "A changelog says what changed. An auditor also asks why."
+        ]
+      }
+    ]
+  },
+  "changelog.html": {
+    "lead": "This page lists what changed, and when.",
+    "topics": [
+      {
+        "title": "No version number",
+        "text": [
+          "Ordinance DS has no version number of its own. A version exists only as a tag that the owner makes in the repository."
+        ]
+      }
+    ]
+  }
+}

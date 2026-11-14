@@ -1,0 +1,222 @@
+{
+  "index.html": {
+    "lead": "Home says what Ordinance DS is and what it enforces today.",
+    "topics": [
+      {
+        "title": "How to read this page",
+        "text": [
+          "Clause 2 lists every rule that the check enforces. Clause 3 lists what is not built."
+        ]
+      },
+      {
+        "title": "The word checked",
+        "text": [
+          "A page says checked only for a rule that the check enforces."
+        ]
+      }
+    ]
+  },
+  "get-started.html": {
+    "lead": "This page takes you from the folder to a built and checked site.",
+    "topics": [
+      {
+        "title": "What you need",
+        "text": [
+          "You need Node.js 20 or later. The browser test also needs Chrome or Edge."
+        ]
+      },
+      {
+        "title": "If the check fails",
+        "text": [
+          "Read the first line. It names the rule in brackets, then the file, then the reason."
+        ]
+      }
+    ]
+  },
+  "core.html": {
+    "lead": "The core is what every site built on Ordinance DS has.",
+    "topics": [
+      {
+        "title": "Core or plugin",
+        "text": [
+          "A part is in the core when the site cannot build without it. Every other part is a plugin."
+        ]
+      },
+      {
+        "title": "Status",
+        "text": [
+          "Built means that the part exists and the check covers it."
+        ]
+      }
+    ]
+  },
+  "excluded.html": {
+    "lead": "This page lists what Ordinance DS leaves out on purpose.",
+    "topics": [
+      {
+        "title": "Why a list of what is missing",
+        "text": [
+          "A reader can trust a framework more when it says where it stops."
+        ]
+      }
+    ]
+  },
+  "css.html": {
+    "lead": "This page lists the layers and every token of the stylesheet.",
+    "topics": [
+      {
+        "title": "Tokens",
+        "text": [
+          "A token is a named value, such as a colour or a size. A rule in the stylesheet uses the name, never the value."
+        ]
+      },
+      {
+        "title": "Themes",
+        "text": [
+          "The system of the reader chooses the light or the dark theme."
+        ]
+      }
+    ]
+  },
+  "parts.html": {
+    "lead": "This page shows each part and lists every registered name.",
+    "topics": [
+      {
+        "title": "A part",
+        "text": [
+          "A part is a block of HTML with a registered class."
+        ]
+      },
+      {
+        "title": "State",
+        "text": [
+          "A part shows a state with an attribute, such as `data-tone`. It never uses a class for a state."
+        ]
+      }
+    ]
+  },
+  "plugins.html": {
+    "lead": "This page lists the plugins of this build and says how to write one.",
+    "topics": [
+      {
+        "title": "A plugin",
+        "text": [
+          "A plugin is one folder that adds pages, styles or checks."
+        ]
+      },
+      {
+        "title": "Permissions",
+        "text": [
+          "A plugin lists what it uses. The check compares the list with what the plugin does."
+        ]
+      }
+    ]
+  },
+  "secure-by-default.html": {
+    "lead": "This page says what the pages refuse, and which headers a server sends.",
+    "topics": [
+      {
+        "title": "Inline code",
+        "text": [
+          "Inline code is a style or a script that is written into a page. Ordinance DS has none, so the policy needs no exception."
+        ]
+      },
+      {
+        "title": "The headers",
+        "text": [
+          "The table is written from the same file that the local server reads."
+        ]
+      }
+    ]
+  },
+  "privacy.html": {
+    "lead": "This page says what a page of Ordinance DS tells other servers about its reader: nothing.",
+    "topics": [
+      {
+        "title": "Why it matters",
+        "text": [
+          "A request to another server gives that server the address of the reader."
+        ]
+      }
+    ]
+  },
+  "resilience.html": {
+    "lead": "This page says what a reader still gets when a part of a page fails.",
+    "topics": [
+      {
+        "title": "The idea",
+        "text": [
+          "The words and the tables of a page never depend on a script."
+        ]
+      }
+    ]
+  },
+  "accessibility.html": {
+    "lead": "This page says which accessibility rules are built in, and which a person must still test.",
+    "topics": [
+      {
+        "title": "Contrast",
+        "text": [
+          "The contrast ratio compares a text colour with its surface. The check measures each pair."
+        ]
+      },
+      {
+        "title": "Criteria",
+        "text": [
+          "The numbers are success criteria of WCAG 2.2."
+        ]
+      }
+    ]
+  },
+  "checks.html": {
+    "lead": "This page lists every rule of the check and the other tests.",
+    "topics": [
+      {
+        "title": "One list",
+        "text": [
+          "The rules are in one file. This page and the page Home are written from it."
+        ]
+      },
+      {
+        "title": "A failure",
+        "text": [
+          "A failure starts with the name of the rule in brackets."
+        ]
+      }
+    ]
+  },
+  "patterns.html": {
+    "lead": "This page shows whole pages that are made from the parts.",
+    "topics": [
+      {
+        "title": "Made-up data",
+        "text": [
+          "The names, numbers and dates in the patterns are examples. They describe no real organisation."
+        ]
+      },
+      {
+        "title": "Use a pattern",
+        "text": [
+          "Copy the markup of a pattern into a page of your plugin. Then build and check."
+        ]
+      }
+    ]
+  },
+  "tables.html": {
+    "lead": "This page shows every variant of the table part.",
+    "topics": [
+      {
+        "title": "Made-up data",
+        "text": [
+          "The rows in these tables are examples. They describe no real organisation."
+        ]
+      },
+      {
+        "title": "Which size to use",
+        "text": [
+          "Use the compact size for a list that the reader scans. Use the roomy size for a few rows that the reader must read with care."
+        ]
+      }
+    ]
+  }
+}

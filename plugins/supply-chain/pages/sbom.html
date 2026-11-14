@@ -1,0 +1,30 @@
+<header class="ord-page__head">
+<h1>Software bill of materials</h1>
+<p class="ord-page__lede">A software bill of materials (SBOM) lists every component of a piece of software. The build writes one for Ordinance DS each time it runs.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">The file</h2>
+<p class="ord-clause__text">The file is <code>sbom.cdx.json</code>, in the CycloneDX format, version 1.6. <a class="ord-link" href="sbom.cdx.json">Open the bill of materials</a></p>
+<p class="ord-clause__text">The file has no date and no random number. So the same sources always give the same file.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">What it lists</h2>
+<!-- ord:core third-party -->
+<p class="ord-clause__text">When a typeface or an icon is added to the folder, it appears in this table and in the file.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">How it is checked</h2>
+<p class="ord-clause__text">The check compares the file with the list of third-party files. It fails when a component or a file is missing.</p>
+</div>
+</section>

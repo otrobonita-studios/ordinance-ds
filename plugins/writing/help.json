@@ -1,0 +1,19 @@
+{
+  "writing.html": {
+    "lead": "This page lists the writing rules that the check enforces.",
+    "topics": [
+      {
+        "title": "Why writing is checked",
+        "text": [
+          "Many readers of a regulated product do not have English as their first language."
+        ]
+      },
+      {
+        "title": "Your own rules",
+        "text": [
+          "The rules are two files. Change them to follow another specification."
+        ]
+      }
+    ]
+  }
+}

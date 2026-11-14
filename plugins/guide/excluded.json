@@ -1,0 +1,49 @@
+{
+  "caption": "What Ordinance DS does not contain",
+  "columns": [
+    {
+      "key": "what",
+      "label": "Not included"
+    },
+    {
+      "key": "why",
+      "label": "Why"
+    },
+    {
+      "key": "you",
+      "label": "What you do"
+    }
+  ],
+  "rows": [
+    {
+      "what": "A server",
+      "why": "The build writes plain files. Any web server can serve them.",
+      "you": "Use the server that your organisation already trusts."
+    },
+    {
+      "what": "Sign-in and access control",
+      "why": "A browser cannot protect a page. Protection belongs on the server.",
+      "you": "Put access control in front of the pages."
+    },
+    {
+      "what": "A gateway for data",
+      "why": "A gateway needs sign-in, limits, secrets and a record of every call.",
+      "you": "Connect your own gateway. The page Data lists what it must do."
+    },
+    {
+      "what": "A component framework",
+      "why": "The stylesheet styles plain HTML, so a page works without one.",
+      "you": "Add one in your product if you need it."
+    },
+    {
+      "what": "Scripts on most pages",
+      "why": "Only the page Data loads a script. Every other page works without one.",
+      "you": "Add a script as a file in a plugin that has the permission."
+    },
+    {
+      "what": "Hiding items of the menu for a plan or a role",
+      "why": "Hiding in the browser protects nothing, and it can look like access control.",
+      "you": "Decide on the server what a reader may open."
+    }
+  ]
+}

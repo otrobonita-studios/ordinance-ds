@@ -1,0 +1,53 @@
+{
+  "caption": "Changes waiting for review",
+  "columns": [
+    {
+      "key": "ref",
+      "label": "Reference",
+      "kind": "code"
+    },
+    {
+      "key": "what",
+      "label": "Change"
+    },
+    {
+      "key": "owner",
+      "label": "Owner"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "kind": "tag"
+    }
+  ],
+  "rows": [
+    {
+      "ref": "CH-0412",
+      "what": "New limit for the size of a payment",
+      "owner": "Risk",
+      "status": {
+        "text": "Waiting",
+        "tone": "quiet"
+      }
+    },
+    {
+      "ref": "CH-0411",
+      "what": "Correction of the text of a notice",
+      "owner": "Legal",
+      "status": {
+        "text": "Approved",
+        "tone": "accent"
+      }
+    },
+    {
+      "ref": "CH-0409",
+      "what": "Removal of an old report",
+      "owner": "Finance",
+      "status": {
+        "text": "Refused",
+        "tone": "harm"
+      }
+    }
+  ],
+  "empty": "No change is waiting for review."
+}

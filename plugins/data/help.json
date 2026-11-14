@@ -1,0 +1,19 @@
+{
+  "data.html": {
+    "lead": "This page says how a page gets data, and shows the check at work.",
+    "topics": [
+      {
+        "title": "The two examples",
+        "text": [
+          "The first block of data fits its schema and becomes a table. The second does not fit, and the page says why."
+        ]
+      },
+      {
+        "title": "A schema",
+        "text": [
+          "A schema says which fields the data has, and the type and the limits of each field."
+        ]
+      }
+    ]
+  }
+}

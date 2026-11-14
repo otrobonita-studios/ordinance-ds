@@ -1,0 +1,42 @@
+{
+  "caption": "Roomy: for a few rows that matter",
+  "variant": [
+    "roomy"
+  ],
+  "columns": [
+    {
+      "key": "ref",
+      "label": "Reference",
+      "kind": "code"
+    },
+    {
+      "key": "what",
+      "label": "Change"
+    },
+    {
+      "key": "owner",
+      "label": "Owner"
+    },
+    {
+      "key": "days",
+      "label": "Days open",
+      "kind": "num"
+    }
+  ],
+  "rows": [
+    {
+      "ref": "CH-0412",
+      "what": "New limit for the size of a payment",
+      "owner": "Risk",
+      "days": 3,
+      "amount": "12 500.00"
+    },
+    {
+      "ref": "CH-0411",
+      "what": "Correction of the text of a notice",
+      "owner": "Legal",
+      "days": 12,
+      "amount": "0.00"
+    }
+  ]
+}

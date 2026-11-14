@@ -1,0 +1,56 @@
+<header class="ord-page__head">
+<h1>Get started</h1>
+<p class="ord-page__lede">Build the site, check it, and open the first page. You need Node.js 20 or later and nothing else.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Build and check</h2>
+<ol class="ord-steps">
+<li>Open a terminal in the folder of Ordinance DS.</li>
+<li>Build the site with the first command below.</li>
+<li>Check every rule with the second command.</li>
+<li>Open <code>dist/index.html</code> in a browser.</li>
+</ol>
+<pre class="ord-code"><code>node scripts/build.mjs
+node scripts/check.mjs
+Start-Process .\dist\index.html</code></pre>
+<p class="ord-clause__text">The commands are written for PowerShell. The two <code>node</code> commands are the same in every terminal.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Serve the site with the security headers</h2>
+<p class="ord-clause__text">The local server sends the headers that the page Secure by default lists. It answers only on your own computer.</p>
+<pre class="ord-code"><code>node scripts/serve.mjs</code></pre>
+<p class="ord-clause__text">Every page also opens from the folder, without the server. A page that asks a server for data needs the server.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Change something</h2>
+<ol class="ord-steps">
+<li>Edit a source: a token in <code>tokens/</code>, a rule in <code>src/css/</code>, or a page in a plugin.</li>
+<li>Register a new name in <code>names.json</code> before you use it.</li>
+<li>Build, and then check.</li>
+<li>Read the result. A failure names the rule, the file and the reason.</li>
+</ol>
+<p class="ord-clause__text">Never edit a file in <code>dist/</code>. The build writes that folder again each time.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">Test more</h2>
+<p class="ord-clause__text">Two more commands test the parts that the check cannot see.</p>
+<pre class="ord-code"><code>node --test
+node scripts/browser-test.mjs</code></pre>
+<p class="ord-clause__text">The first runs the unit tests. The second opens the built pages in a browser without a window.</p>
+</div>
+</section>

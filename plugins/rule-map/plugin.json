@@ -1,0 +1,30 @@
+{
+  "id": "rule-map",
+  "title": "Rule map",
+  "purpose": "A table from a rule in a law or a standard to what Ordinance DS does, and the check that covers it.",
+  "permissions": [
+    "page",
+    "check"
+  ],
+  "pages": [
+    {
+      "file": "rule-map.html",
+      "title": "Rule map",
+      "source": "pages/rule-map.html",
+      "group": "verify",
+      "order": 2,
+      "icon": "table-cells"
+    }
+  ],
+  "data": [
+    "rule-map.json"
+  ],
+  "check": "check.mjs",
+  "rules": [
+    {
+      "id": "rule-map",
+      "rule": "The rule map names real checks",
+      "does": "It refuses a row of the rule map that names a check which does not exist."
+    }
+  ]
+}

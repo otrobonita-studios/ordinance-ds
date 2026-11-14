@@ -1,0 +1,19 @@
+{
+  "built-with.html": {
+    "lead": "This page lists the sites that are built with Ordinance DS.",
+    "topics": [
+      {
+        "title": "Planned",
+        "text": [
+          "A site with the status Planned does not exist yet. It gets a link when it has a public address."
+        ]
+      },
+      {
+        "title": "The mark",
+        "text": [
+          "The mark is one line of text in the foot of a page. It is a choice, and the licence does not ask for it."
+        ]
+      }
+    ]
+  }
+}

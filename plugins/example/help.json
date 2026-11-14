@@ -1,0 +1,13 @@
+{
+  "example-plugin.html": {
+    "lead": "This page belongs to the example plugin.",
+    "topics": [
+      {
+        "title": "What to do with it",
+        "text": [
+          "Copy the folder, change the id, and write your own page."
+        ]
+      }
+    ]
+  }
+}

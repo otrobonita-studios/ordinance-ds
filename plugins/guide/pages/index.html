@@ -1,0 +1,50 @@
+<header class="ord-page__head">
+<h1>Ordinance DS</h1>
+<p class="ord-page__lede">Ordinance DS is a web starter pack and a minimal design system for regulated products. A test checks every rule that this page calls checked.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">What it is</h2>
+<p class="ord-clause__text">Ordinance DS gives a team a strict start for a website or a product. It is a set of design tokens, a stylesheet, a build and a set of checks.</p>
+<p class="ord-clause__text">It has a strict security policy, self-hosted assets, and components built to WCAG 2.2. It also has conventions that an AI agent can follow, and defaults that an auditor can check.</p>
+<p class="ord-clause__text">A design system used to be a library of finished screens. Ordinance DS is a base instead: an organisation and its AI agents build their own product on it.</p>
+<p class="ord-clause__text">It keeps to the rules that a test can measure, such as contrast, names, requests and checksums. The check then says whether a change still keeps them.</p>
+<p class="ord-clause__text">The framework does not make a product meet a law. It says what it does, and it shows how each statement is checked.</p>
+<div class="ord-metrics">
+<div class="ord-metric"><span class="ord-metric__label">Dependencies</span><span class="ord-metric__value">0</span><span class="ord-metric__note">the build and the checks need only Node.js</span></div>
+<div class="ord-metric"><span class="ord-metric__label">Requests to other servers</span><span class="ord-metric__value">0</span><span class="ord-metric__note">from the stylesheet and the pages</span></div>
+<div class="ord-metric"><span class="ord-metric__label">Smallest text</span><span class="ord-metric__value">14 px</span><span class="ord-metric__note">at the browser's standard size</span></div>
+<div class="ord-metric"><span class="ord-metric__label">Smallest target</span><span class="ord-metric__value">24 px</span><span class="ord-metric__note">for a button</span></div>
+</div>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">What holds today</h2>
+<p class="ord-clause__text">Each row is a rule that the check enforces. The check fails when a rule is broken, and it names the rule and the file.</p>
+<!-- ord:core checks -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">What is not built</h2>
+<p class="ord-clause__text">These parts do not exist yet. A part that is not built is never described as if it works.</p>
+<!-- ord:table not-built.json -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">Build and check</h2>
+<p class="ord-clause__text">Two commands build the pages and check every rule in clause 2.</p>
+<pre class="ord-code"><code>node scripts/build.mjs
+node scripts/check.mjs</code></pre>
+</div>
+</section>

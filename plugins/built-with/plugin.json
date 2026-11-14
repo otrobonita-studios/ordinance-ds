@@ -1,0 +1,21 @@
+{
+  "id": "built-with",
+  "title": "Built with",
+  "purpose": "The list of sites that are built with Ordinance DS, and the mark that such a site can show.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "built-with.html",
+      "title": "Built with",
+      "source": "pages/built-with.html",
+      "group": "start",
+      "order": 5,
+      "icon": "window"
+    }
+  ],
+  "data": [
+    "sites.json"
+  ]
+}

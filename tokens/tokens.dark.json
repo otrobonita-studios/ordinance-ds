@@ -1,0 +1,138 @@
+{
+  "$description": "Ordinance DS tokens: only the colours that differ in the dark theme.",
+  "color": {
+    "$type": "color",
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0667,
+          0.0745,
+          0.0824
+        ],
+        "hex": "#111315"
+      }
+    },
+    "surface-subtle": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.102,
+          0.1137,
+          0.1255
+        ],
+        "hex": "#1a1d20"
+      }
+    },
+    "surface-inverse": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.949,
+          0.9529,
+          0.9569
+        ],
+        "hex": "#f2f3f4"
+      }
+    },
+    "text": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9216,
+          0.9255,
+          0.9333
+        ],
+        "hex": "#ebecee"
+      }
+    },
+    "text-secondary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.7882,
+          0.8,
+          0.8157
+        ],
+        "hex": "#c9ccd0"
+      }
+    },
+    "text-inverse": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.0863,
+          0.0941,
+          0.102
+        ],
+        "hex": "#16181a"
+      }
+    },
+    "line": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.1647,
+          0.1804,
+          0.1961
+        ],
+        "hex": "#2a2e32"
+      }
+    },
+    "line-strong": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.5216,
+          0.5451,
+          0.5725
+        ],
+        "hex": "#858b92"
+      }
+    },
+    "accent": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6627,
+          0.7569,
+          1
+        ],
+        "hex": "#a9c1ff"
+      }
+    },
+    "accent-contrast": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.051,
+          0.0706,
+          0.1255
+        ],
+        "hex": "#0d1220"
+      }
+    },
+    "harm": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.6353,
+          0.6078
+        ],
+        "hex": "#ffa29b"
+      }
+    },
+    "focus": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9216,
+          0.9255,
+          0.9333
+        ],
+        "hex": "#ebecee"
+      }
+    }
+  }
+}

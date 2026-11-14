@@ -1,0 +1,32 @@
+{
+  "caption": "The files of this plugin",
+  "columns": [
+    {
+      "key": "file",
+      "label": "File",
+      "kind": "code"
+    },
+    {
+      "key": "what",
+      "label": "What it is"
+    }
+  ],
+  "rows": [
+    {
+      "file": "plugin.json",
+      "what": "The id, the title, the purpose, the permissions and the pages."
+    },
+    {
+      "file": "pages/example-plugin.html",
+      "what": "This page, as a fragment."
+    },
+    {
+      "file": "help.json",
+      "what": "The help of this page."
+    },
+    {
+      "file": "files.json",
+      "what": "The data of this table."
+    }
+  ]
+}

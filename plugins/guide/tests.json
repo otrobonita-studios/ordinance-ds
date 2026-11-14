@@ -1,0 +1,40 @@
+{
+  "caption": "The four ways to test",
+  "columns": [
+    {
+      "key": "command",
+      "label": "Command",
+      "kind": "code"
+    },
+    {
+      "key": "what",
+      "label": "What it tests"
+    },
+    {
+      "key": "needs",
+      "label": "What it needs"
+    }
+  ],
+  "rows": [
+    {
+      "command": "node scripts/check.mjs",
+      "what": "Every rule in the table above.",
+      "needs": "Node.js"
+    },
+    {
+      "command": "node --test",
+      "what": "The build, the languages, the tables, the data check, the writing check and the accessibility rules, as unit tests.",
+      "needs": "Node.js"
+    },
+    {
+      "command": "node scripts/browser-test.mjs",
+      "what": "The layout, the menu, the help, the keyboard, the focus, the size of controls, text spacing, forced colours and the data. It runs in a real browser under the security headers.",
+      "needs": "Chrome or Edge"
+    },
+    {
+      "command": "npm test",
+      "what": "Base UI parts with the class names of Ordinance DS. Run it in the folder tests/base-ui, after npm ci --ignore-scripts.",
+      "needs": "Node.js and the packages of the test"
+    }
+  ]
+}

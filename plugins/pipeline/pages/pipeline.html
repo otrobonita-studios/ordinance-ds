@@ -1,0 +1,37 @@
+<header class="ord-page__head">
+<h1>Pipeline</h1>
+<p class="ord-page__lede">A pipeline runs the checks on every change, so that nobody has to remember them. Ordinance DS has a template that uses no code from others.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">The template</h2>
+<p class="ord-clause__text">The template is a workflow for GitHub Actions. It runs the build, the check and the unit tests. <a class="ord-link" href="github-actions.yml">Open the template</a></p>
+<p class="ord-clause__text">Every step of the template is a command. It uses no action from another project, so the pipeline has no third-party code to review.</p>
+<p class="ord-clause__text">Ordinance DS uses a copy of the template as its own pipeline. The check fails when the two files differ.</p>
+<p class="ord-clause__text">The template has not run in a live pipeline yet. Test it in your repository before you rely on it.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Use it</h2>
+<ol class="ord-steps">
+<li>Copy the file to <code>.github/workflows/check.yml</code> in your repository.</li>
+<li>Require this check before a change can be merged.</li>
+<li>Require a review by a second person.</li>
+<li>Turn on the scan for secrets in your code host.</li>
+</ol>
+<p class="ord-clause__text">The last three steps are settings of your code host. Ordinance DS cannot set them for you.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">What a pipeline adds</h2>
+<p class="ord-clause__text">The check proves a rule at one moment. A pipeline leaves a record that the rule held at every change.</p>
+</div>
+</section>

@@ -1,0 +1,51 @@
+<header class="ord-page__head">
+<h1>Core</h1>
+<p class="ord-page__lede">The core is everything that the site cannot build without. Every other part is a plugin, and a plugin can be taken away.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">What the core contains</h2>
+<!-- ord:table core-parts.json -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">The shell</h2>
+<p class="ord-clause__text">The build writes the menu from the pages of the plugins. Adding a page to a plugin adds an item to the menu.</p>
+<p class="ord-clause__text">The menu and the help are parts of HTML that open without a script. On a narrow screen the menu opens from a button.</p>
+<p class="ord-clause__text">The page is one centred column. Its widest line of reading text is 42 rem.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Made for a new developer and for an agent</h2>
+<p class="ord-clause__text">A change can be checked without asking anyone. Three choices make that possible.</p>
+<ul class="ord-list">
+<li>The rules for a change are in one file, <code>AGENTS.md</code>.</li>
+<li>Every fact has one source: the tokens, the names, the rules and each plugin's own file.</li>
+<li>Every failure of the check names the rule, the file and the reason.</li>
+</ul>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">Add a language</h2>
+<p class="ord-clause__text">The pages exist in English only. The build can write the site in more languages, and these steps add one.</p>
+<ol class="ord-steps">
+<li>Add the code of the language to <code>languages</code> in <code>site.json</code>. The first language in the list is the main one.</li>
+<li>Copy <code>strings/en.json</code> to a file with the code of the language, and translate its texts.</li>
+<li>In a plugin, put the translated pages in the folder <code>lang/sv/pages</code>, where <code>sv</code> is the code. Use the same file names.</li>
+<li>Beside that folder, <code>titles.json</code> holds the titles for the menu, and <code>help.json</code> holds the help.</li>
+</ol>
+<p class="ord-clause__text">The build writes each added language into its own folder, and the menu links each page to its other languages.</p>
+<p class="ord-clause__text">A page without a translation shows the main language, and its markup says so.</p>
+</div>
+</section>

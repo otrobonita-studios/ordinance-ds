@@ -1,0 +1,75 @@
+{
+  "caption": "Terms",
+  "columns": [
+    {
+      "key": "term",
+      "label": "Term"
+    },
+    {
+      "key": "meaning",
+      "label": "Meaning"
+    }
+  ],
+  "rows": [
+    {
+      "term": "Block",
+      "meaning": "A part of a page with a registered class, such as a panel or a table."
+    },
+    {
+      "term": "Build",
+      "meaning": "The script that writes the site from the sources."
+    },
+    {
+      "term": "Check",
+      "meaning": "The script that enforces the rules, and names the rule and the file when it fails."
+    },
+    {
+      "term": "Checksum",
+      "meaning": "A short value that is computed from a file. A changed file gives another value."
+    },
+    {
+      "term": "Clause",
+      "meaning": "A numbered section of a page."
+    },
+    {
+      "term": "Content-Security-Policy",
+      "meaning": "A header from the server that tells the browser what a page may load and run."
+    },
+    {
+      "term": "Contrast ratio",
+      "meaning": "A number that compares a text colour with its surface. A higher number is easier to read."
+    },
+    {
+      "term": "Element",
+      "meaning": "A named piece of a block, such as the head of a panel."
+    },
+    {
+      "term": "Fragment",
+      "meaning": "The body of a page, without the menu and the shell."
+    },
+    {
+      "term": "Modifier",
+      "meaning": "A fixed variant of a block, such as the primary button."
+    },
+    {
+      "term": "Plugin",
+      "meaning": "One folder that adds pages, styles or checks to the site."
+    },
+    {
+      "term": "Popover",
+      "meaning": "A part of HTML that opens over a page without a script."
+    },
+    {
+      "term": "Register",
+      "meaning": "The list of every name that the stylesheet and the pages may use."
+    },
+    {
+      "term": "Software bill of materials (SBOM)",
+      "meaning": "A list of every component of a piece of software."
+    },
+    {
+      "term": "Token",
+      "meaning": "A named value, such as a colour or a size, that the stylesheet uses."
+    }
+  ]
+}

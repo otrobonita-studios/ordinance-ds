@@ -1,0 +1,43 @@
+{
+  "id": "pipeline",
+  "title": "Pipeline",
+  "purpose": "A template that runs the build, the check and the tests on every change.",
+  "permissions": [
+    "page",
+    "asset",
+    "check"
+  ],
+  "pages": [
+    {
+      "file": "pipeline.html",
+      "title": "Pipeline",
+      "source": "pages/pipeline.html",
+      "group": "verify",
+      "order": 4,
+      "icon": "arrow-path"
+    },
+    {
+      "file": "history.html",
+      "title": "History",
+      "source": "pages/history.html",
+      "group": "verify",
+      "order": 4.5,
+      "icon": "document-magnifying-glass"
+    }
+  ],
+  "assets": [
+    "assets/github-actions.yml"
+  ],
+  "check": "check.mjs",
+  "rules": [
+    {
+      "id": "pipeline",
+      "rule": "The pipeline template uses no third-party action",
+      "does": "It refuses a step that uses an action, and requires the build, the check and the unit tests. It also requires that the pipeline of this folder is a copy of the template."
+    }
+  ],
+  "data": [
+    "host-settings.json",
+    "history-reads.json"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "caption": "What a table file can say",
+  "columns": [
+    {
+      "key": "key",
+      "label": "Key",
+      "kind": "code",
+      "width": "narrow"
+    },
+    {
+      "key": "values",
+      "label": "Values",
+      "kind": "codes"
+    },
+    {
+      "key": "does",
+      "label": "What it does"
+    }
+  ],
+  "rows": [
+    {
+      "key": "variant",
+      "values": [
+        "compact",
+        "roomy",
+        "lines",
+        "zebra",
+        "fixed",
+        "sticky"
+      ],
+      "does": "A list on the table. It changes the room, the lines and the head of the whole table."
+    },
+    {
+      "key": "tall",
+      "values": [
+        "true"
+      ],
+      "does": "The table scrolls inside its frame. Use it with the variant sticky."
+    },
+    {
+      "key": "foot",
+      "values": [],
+      "does": "One more row at the end, for a sum."
+    },
+    {
+      "key": "kind",
+      "values": [
+        "text",
+        "code",
+        "codes",
+        "num",
+        "tag",
+        "swatch"
+      ],
+      "does": "On a column. It says what the cells hold. A number stands at the end of its cell."
+    },
+    {
+      "key": "wrap",
+      "values": [
+        "nowrap",
+        "break"
+      ],
+      "does": "On a column. The text stays on one line, or it breaks inside a long word."
+    },
+    {
+      "key": "width",
+      "values": [
+        "narrow",
+        "wide"
+      ],
+      "does": "On a column. The column is as narrow as its text, or it takes about half of the table."
+    }
+  ]
+}

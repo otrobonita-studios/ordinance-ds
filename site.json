@@ -1,0 +1,31 @@
+{
+  "name": "Ordinance DS",
+  "lang": "en",
+  "languages": [
+    "en"
+  ],
+  "home": "index.html",
+  "groups": [
+    {
+      "id": "start",
+      "label": "Start"
+    },
+    {
+      "id": "build",
+      "label": "Build"
+    },
+    {
+      "id": "assure",
+      "label": "Assure"
+    },
+    {
+      "id": "verify",
+      "label": "Verify"
+    },
+    {
+      "id": "help",
+      "label": "Help"
+    }
+  ],
+  "disabled": []
+}

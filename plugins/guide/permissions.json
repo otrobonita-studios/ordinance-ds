@@ -1,0 +1,44 @@
+{
+  "caption": "Permissions of a plugin",
+  "columns": [
+    {
+      "key": "name",
+      "label": "Permission",
+      "kind": "code"
+    },
+    {
+      "key": "allows",
+      "label": "What it allows"
+    }
+  ],
+  "rows": [
+    {
+      "name": "page",
+      "allows": "Pages, each with an item in the menu."
+    },
+    {
+      "name": "style",
+      "allows": "Rules in the stylesheet, for names that the plugin registers."
+    },
+    {
+      "name": "script",
+      "allows": "A script file that a page of the plugin may load."
+    },
+    {
+      "name": "network:same-origin",
+      "allows": "A script that asks the site's own server for data."
+    },
+    {
+      "name": "check",
+      "allows": "Rules of its own in the check."
+    },
+    {
+      "name": "asset",
+      "allows": "Another file in the built site, such as a template."
+    },
+    {
+      "name": "third-party",
+      "allows": "Files from another project, each listed with its checksum."
+    }
+  ]
+}

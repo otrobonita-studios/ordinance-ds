@@ -1,0 +1,123 @@
+{
+  "caption": "Rules, and what Ordinance DS does",
+  "columns": [
+    {
+      "key": "rule",
+      "label": "Rule"
+    },
+    {
+      "key": "does",
+      "label": "What Ordinance DS does"
+    },
+    {
+      "key": "checks",
+      "label": "Checked by",
+      "kind": "codes"
+    }
+  ],
+  "rows": [
+    {
+      "rule": "WCAG 2.2, 1.4.6 Contrast (Enhanced)",
+      "does": "Every text colour is measured against its surface, in both themes.",
+      "checks": [
+        "contrast"
+      ]
+    },
+    {
+      "rule": "WCAG 2.2, 1.4.11 Non-text Contrast",
+      "does": "The edge of a control and the focus outline are measured against the page.",
+      "checks": [
+        "contrast"
+      ]
+    },
+    {
+      "rule": "WCAG 2.2, 1.4.1 Use of Color",
+      "does": "A status is a tag with words, and a link is underlined.",
+      "checks": []
+    },
+    {
+      "rule": "WCAG 2.2, 2.4.1 Bypass Blocks",
+      "does": "The first link of a page skips to the content.",
+      "checks": [
+        "structure"
+      ]
+    },
+    {
+      "rule": "WCAG 2.2, 2.4.2 Page Titled, and 3.1.1 Language of Page",
+      "does": "Every page has a title and says its language.",
+      "checks": [
+        "structure"
+      ]
+    },
+    {
+      "rule": "WCAG 2.2, 1.3.1 Info and Relationships",
+      "does": "Headings come in order, and every table has a caption and column heads.",
+      "checks": [
+        "structure"
+      ]
+    },
+    {
+      "rule": "WCAG 2.2, 2.1.1 Keyboard",
+      "does": "The menu and the help are parts of HTML that open with the keyboard.",
+      "checks": []
+    },
+    {
+      "rule": "WCAG 2.2, 2.5.8 Target Size (Minimum)",
+      "does": "A button and an item in the menu are at least 24 px high, from one token.",
+      "checks": []
+    },
+    {
+      "rule": "WCAG 2.2, 2.3.3 Animation from Interactions",
+      "does": "The time tokens are zero when the reader asks for reduced motion.",
+      "checks": []
+    },
+    {
+      "rule": "EN 301 549",
+      "does": "This European standard refers to WCAG for web pages, so the rows above apply.",
+      "checks": []
+    },
+    {
+      "rule": "GDPR, Article 25",
+      "does": "A page loads nothing from another server, and a script may not store anything in the browser.",
+      "checks": [
+        "same-origin",
+        "scripts"
+      ]
+    },
+    {
+      "rule": "GDPR, Article 32",
+      "does": "A page runs no code that is written into it, and the server sends a strict security policy.",
+      "checks": [
+        "no-inline"
+      ]
+    },
+    {
+      "rule": "EU Cyber Resilience Act, Annex I",
+      "does": "Every file from another project is listed with a checksum, and the build writes a bill of materials.",
+      "checks": [
+        "third-party",
+        "sbom"
+      ]
+    },
+    {
+      "rule": "DORA, Article 8",
+      "does": "The list of third-party files and the bill of materials name what the site is made of.",
+      "checks": [
+        "third-party",
+        "sbom"
+      ]
+    },
+    {
+      "rule": "SOC 2, CC8.1",
+      "does": "A change must pass the check, and the same sources always give the same site.",
+      "checks": [
+        "build"
+      ]
+    },
+    {
+      "rule": "ISO 24495-1",
+      "does": "The pages are checked against plain-language rules.",
+      "checks": []
+    }
+  ]
+}

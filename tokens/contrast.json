@@ -1,0 +1,65 @@
+{
+  "$description": "Colour pairs that the check measures in both themes. min is the WCAG contrast ratio.",
+  "pairs": [
+    {
+      "text": "color.text",
+      "on": "color.surface",
+      "min": 7
+    },
+    {
+      "text": "color.text",
+      "on": "color.surface-subtle",
+      "min": 7
+    },
+    {
+      "text": "color.text-secondary",
+      "on": "color.surface",
+      "min": 7
+    },
+    {
+      "text": "color.text-secondary",
+      "on": "color.surface-subtle",
+      "min": 7
+    },
+    {
+      "text": "color.accent",
+      "on": "color.surface",
+      "min": 7
+    },
+    {
+      "text": "color.accent",
+      "on": "color.surface-subtle",
+      "min": 7
+    },
+    {
+      "text": "color.accent-contrast",
+      "on": "color.accent",
+      "min": 7
+    },
+    {
+      "text": "color.harm",
+      "on": "color.surface",
+      "min": 7
+    },
+    {
+      "text": "color.harm",
+      "on": "color.surface-subtle",
+      "min": 7
+    },
+    {
+      "text": "color.text-inverse",
+      "on": "color.surface-inverse",
+      "min": 7
+    },
+    {
+      "text": "color.line-strong",
+      "on": "color.surface",
+      "min": 3
+    },
+    {
+      "text": "color.focus",
+      "on": "color.surface",
+      "min": 3
+    }
+  ]
+}

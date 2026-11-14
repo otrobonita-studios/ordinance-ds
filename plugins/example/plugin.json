@@ -1,0 +1,22 @@
+{
+  "id": "example",
+  "title": "Example plugin",
+  "purpose": "The smallest plugin that works: one page. Copy it to start your own.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "example-plugin.html",
+      "title": "Example plugin",
+      "source": "pages/example-plugin.html",
+      "group": "build",
+      "order": 4,
+      "icon": "map-pin",
+      "under": "plugins.html"
+    }
+  ],
+  "data": [
+    "files.json"
+  ]
+}

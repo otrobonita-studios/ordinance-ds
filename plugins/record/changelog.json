@@ -1,0 +1,20 @@
+{
+  "caption": "Changes",
+  "columns": [
+    {
+      "key": "date",
+      "label": "Date",
+      "wrap": "nowrap"
+    },
+    {
+      "key": "what",
+      "label": "What changed"
+    }
+  ],
+  "rows": [
+    {
+      "date": "14 Nov 2026",
+      "what": "The first commit: the tokens, the stylesheet with its components, layout, tables, forms and utilities, the shell, the plugins, the checks and the tests."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "help",
+  "title": "Help",
+  "purpose": "The page about the help, and the glossary.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "help.html",
+      "title": "Help",
+      "source": "pages/help.html",
+      "group": "help",
+      "order": 1,
+      "icon": "question-mark-circle"
+    },
+    {
+      "file": "glossary.html",
+      "title": "Glossary",
+      "source": "pages/glossary.html",
+      "group": "help",
+      "order": 2,
+      "icon": "book-open"
+    }
+  ],
+  "data": [
+    "glossary.json"
+  ]
+}

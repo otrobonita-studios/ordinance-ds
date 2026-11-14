@@ -1,0 +1,24 @@
+{
+  "help.html": {
+    "lead": "This is the help of the page about the help.",
+    "topics": [
+      {
+        "title": "Try it",
+        "text": [
+          "This panel is the help. It stays open until you close it."
+        ]
+      }
+    ]
+  },
+  "glossary.html": {
+    "lead": "This page explains the words that Ordinance DS uses.",
+    "topics": [
+      {
+        "title": "One word, one meaning",
+        "text": [
+          "A word in the glossary has the same meaning on every page."
+        ]
+      }
+    ]
+  }
+}

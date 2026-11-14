@@ -1,0 +1,39 @@
+{
+  "caption": "What still works when a part fails",
+  "columns": [
+    {
+      "key": "when",
+      "label": "When"
+    },
+    {
+      "key": "what",
+      "label": "What the reader gets"
+    }
+  ],
+  "rows": [
+    {
+      "when": "Scripts do not run",
+      "what": "Every page shows its text, its tables, the menu and the help. Only the live table on the page Data stays empty, and it says so."
+    },
+    {
+      "when": "The stylesheet does not load",
+      "what": "The page is plain HTML in a sound order: the skip link, the menu, the content, the help."
+    },
+    {
+      "when": "A typeface file does not load",
+      "what": "The text is shown in a typeface of the system. No text waits for a file."
+    },
+    {
+      "when": "Data has the wrong shape",
+      "what": "The data script refuses it and shows an error in words."
+    },
+    {
+      "when": "The screen is narrow",
+      "what": "The menu becomes a button, and the page becomes one column."
+    },
+    {
+      "when": "The page is printed",
+      "what": "The menu and the help are left out."
+    }
+  ]
+}

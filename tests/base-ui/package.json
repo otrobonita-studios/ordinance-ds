@@ -1,0 +1,14 @@
+{
+  "name": "ordinance-base-ui-test",
+  "private": true,
+  "description": "A test that Base UI parts can be styled by the Ordinance DS stylesheet. Its packages are for this test only; they are not part of the site.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test base-ui.mjs"
+  },
+  "dependencies": {
+    "@base-ui/react": "1.9.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

@@ -1,0 +1,37 @@
+<header class="ord-page__head">
+<h1>Supply chain</h1>
+<p class="ord-page__lede">Every file from another project is a risk that someone must manage. Ordinance DS lists each such file, and the check compares it with its checksum.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">In the folder today</h2>
+<!-- ord:core third-party -->
+<p class="ord-clause__text">The build and the checks use Node.js and no package.</p>
+<p class="ord-clause__text">One test uses packages: the test with Base UI, in the folder <code>tests/base-ui</code>. Its three packages have exact versions, and a lock file holds their checksums. They are never part of the built site.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">How a file is added</h2>
+<ol class="ord-steps">
+<li>Get the file from its project. Compare its checksum with the value that the project publishes.</li>
+<li>Put the file in the folder <code>third-party/</code>.</li>
+<li>List it in <code>third-party.json</code>, or in the <code>plugin.json</code> of the plugin that uses it.</li>
+<li>Give its project, version, licence, source and SHA-256 value.</li>
+<li>Build, and then check.</li>
+</ol>
+<p class="ord-clause__text">The check fails for a file in <code>third-party/</code> that is not listed. It also fails for a listed file that has changed.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">The rule that this answers</h2>
+<p class="ord-clause__text">The EU Cyber Resilience Act asks a manufacturer to know the components of its product. A list with checksums is the base for that.</p>
+</div>
+</section>

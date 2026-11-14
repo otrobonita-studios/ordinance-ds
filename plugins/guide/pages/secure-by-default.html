@@ -1,0 +1,36 @@
+<header class="ord-page__head">
+<h1>Secure by default</h1>
+<p class="ord-page__lede">A page of Ordinance DS runs no code that is written into it, and it loads nothing from another server. The check enforces both.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">In the pages</h2>
+<ul class="ord-list">
+<li>A page has no style attribute and no style element.</li>
+<li>A page has no script that is written into it, and no event attribute.</li>
+<li>A script is a file that a plugin declares for a page.</li>
+<li>Code that writes HTML from data is refused, for example <code>innerHTML</code> and <code>eval</code>.</li>
+</ul>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Headers from the server</h2>
+<p class="ord-clause__text">A server sends these headers with every page. The first one is the Content-Security-Policy.</p>
+<!-- ord:core headers -->
+<p class="ord-clause__text">The policy has no exception for inline styles or inline scripts, because the pages have none.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Where the headers are used</h2>
+<p class="ord-clause__text">The local server sends the headers. The browser test opens every page under them, and fails when the browser blocks anything.</p>
+<p class="ord-clause__text">Headers do not decide who may read a page. Access control is on the page Excluded.</p>
+</div>
+</section>

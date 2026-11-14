@@ -1,0 +1,52 @@
+{
+  "caption": "Parts that are not built",
+  "columns": [
+    {
+      "key": "part",
+      "label": "Part"
+    },
+    {
+      "key": "state",
+      "label": "Where it stands"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "kind": "tag"
+    }
+  ],
+  "rows": [
+    {
+      "part": "Pages in a second language",
+      "state": "The build can write a site in several languages, and a unit test proves it. The pages exist in English only.",
+      "status": {
+        "text": "Not built",
+        "tone": "quiet"
+      }
+    },
+    {
+      "part": "A run of the pipeline",
+      "state": "The file for the pipeline is in the folder. It has not run on a server, because the folder has no remote copy.",
+      "status": {
+        "text": "Not built",
+        "tone": "quiet"
+      }
+    },
+    {
+      "part": "A signed release",
+      "state": "No release is published, and no file is signed.",
+      "status": {
+        "text": "Not built",
+        "tone": "quiet"
+      }
+    },
+    {
+      "part": "A test with a screen reader",
+      "state": "The browser test uses the keyboard and reads the accessibility tree. No person has tested the pages with a screen reader.",
+      "status": {
+        "text": "Not built",
+        "tone": "quiet"
+      }
+    }
+  ]
+}

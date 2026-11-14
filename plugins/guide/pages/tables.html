@@ -1,0 +1,84 @@
+<header class="ord-page__head">
+<h1>Tables</h1>
+<p class="ord-page__lede">A regulated product is mostly tables. The table part has variants for its room, its lines, its columns and its length.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Room</h2>
+<p class="ord-clause__text">Three sizes change the room around the text. The text itself keeps its size, so a compact table is still easy to read.</p>
+<!-- ord:table tables/compact.json -->
+<!-- ord:table tables/standard.json -->
+<!-- ord:table tables/roomy.json -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Stripes and lines</h2>
+<p class="ord-clause__text">Stripes help the eye to follow a wide row. Lines between the columns help when the cells hold numbers or codes.</p>
+<!-- ord:table tables/zebra.json -->
+<!-- ord:table tables/lines.json -->
+<p class="ord-clause__text">Variants can be used together. The second table is compact and has lines.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Columns</h2>
+<p class="ord-clause__text">A class on a column says how its text breaks and how wide it is.</p>
+<!-- ord:table tables/columns.json -->
+<ul class="ord-list">
+<li><code>ord-table__narrow</code> makes a column as narrow as its text.</li>
+<li><code>ord-table__wide</code> gives a column about half of the table.</li>
+<li><code>ord-table__nowrap</code> keeps a date or a name on one line.</li>
+<li><code>ord-table__break</code> breaks a long identifier, so that it does not push the table wider.</li>
+<li><code>ord-table__num</code> puts a number at the end of its cell, with digits of equal width.</li>
+</ul>
+<p class="ord-clause__text">The variant <code>fixed</code> gives all columns the same width. The table then never depends on the length of its text.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">A long table</h2>
+<p class="ord-clause__text">A long table scrolls inside its frame, and its head stays in view. The last row holds a sum.</p>
+<!-- ord:table tables/tall.json -->
+<p class="ord-clause__text">The frame takes the focus of the keyboard, so the arrow keys scroll it. A wide table scrolls sideways in the same frame on a narrow screen.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c5">
+<span class="ord-clause__number">5</span>
+<div class="ord-clause__body">
+<h2 id="c5">Sorting and a chosen row</h2>
+<p class="ord-clause__text">A head that sorts is a button in the head cell. The cell says the order with <code>aria-sort</code>, and an arrow shows it.</p>
+<div class="ord-panel">
+<div class="ord-table-scroll"><table class="ord-table ord-table--compact">
+<caption>Changes, sorted by days open</caption>
+<thead><tr><th scope="col"><button class="ord-table__sort" type="button">Reference</button></th><th scope="col">Owner</th><th scope="col" class="ord-table__num" aria-sort="descending"><button class="ord-table__sort" type="button">Days open</button></th></tr></thead>
+<tbody>
+<tr><th scope="row"><code>CH-0408</code></th><td>Purchasing</td><td class="ord-table__num">27</td></tr>
+<tr aria-selected="true"><th scope="row"><code>CH-0411</code></th><td>Legal</td><td class="ord-table__num">12</td></tr>
+<tr><th scope="row"><code>CH-0412</code></th><td>Risk</td><td class="ord-table__num">3</td></tr>
+</tbody>
+</table></div>
+</div>
+<p class="ord-clause__text">The second row is the chosen one. It has a line at its start and a tint, so it does not rely on colour.</p>
+<p class="ord-clause__text">The buttons here do nothing. The script that sorts and chooses belongs to the product.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c6">
+<span class="ord-clause__number">6</span>
+<div class="ord-clause__body">
+<h2 id="c6">A table from a file</h2>
+<p class="ord-clause__text">A plugin writes a table as a JSON file, and the build writes the markup. The file can say the following.</p>
+<!-- ord:table tables/options.json -->
+<p class="ord-clause__text">The build stops at a word that it does not know. So a spelling mistake does not give a table without its variant.</p>
+</div>
+</section>

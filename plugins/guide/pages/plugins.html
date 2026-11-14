@@ -1,0 +1,52 @@
+<header class="ord-page__head">
+<h1>Plugins</h1>
+<p class="ord-page__lede">A plugin is one folder that adds pages, styles or checks. The build compiles every plugin in, and nothing is loaded while a page runs.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Plugins in this build</h2>
+<!-- ord:core plugins -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Write a plugin</h2>
+<ol class="ord-steps">
+<li>Make a folder in <code>plugins/</code>. Its name is the id of the plugin.</li>
+<li>Write <code>plugin.json</code> with the id, a title, a purpose, the permissions and the pages.</li>
+<li>Write each page as a fragment: the body of the page, without the menu.</li>
+<li>Write <code>help.json</code> with the help of each page.</li>
+<li>Build, and then check.</li>
+</ol>
+<p class="ord-clause__text">The plugin <code>example</code> is the smallest plugin that works. Copy its folder to start. Its page stands under this page in the menu.</p>
+<p class="ord-clause__text">A page can stand under another page. Its entry in <code>plugin.json</code> then has <code>under</code> with the file name of the page above.</p>
+<p class="ord-clause__text">When the page above is not built, the page becomes an item of its own group.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Permissions</h2>
+<p class="ord-clause__text">A plugin asks for exactly what it uses. The check refuses a permission that is missing, and a permission that is not used.</p>
+<!-- ord:table permissions.json -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">The rules for a plugin</h2>
+<ul class="ord-list">
+<li>A plugin is complete in one folder. Every file in the folder is named in <code>plugin.json</code>.</li>
+<li>A page links only to pages of its own plugin.</li>
+<li>The site builds and passes without the plugin. The check proves it for every plugin.</li>
+<li>A plugin is compiled in when the site is built. It is never fetched or loaded while the site runs.</li>
+</ul>
+<p class="ord-clause__text">The idea that every part is a plugin comes from two open projects, DeepSeek Harness and Cordis. Ordinance DS differs in the last rule of the list.</p>
+</div>
+</section>

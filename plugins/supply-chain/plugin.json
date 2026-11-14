@@ -1,0 +1,26 @@
+{
+  "id": "supply-chain",
+  "title": "Supply chain",
+  "purpose": "The pages about files from other projects: the list, the checksums and the bill of materials.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "supply-chain.html",
+      "title": "Supply chain",
+      "source": "pages/supply-chain.html",
+      "group": "assure",
+      "order": 1,
+      "icon": "link"
+    },
+    {
+      "file": "sbom.html",
+      "title": "SBOM",
+      "source": "pages/sbom.html",
+      "group": "verify",
+      "order": 3,
+      "icon": "clipboard-document-list"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "pipeline.html": {
+    "lead": "This page explains the pipeline template and how to use it.",
+    "topics": [
+      {
+        "title": "A pipeline",
+        "text": [
+          "A pipeline is a service that runs commands each time someone changes the code."
+        ]
+      },
+      {
+        "title": "Not tested live",
+        "text": [
+          "The template has not run in a live pipeline yet."
+        ]
+      }
+    ]
+  },
+  "history.html": {
+    "lead": "This page says how to keep the history of a repository, and how to read it for mistakes.",
+    "topics": [
+      {
+        "title": "Pull request",
+        "text": [
+          "A pull request is a proposal to merge a change into the main branch. It holds the discussion and the approval."
+        ]
+      },
+      {
+        "title": "Signed commit",
+        "text": [
+          "A signed commit carries a signature of its author. The code host shows whether the signature belongs to the account."
+        ]
+      }
+    ]
+  }
+}

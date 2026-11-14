@@ -1,0 +1,36 @@
+<header class="ord-page__head">
+<h1>Data</h1>
+<p class="ord-page__lede">A page gets its data in one way. That makes it possible to check the data before the page shows it.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Data in the page</h2>
+<p class="ord-clause__text">A page carries its data as a block of JSON. The script <code>ord-data.js</code> reads the block and checks it against a schema.</p>
+<p class="ord-clause__text">Data that fits becomes a table. The script writes every value as text, so data can never become code.</p>
+<div class="ord-panel" id="demo-out"><p class="ord-empty">The table appears here when the script has checked the data.</p></div>
+<script type="application/json" id="demo-data">{"rows":[{"name":"guide","pages":12},{"name":"data","pages":1},{"name":"example","pages":1}]}</script>
+<p class="ord-notice" id="demo-refused">The script writes the result of the second example here.</p>
+<script type="application/json" id="demo-wrong">{"rows":[{"name":"guide","pages":12},{"name":"data","pages":"one"}]}</script>
+<p class="ord-clause__text">The second block has a text where a number must be. So the script refuses it, and the notice above says why.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Data from a server</h2>
+<p class="ord-clause__text">The function <code>ordData.load</code> asks a server for data. It accepts an address on the site's own server and refuses every other address.</p>
+<p class="ord-clause__text">It is the only code in Ordinance DS that may use the network. No page calls it today, because Ordinance DS has no server.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">What your gateway must do</h2>
+<p class="ord-clause__text">Ordinance DS has no gateway. This list says what yours must do before a page asks it for data.</p>
+<!-- ord:table gateway.json -->
+</div>
+</section>

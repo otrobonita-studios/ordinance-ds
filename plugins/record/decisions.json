@@ -1,0 +1,186 @@
+{
+  "caption": "Decisions",
+  "columns": [
+    {
+      "key": "no",
+      "label": "No.",
+      "kind": "code"
+    },
+    {
+      "key": "decision",
+      "label": "Decision"
+    },
+    {
+      "key": "why",
+      "label": "Why"
+    },
+    {
+      "key": "date",
+      "label": "Date"
+    }
+  ],
+  "rows": [
+    {
+      "no": "D-27",
+      "decision": "A commit and a pull request name the responsible person only, and no tool or AI agent.",
+      "why": "A person answers for every change. The name of a tool in the record would blur who that is.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-26",
+      "decision": "A small set of utility classes is the last layer of the stylesheet.",
+      "why": "A page then never needs a style attribute. The set stays small, so that parts with names carry the design.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-25",
+      "decision": "The history of the repository is kept as a record, and one command reads every commit.",
+      "why": "A review of a regulated product reads the history. A mistake that is published cannot be taken back.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-24",
+      "decision": "A product changes its look in a theme file, and never in the tokens of the core.",
+      "why": "The core can then be updated, and the check still measures the colours of the product.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-23",
+      "decision": "Ordinance DS is a base to build on, with parts, layout and patterns. It is not a library of finished screens.",
+      "why": "An organisation and its AI agents build the product. The framework keeps the rules that a test can measure.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-22",
+      "decision": "Form controls and the dialog are native elements of HTML.",
+      "why": "The browser then gives them the keyboard, the label and the role, and the page needs no script for them.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-21",
+      "decision": "The accessibility rules that a script can read are a rule of the check.",
+      "why": "A missing name or label is then found before a person has to find it.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-20",
+      "decision": "The framework is named Ordinance DS.",
+      "why": "The first product takes the name Ordinance. Two things with one name would be mixed up.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-19",
+      "decision": "Version control starts in the folder, with no remote copy.",
+      "why": "The history is then kept from the first day, and nothing is published before the owner decides.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-18",
+      "decision": "Under the strict security policy, Base UI parts are rendered in the browser.",
+      "why": "On a server, Base UI writes style attributes, and the policy blocks them.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-17",
+      "decision": "The licence of Ordinance DS is MIT.",
+      "why": "It is short and well known, and it lets a team use the framework in a closed product.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-16",
+      "decision": "The pages are in English only, and the build can add a language.",
+      "why": "One language keeps the texts true. A team that needs another language adds files and changes no code.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-15",
+      "decision": "The icons are Heroicons, as files in the folder.",
+      "why": "The set is open, under the MIT licence. The build puts an icon into the page, so no request is made for it.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-14",
+      "decision": "The typefaces are Noto Sans, Noto Serif and Noto Sans Mono, as files in the folder.",
+      "why": "One open family covers the three roles and many scripts. The pages ask no other server.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-13",
+      "decision": "Typefaces are the system's own until files are chosen. Replaced by D-14.",
+      "why": "A page that downloads no typeface is the fastest and the most private.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-12",
+      "decision": "A page says checked only for a rule in the check.",
+      "why": "A statement that nothing checks becomes false without anyone seeing it.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-11",
+      "decision": "Names of other products are held as hashes.",
+      "why": "The check can refuse a name without containing it.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-10",
+      "decision": "What is left out is left out everywhere.",
+      "why": "A half-removed part leaves names and pages that nobody owns.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-9",
+      "decision": "Hiding items of the menu for a plan or a role is not in the core.",
+      "why": "Hiding in the browser protects nothing, and it can look like access control.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-8",
+      "decision": "The first version has no gateway for data.",
+      "why": "A gateway that is half built would be the weakest part. The page Data lists what a gateway must do.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-7",
+      "decision": "A plugin is compiled in, and never loaded while the site runs.",
+      "why": "Code that arrives while the site runs cannot be reviewed or listed first.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-6",
+      "decision": "The menu and the help open without a script.",
+      "why": "They are the parts that every reader needs, so they must not depend on a script.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-5",
+      "decision": "Tokens follow the Design Tokens format.",
+      "why": "A shared format lets other tools read the tokens.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-4",
+      "decision": "A state is an attribute, never a class.",
+      "why": "Plain HTML and component frameworks can then share one stylesheet.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-3",
+      "decision": "Classes are named as block, element and modifier.",
+      "why": "A name then shows what a part belongs to.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-2",
+      "decision": "Every name is registered before it is used.",
+      "why": "The check can then find a name that is wrong, and a name that nothing uses.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-1",
+      "decision": "The build and the checks have no dependency.",
+      "why": "Every dependency is a file from others that someone must watch.",
+      "date": "14 Nov 2026"
+    }
+  ]
+}

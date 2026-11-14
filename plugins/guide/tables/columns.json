@@ -1,0 +1,73 @@
+{
+  "caption": "Classes for a column",
+  "variant": [
+    "lines"
+  ],
+  "columns": [
+    {
+      "key": "ref",
+      "label": "Reference",
+      "kind": "code",
+      "width": "narrow"
+    },
+    {
+      "key": "id",
+      "label": "Long identifier",
+      "kind": "code",
+      "wrap": "break"
+    },
+    {
+      "key": "what",
+      "label": "Change",
+      "width": "wide"
+    },
+    {
+      "key": "date",
+      "label": "Date",
+      "wrap": "nowrap"
+    },
+    {
+      "key": "amount",
+      "label": "Cost in EUR",
+      "kind": "num"
+    }
+  ],
+  "rows": [
+    {
+      "ref": "CH-0412",
+      "what": "New limit for the size of a payment",
+      "owner": "Risk",
+      "days": 3,
+      "amount": "12 500.00",
+      "id": "urn:register:changes:2026:9f3a7c1e5b2d40689f3a7c1e5b2d40680",
+      "date": "12 November 2026"
+    },
+    {
+      "ref": "CH-0411",
+      "what": "Correction of the text of a notice",
+      "owner": "Legal",
+      "days": 12,
+      "amount": "0.00",
+      "id": "urn:register:changes:2026:9f3a7c1e5b2d40689f3a7c1e5b2d40681",
+      "date": "13 November 2026"
+    },
+    {
+      "ref": "CH-0409",
+      "what": "Removal of an old report",
+      "owner": "Finance",
+      "days": 1,
+      "amount": "480.50",
+      "id": "urn:register:changes:2026:9f3a7c1e5b2d40689f3a7c1e5b2d40682",
+      "date": "14 November 2026"
+    },
+    {
+      "ref": "CH-0408",
+      "what": "New field in the register of suppliers",
+      "owner": "Purchasing",
+      "days": 27,
+      "amount": "3 020.00",
+      "id": "urn:register:changes:2026:9f3a7c1e5b2d40689f3a7c1e5b2d40683",
+      "date": "15 November 2026"
+    }
+  ]
+}

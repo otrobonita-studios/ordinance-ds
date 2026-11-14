@@ -1,0 +1,31 @@
+{
+  "id": "writing",
+  "title": "Writing",
+  "purpose": "Plain-language rules for the pages, and the check that enforces them.",
+  "permissions": [
+    "page",
+    "check"
+  ],
+  "pages": [
+    {
+      "file": "writing.html",
+      "title": "Writing",
+      "source": "pages/writing.html",
+      "group": "assure",
+      "order": 6,
+      "icon": "pencil-square"
+    }
+  ],
+  "data": [
+    "rules.json",
+    "avoid.json"
+  ],
+  "check": "check.mjs",
+  "rules": [
+    {
+      "id": "writing",
+      "rule": "The pages follow the plain-language rules",
+      "does": "It counts the words of each sentence and each button, and searches the pages for the words to avoid."
+    }
+  ]
+}

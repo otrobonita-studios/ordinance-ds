@@ -1,0 +1,17 @@
+{
+  "name": "ordinance-ds",
+  "private": true,
+  "description": "A web starter pack and minimal design system for regulated products. The build and the checks have no dependency.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test",
+    "serve": "node scripts/serve.mjs",
+    "browser-test": "node scripts/browser-test.mjs"
+  },
+  "license": "MIT"
+}

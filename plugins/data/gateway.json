@@ -1,0 +1,43 @@
+{
+  "caption": "What a gateway for data must do",
+  "columns": [
+    {
+      "key": "what",
+      "label": "Requirement"
+    },
+    {
+      "key": "why",
+      "label": "Why"
+    }
+  ],
+  "rows": [
+    {
+      "what": "Answer on the same address as the pages",
+      "why": "The security policy allows a page to ask its own server only."
+    },
+    {
+      "what": "Check who is asking",
+      "why": "A sign-in decides who may read, before any data is sent."
+    },
+    {
+      "what": "Keep the data of each customer apart",
+      "why": "An answer must never contain the data of another customer."
+    },
+    {
+      "what": "Limit how often a reader can ask",
+      "why": "A limit protects the server and the other readers."
+    },
+    {
+      "what": "Keep a record of every call",
+      "why": "An auditor asks who read what, and when."
+    },
+    {
+      "what": "Keep every secret on the server",
+      "why": "A key in the browser is a key that every reader has."
+    },
+    {
+      "what": "Send data in a fixed shape",
+      "why": "The page checks the data against a schema, and refuses what does not fit."
+    }
+  ]
+}

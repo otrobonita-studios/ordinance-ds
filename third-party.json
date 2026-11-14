@@ -1,0 +1,188 @@
+{
+  "components": [
+    {
+      "name": "@fontsource-variable/noto-sans",
+      "version": "5.3.0",
+      "licence": "OFL-1.1",
+      "source": "https://registry.npmjs.org/@fontsource-variable/noto-sans/-/noto-sans-5.3.0.tgz",
+      "integrity": "sha512-e3ZuxzY9AL2psXPZlhwhnYrHUHv6PMoyK9MQ7croF0CUgURLqu9EMjW7q2FgVLwij1tjLsIHQrnwQ8aUcg4BiA==",
+      "files": [
+        {
+          "path": "third-party/fonts/noto-sans/noto-sans-latin-wght-normal.woff2",
+          "sha256": "51ca196f49a33e79e7870ff88ebd2829a3f627a51e7d690986618f0e7ad2b52d"
+        },
+        {
+          "path": "third-party/fonts/noto-sans/noto-sans-latin-ext-wght-normal.woff2",
+          "sha256": "6d5a79315528df191b9d86f97b0c4272a8b588fcb166773fe6588ac795de0613"
+        },
+        {
+          "path": "third-party/fonts/noto-sans/LICENSE",
+          "sha256": "54ec7b5a35310ad66f9f3091426f7028484cbf9ae1ab5da30122ee412a3009e1"
+        }
+      ]
+    },
+    {
+      "name": "@fontsource-variable/noto-serif",
+      "version": "5.3.0",
+      "licence": "OFL-1.1",
+      "source": "https://registry.npmjs.org/@fontsource-variable/noto-serif/-/noto-serif-5.3.0.tgz",
+      "integrity": "sha512-GxGAScLRifXH02gDoJGroO/NIX83It7m1TYPPp1bhNPaii6/+GBYKxl/uL5GabFe0PBfiUV92wA4MdMdEDUu6A==",
+      "files": [
+        {
+          "path": "third-party/fonts/noto-serif/noto-serif-latin-wght-normal.woff2",
+          "sha256": "46281456234014ceb2a79bff447245de0f76b8d803be0738972ed374c3206c5b"
+        },
+        {
+          "path": "third-party/fonts/noto-serif/noto-serif-latin-ext-wght-normal.woff2",
+          "sha256": "2654f8d1261a420fc81628122bee9d494b493227e3d7d9baa4238360b92b11d3"
+        },
+        {
+          "path": "third-party/fonts/noto-serif/LICENSE",
+          "sha256": "45d545469122348b916bfa4d362f691c3f7f3af7169fd46f920845cae97923df"
+        }
+      ]
+    },
+    {
+      "name": "@fontsource-variable/noto-sans-mono",
+      "version": "5.3.0",
+      "licence": "OFL-1.1",
+      "source": "https://registry.npmjs.org/@fontsource-variable/noto-sans-mono/-/noto-sans-mono-5.3.0.tgz",
+      "integrity": "sha512-EgozyWG4nG2U1OT+zfdyHP1L8O0fUFMUBOilVF9urTshqIdfeGV9/FUQxaNHdPvHtV1cQCs1Ql0W1q93SiPK2w==",
+      "files": [
+        {
+          "path": "third-party/fonts/noto-sans-mono/noto-sans-mono-latin-wght-normal.woff2",
+          "sha256": "71f6c22d5dd256eaa9e48347bda6ac2c65f58980dd372ed5780fbdaca1186331"
+        },
+        {
+          "path": "third-party/fonts/noto-sans-mono/noto-sans-mono-latin-ext-wght-normal.woff2",
+          "sha256": "aed68c8758d2a5e224dd849fe4caf0728bc33e29b471662f9a6b36f606d14202"
+        },
+        {
+          "path": "third-party/fonts/noto-sans-mono/LICENSE",
+          "sha256": "9e73c367ca79c54f9bce96d879b7a7f7fa279119ed4b3e61299f061b34f361cb"
+        }
+      ]
+    },
+    {
+      "name": "heroicons",
+      "version": "2.2.0",
+      "licence": "MIT",
+      "source": "https://registry.npmjs.org/heroicons/-/heroicons-2.2.0.tgz",
+      "integrity": "sha512-yOwvztmNiBWqR946t+JdgZmyzEmnRMC2nxvHFC90bF1SUttwB6yJKYeme1JeEcBfobdOs827nCyiWBS2z/brog==",
+      "files": [
+        {
+          "path": "third-party/icons/arrow-path.svg",
+          "sha256": "b191971e5cd0347fb23ea91c87e7468b2a3759613d3dd928fdd326004a5542ae"
+        },
+        {
+          "path": "third-party/icons/book-open.svg",
+          "sha256": "dc4fab6a62dcebe7c1c31096a7062151363b803b62919ba47ef32ba37ad127df"
+        },
+        {
+          "path": "third-party/icons/circle-stack.svg",
+          "sha256": "a3e20dd4b182fd428ab2b66c65ced2f91b5c9a4f49e39ac96c9c1e04772d23e6"
+        },
+        {
+          "path": "third-party/icons/clipboard-document-check.svg",
+          "sha256": "6aae9896d66e7dc77a12538438dde68914e62daa7cb676b6b4673caaa4613e0a"
+        },
+        {
+          "path": "third-party/icons/clipboard-document-list.svg",
+          "sha256": "0de7d55c558c8ecd344379182a766a04c4411952a21d0ba2655f9e6115e38911"
+        },
+        {
+          "path": "third-party/icons/clock.svg",
+          "sha256": "373d9798f3bde27f665fd49fd4b78b6896de13e1b30670c1930d9553cd1ff3e3"
+        },
+        {
+          "path": "third-party/icons/cpu-chip.svg",
+          "sha256": "7a26bbe0641421d26cf2d3b7daba200d10e780f03c8bd28ccb616bc870eb0c6f"
+        },
+        {
+          "path": "third-party/icons/document-magnifying-glass.svg",
+          "sha256": "2801e1ac62b2b95777bb10a275190ca95d204119d4e0f6b428db98b8fd909182"
+        },
+        {
+          "path": "third-party/icons/eye-slash.svg",
+          "sha256": "01f1daffba28f46662f57f41aa5d92893e83b403b724becd7145c9be095bcf1e"
+        },
+        {
+          "path": "third-party/icons/home.svg",
+          "sha256": "bf22818e3638f217e824ff26c8ffaf2ef014803982ca7c430e6c3c20915b185a"
+        },
+        {
+          "path": "third-party/icons/lifebuoy.svg",
+          "sha256": "c176af94a4dcd341e25218a6039314d7b489edb22d0bf9098c7312be5186686a"
+        },
+        {
+          "path": "third-party/icons/link.svg",
+          "sha256": "ffdc20f6386b3a50f581fbcc3bb79df69096f3f82127876aa6189342c6eca2f5"
+        },
+        {
+          "path": "third-party/icons/map-pin.svg",
+          "sha256": "2e5e3a42d2f4111d1e54fed11e8f5634c5716fa3a541bb6787e998e147233639"
+        },
+        {
+          "path": "third-party/icons/no-symbol.svg",
+          "sha256": "ebbe791f35216d952dbc38b45429a40165621f0847b34431590af6bff89aa971"
+        },
+        {
+          "path": "third-party/icons/pencil-square.svg",
+          "sha256": "21da72fcd66af3e386d554259ff8517124d0a2270975ffa3a69b5aa926959d4c"
+        },
+        {
+          "path": "third-party/icons/puzzle-piece.svg",
+          "sha256": "880c89745545bdfdb165ae93ced38cade941c31f18eb6e76222c0a2f7f5e7837"
+        },
+        {
+          "path": "third-party/icons/question-mark-circle.svg",
+          "sha256": "0187052648b5683b4f3dc671ee861039f6476325f08a666cc5abf1d5381d202f"
+        },
+        {
+          "path": "third-party/icons/queue-list.svg",
+          "sha256": "aa08b011e64493839e49d26fd8d200997e9d181b139b5ee951c4d8d498265914"
+        },
+        {
+          "path": "third-party/icons/rectangle-group.svg",
+          "sha256": "20158d79dc62bd3d9531f0e157a2396ddd13aa1a92710a45a4c00ad6f7021ac7"
+        },
+        {
+          "path": "third-party/icons/rocket-launch.svg",
+          "sha256": "aa6421011bdcaebea71e2dd0958bb41b6cd52fc07f7e814fec551a6812307e0e"
+        },
+        {
+          "path": "third-party/icons/scale.svg",
+          "sha256": "b44f8c01b85efbf5d84cc1b057c30f37ddc109a0e1d75e336bab54132c6096ad"
+        },
+        {
+          "path": "third-party/icons/shield-check.svg",
+          "sha256": "db8ceec9867b8dcb63efb1da7afaf6c66729e93f0e94b4352e97d6249d83680f"
+        },
+        {
+          "path": "third-party/icons/squares-2x2.svg",
+          "sha256": "45f2eac7a2fda730f8ac492ed12431f894ae30b6469405f7468c788fe7963223"
+        },
+        {
+          "path": "third-party/icons/swatch.svg",
+          "sha256": "1a913cfbe4c5e51ea30705a55108b8267699236266facef9479b7b586018e819"
+        },
+        {
+          "path": "third-party/icons/table-cells.svg",
+          "sha256": "657ebdc1af89b6ba39ae33995cec570e68ed26bc76a34c6ab29f0d23f84ee603"
+        },
+        {
+          "path": "third-party/icons/user.svg",
+          "sha256": "73fa969e35b58fdf764fb90fce1f848c4ca4c4b20184ce8bf9bd442700456356"
+        },
+        {
+          "path": "third-party/icons/window.svg",
+          "sha256": "86eda418cb1a8b856db2cd3210b32f345914e6a3b66893f82403370aea68c133"
+        },
+        {
+          "path": "third-party/icons/LICENSE",
+          "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+        }
+      ]
+    }
+  ]
+}

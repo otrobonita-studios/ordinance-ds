@@ -1,0 +1,62 @@
+/* The shell: the menu beside a centred page. It needs no script.
+   The menu is a native popover. On a narrow screen the Menu button opens it over the page, and Escape or a click
+   outside closes it. On a wide screen the same element stands beside the page and the button is not shown. */
+@layer ord.parts {
+  .ord-shell { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 100dvh; }
+  .ord-shell__side { border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); }
+  .ord-shell__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ord-space-3); padding: var(--ord-space-2) var(--ord-space-3); }
+  .ord-shell__brand { display: inline-flex; align-items: center; min-height: var(--ord-size-target-min); color: var(--ord-color-text); font-size: var(--ord-font-size-md); font-weight: var(--ord-font-weight-bold); text-decoration: none; }
+  .ord-shell__brand:hover { text-decoration: underline; }
+
+  /* the menu as a sheet from the left edge */
+  .ord-menu { position: fixed; inset: 0 auto 0 0; width: min(20rem, 90vw); height: 100dvh; max-height: none; margin: 0; padding: var(--ord-space-3); overflow-y: auto; border: 0; border-right: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); color: var(--ord-color-text); }
+  .ord-menu::backdrop { background: color-mix(in srgb, var(--ord-color-text) 45%, transparent); }
+  .ord-menu__close { margin-bottom: var(--ord-space-3); }
+  .ord-menu__group + .ord-menu__group { margin-top: var(--ord-space-4); }
+  .ord-menu__head { margin-bottom: var(--ord-space-1); color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-xs); font-weight: var(--ord-font-weight-bold); }
+  .ord-menu__list { list-style: none; }
+  .ord-menu__item { display: flex; align-items: center; gap: var(--ord-space-1); min-height: var(--ord-size-target-min); padding: var(--ord-space-1) var(--ord-space-2); border-left: 0.1875rem solid transparent; color: var(--ord-color-text); font-size: var(--ord-font-size-sm); text-decoration: none; }
+  /* A page that stands under another page: it follows that page, set in to the line of its text. */
+  .ord-menu__sub { padding-left: calc(1.25rem + 2 * var(--ord-space-2) + var(--ord-space-1)); }
+  a.ord-menu__item:hover { background: var(--ord-color-surface-subtle); text-decoration: underline; }
+  /* the current page: a bar at the edge and bold text, so that it does not rely on colour */
+  .ord-menu__item[aria-current="page"] { border-left-color: var(--ord-color-text); background: var(--ord-color-surface-subtle); font-weight: var(--ord-font-weight-bold); }
+  .ord-menu__item[data-status="planned"] { color: var(--ord-color-text-secondary); }
+  .ord-menu__note { margin-left: auto; font-size: var(--ord-font-size-xs); }
+
+  @media (min-width: 60rem) {
+    .ord-shell { grid-template-columns: 17rem minmax(0, 1fr); }
+    .ord-shell__side { position: sticky; top: 0; align-self: start; height: 100dvh; overflow-y: auto; border-bottom: 0; border-right: var(--ord-border-width) solid var(--ord-color-line-strong); }
+    .ord-shell__bar { padding: var(--ord-space-4) var(--ord-space-4) var(--ord-space-2); }
+    .ord-shell__open, .ord-menu__close { display: none; }
+    /* the same element, now in the page's flow */
+    .ord-menu { display: block; position: static; width: auto; height: auto; padding: var(--ord-space-2) var(--ord-space-3) var(--ord-space-5); overflow: visible; border-right: 0; background: none; }
+  }
+  @media print { .ord-shell { display: block; } .ord-shell__side { display: none; } }
+}
+
+/* The help of a page: a panel at the right edge. It is a native popover that stays open while the reader works,
+   and its Close button closes it. On a wide screen the page makes room for it, so the help covers nothing. */
+@layer ord.parts {
+  .ord-menu__icon { flex: none; width: 1.25rem; height: 1.25rem; margin-right: var(--ord-space-2); }
+  .ord-help { position: fixed; inset: 0 0 0 auto; width: min(24rem, 100vw); height: 100dvh; max-height: none; margin: 0; padding: 0; overflow-y: auto; border: 0; border-left: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); color: var(--ord-color-text); }
+  .ord-help__head { display: flex; align-items: center; justify-content: space-between; gap: var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4); border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); }
+  .ord-help__title { font-size: var(--ord-font-size-md); }
+  .ord-help__body { display: grid; gap: var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4) var(--ord-space-6); font-size: var(--ord-font-size-sm); }
+  .ord-help__lead { color: var(--ord-color-text-secondary); }
+  .ord-help__topic { display: grid; gap: var(--ord-space-2); padding-top: var(--ord-space-3); border-top: var(--ord-border-width) solid var(--ord-color-line); }
+  .ord-help__topic h3 { font-size: var(--ord-font-size-sm); }
+
+  @media (min-width: 60rem) {
+    .ord-shell__bar { flex-wrap: wrap; }
+  }
+  @media (min-width: 90rem) {
+    .ord-shell:has(.ord-help:popover-open) { grid-template-columns: 17rem minmax(0, 1fr) 24rem; }
+  }
+  @media print { .ord-help { display: none; } }
+}
+
+@layer ord.parts {
+  .ord-shell__help { margin-left: auto; }
+  .ord-help__close { flex: none; }
+}

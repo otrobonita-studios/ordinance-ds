@@ -1,0 +1,28 @@
+/* Base: the page before any part is used. Every value is a token. */
+@layer ord.reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  body, h1, h2, h3, h4, p, ul, ol, dl, dd, figure, table { margin: 0; }
+  ul, ol { padding: 0; }
+}
+
+@layer ord.base {
+  html { font-size: 100%; }
+  body {
+    background: var(--ord-color-surface);
+    color: var(--ord-color-text);
+    font-family: var(--ord-font-family-sans);
+    font-size: var(--ord-font-size-md);
+    line-height: var(--ord-font-leading-text);
+  }
+  h1, h2, h3 { font-weight: var(--ord-font-weight-bold); line-height: var(--ord-font-leading-tight); }
+  h1 { font-size: var(--ord-font-size-2xl); }
+  h2 { font-size: var(--ord-font-size-xl); }
+  h3 { font-size: var(--ord-font-size-lg); }
+  p, li, dd { max-width: var(--ord-size-measure); }
+  code, kbd { font-family: var(--ord-font-family-mono); font-size: var(--ord-font-size-sm); overflow-wrap: anywhere; }
+  a { color: inherit; }
+  /* The focus ring is always visible, and it never relies on colour alone: it is an outline with an offset. */
+  :focus-visible { outline: 0.125rem solid var(--ord-color-focus); outline-offset: 0.125rem; }
+  /* System colours take over in forced-colours mode. */
+  @media (forced-colors: active) { :focus-visible { outline-color: Highlight; } }
+}

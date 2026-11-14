@@ -1,0 +1,95 @@
+<header class="ord-page__head">
+<h1>Patterns</h1>
+<p class="ord-page__lede">A pattern is a whole page made from the parts. Copy a pattern to start a page of your own.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">A list</h2>
+<p class="ord-clause__text">A list page says where the reader is, names the list, and offers one main action. The data in every pattern is made up.</p>
+<div class="ord-panel">
+<div class="ord-panel__body ord-stack">
+<nav aria-label="Crumbs of the list pattern"><ol class="ord-crumbs"><li><a class="ord-link" href="patterns.html">Register</a></li><li><span aria-current="page">Changes</span></li></ol></nav>
+<div class="ord-row"><h3>Changes</h3><button class="ord-button ord-button--primary" type="button">Add a change</button></div>
+<!-- ord:table pattern-list.json -->
+<nav aria-label="Pages of the list pattern"><ul class="ord-pages"><li><a class="ord-pages__item" href="patterns.html" aria-label="Page 1" aria-current="page">1</a></li><li><a class="ord-pages__item" href="patterns.html" aria-label="Page 2">2</a></li><li><a class="ord-pages__item" href="patterns.html">Next</a></li></ul></nav>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">One record</h2>
+<p class="ord-clause__text">A record page shows the facts in the wide column, and the status in the narrow one. History is in a section that the reader opens.</p>
+<div class="ord-panel">
+<div class="ord-panel__body ord-split">
+<div class="ord-stack">
+<h3>CH-0412: new limit for the size of a payment</h3>
+<dl class="ord-terms">
+<div><dt>Owner</dt><dd>Risk</dd></div>
+<div><dt>Applies from</dt><dd>1 January 2027</dd></div>
+<div><dt>Reason</dt><dd>The old limit did not follow the new rule for large payments.</dd></div>
+</dl>
+<details class="ord-details">
+<summary class="ord-details__summary">History of this change</summary>
+<div class="ord-details__body"><p>Written on 12 November 2026. Sent for review on 14 November 2026.</p></div>
+</details>
+</div>
+<div class="ord-stack">
+<p><span class="ord-tag" data-tone="quiet">Waiting</span></p>
+<p>One reviewer must approve this change before it applies.</p>
+<div class="ord-row"><button class="ord-button ord-button--primary" type="button">Approve</button><button class="ord-button" type="button">Refuse</button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">A form with errors</h2>
+<p class="ord-clause__text">When a form has errors, a notice above the form lists them. Each line of the notice links to its field.</p>
+<div class="ord-panel">
+<div class="ord-panel__body ord-stack">
+<h3>Add a change</h3>
+<div class="ord-notice" data-tone="harm" role="group" aria-labelledby="pf-errors">
+<p id="pf-errors">Error: 2 fields need a change.</p>
+<ul class="ord-list">
+<li><a class="ord-link" href="#pf-ref">The reference needs 8 digits.</a></li>
+<li><a class="ord-link" href="#pf-why">Give a reason for the change.</a></li>
+</ul>
+</div>
+<div class="ord-field">
+<label class="ord-field__label" for="pf-ref">Reference</label>
+<input class="ord-input" type="text" id="pf-ref" value="2026-14" aria-invalid="true" aria-describedby="pf-ref-error" autocomplete="off">
+<p class="ord-field__error" id="pf-ref-error">Error: the reference needs 8 digits.</p>
+</div>
+<div class="ord-field">
+<label class="ord-field__label" for="pf-why">Reason</label>
+<p class="ord-field__hint" id="pf-why-hint">One or two sentences are enough.</p>
+<textarea class="ord-input" id="pf-why" rows="3" aria-invalid="true" aria-describedby="pf-why-hint pf-why-error"></textarea>
+<p class="ord-field__error" id="pf-why-error">Error: give a reason for the change.</p>
+</div>
+<div class="ord-row"><button class="ord-button ord-button--primary" type="button">Save the change</button><button class="ord-button" type="button">Cancel</button></div>
+</div>
+</div>
+<p class="ord-clause__text">The buttons in the patterns do nothing. A product adds the script or the server that acts on them.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">Nothing, waiting and failed</h2>
+<p class="ord-clause__text">A page has three states besides its normal one. Each state says in words what happened, and what the reader can do.</p>
+<div class="ord-grid">
+<div class="ord-stack"><p class="ord-empty">No change is waiting for review.</p><p><button class="ord-button" type="button">Add a change</button></p></div>
+<div class="ord-field"><label class="ord-field__label" for="ps-load">Reading the register: 2 of 5 files</label><progress class="ord-progress" id="ps-load" value="2" max="5">2 of 5</progress></div>
+<div class="ord-stack"><p class="ord-notice" data-tone="harm">Error: the register did not answer. Nothing was changed.</p><p><button class="ord-button" type="button">Try again</button></p></div>
+</div>
+</div>
+</section>

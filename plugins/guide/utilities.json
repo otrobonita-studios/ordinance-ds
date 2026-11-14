@@ -1,0 +1,100 @@
+{
+  "caption": "The utility classes",
+  "columns": [
+    {
+      "key": "cls",
+      "label": "Class",
+      "kind": "code",
+      "width": "narrow"
+    },
+    {
+      "key": "does",
+      "label": "What it does"
+    }
+  ],
+  "rows": [
+    {
+      "cls": "ord-u-mt-0",
+      "does": "No space above."
+    },
+    {
+      "cls": "ord-u-mt-2",
+      "does": "A small space above."
+    },
+    {
+      "cls": "ord-u-mt-4",
+      "does": "A space above."
+    },
+    {
+      "cls": "ord-u-mt-6",
+      "does": "A large space above."
+    },
+    {
+      "cls": "ord-u-end",
+      "does": "In a row, the part moves to the end."
+    },
+    {
+      "cls": "ord-u-full",
+      "does": "The part takes the whole width."
+    },
+    {
+      "cls": "ord-u-measure",
+      "does": "The part is no wider than a line of reading text."
+    },
+    {
+      "cls": "ord-u-text-end",
+      "does": "The text stands at the end of the line."
+    },
+    {
+      "cls": "ord-u-text-center",
+      "does": "The text stands in the middle."
+    },
+    {
+      "cls": "ord-u-nowrap",
+      "does": "The text stays on one line."
+    },
+    {
+      "cls": "ord-u-break",
+      "does": "A long word breaks."
+    },
+    {
+      "cls": "ord-u-bold",
+      "does": "Bold text."
+    },
+    {
+      "cls": "ord-u-small",
+      "does": "Small text."
+    },
+    {
+      "cls": "ord-u-quiet",
+      "does": "Text in the second colour for text."
+    },
+    {
+      "cls": "ord-u-mono",
+      "does": "The typeface for code."
+    },
+    {
+      "cls": "ord-u-num",
+      "does": "Digits of equal width."
+    },
+    {
+      "cls": "ord-u-visually-hidden",
+      "does": "The text is for a screen reader only."
+    },
+    {
+      "cls": "ord-u-hidden-narrow",
+      "does": "Not shown on a narrow screen."
+    },
+    {
+      "cls": "ord-u-hidden-wide",
+      "does": "Not shown on a wide screen."
+    },
+    {
+      "cls": "ord-u-hidden-print",
+      "does": "Not printed."
+    }
+  ],
+  "variant": [
+    "compact"
+  ]
+}

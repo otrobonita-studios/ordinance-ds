@@ -1,0 +1,45 @@
+{
+  "caption": "The rules that the check enforces",
+  "columns": [
+    {
+      "key": "rule",
+      "label": "Rule"
+    },
+    {
+      "key": "why",
+      "label": "Why"
+    }
+  ],
+  "rows": [
+    {
+      "key": "max-sentence",
+      "value": 25,
+      "rule": "A sentence has at most 25 words.",
+      "why": "A long sentence is hard to follow in a second language."
+    },
+    {
+      "key": "max-button",
+      "value": 3,
+      "rule": "A button has at most 3 words.",
+      "why": "A reader must see at once what a button does."
+    },
+    {
+      "key": "heading-stop",
+      "value": true,
+      "rule": "A heading does not end with a full stop.",
+      "why": "A heading is a name, not a sentence."
+    },
+    {
+      "key": "percent",
+      "value": true,
+      "rule": "A percent sign follows its number without a space.",
+      "why": "One way of writing a figure in all pages."
+    },
+    {
+      "key": "british",
+      "value": true,
+      "rule": "The spelling is British.",
+      "why": "One spelling in all pages."
+    }
+  ]
+}

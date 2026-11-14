@@ -1,0 +1,52 @@
+{
+  "caption": "Words and phrases to avoid",
+  "columns": [
+    {
+      "key": "phrase",
+      "label": "Avoid",
+      "kind": "code"
+    },
+    {
+      "key": "instead",
+      "label": "Write this"
+    }
+  ],
+  "rows": [
+    {
+      "phrase": "click here",
+      "instead": "Say where the link leads."
+    },
+    {
+      "phrase": "in order to",
+      "instead": "Write \"to\"."
+    },
+    {
+      "phrase": "utilise",
+      "instead": "Write \"use\"."
+    },
+    {
+      "phrase": "leverage",
+      "instead": "Write \"use\"."
+    },
+    {
+      "phrase": "seamless",
+      "instead": "Say what works together, and how."
+    },
+    {
+      "phrase": "simply",
+      "instead": "Leave the word out."
+    },
+    {
+      "phrase": "please note",
+      "instead": "State the fact."
+    },
+    {
+      "phrase": "best practice",
+      "instead": "State the rule and its reason."
+    },
+    {
+      "phrase": "out of the box",
+      "instead": "Say what is included."
+    }
+  ]
+}

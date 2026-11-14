@@ -1,0 +1,84 @@
+{
+  "caption": "What the core contains",
+  "columns": [
+    {
+      "key": "part",
+      "label": "Part"
+    },
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "kind": "tag"
+    }
+  ],
+  "rows": [
+    {
+      "part": "Tokens",
+      "what": "The colours, sizes, typefaces and times, in the Design Tokens format.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "The layers of the stylesheet",
+      "what": "Reset, tokens, base and parts. A later layer wins, so no rule needs force.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "The shell",
+      "what": "The menu beside a centred page, the help panel and a link that skips to the content.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "The build",
+      "what": "One script that writes the site from the sources. The same sources give the same bytes.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "The checks",
+      "what": "One script that enforces every rule, and names the rule and the file when it fails.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "The local server",
+      "what": "A small server for your own computer that sends the security headers.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "Empty and error states",
+      "what": "A part for \"nothing to show\" and a part for a notice or an error.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "part": "Instructions for a new developer or an agent",
+      "what": "One file, AGENTS.md, with the rules for a change.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    }
+  ]
+}

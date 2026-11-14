@@ -1,0 +1,22 @@
+# A workflow for GitHub Actions that runs the build, the check and the unit tests on every change.
+# It uses no action from another project: every step is a command. So the pipeline has no third-party code to review.
+# Copy this file to .github/workflows/check.yml in your repository.
+name: Check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the change
+        run: |
+          git init --quiet .
+          git fetch --quiet --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" "${{ github.ref }}"
+          git checkout --quiet FETCH_HEAD
+      - name: Build
+        run: node scripts/build.mjs
+      - name: Check
+        run: node scripts/check.mjs
+      - name: Unit tests
+        run: node --test

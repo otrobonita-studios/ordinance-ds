@@ -1,0 +1,37 @@
+{
+  "caption": "Sites built with Ordinance DS",
+  "columns": [
+    {
+      "key": "site",
+      "label": "Site"
+    },
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "kind": "tag"
+    }
+  ],
+  "rows": [
+    {
+      "site": "This site",
+      "what": "The pages that document the framework. The build writes them from the same parts.",
+      "status": {
+        "text": "Built",
+        "tone": "accent"
+      }
+    },
+    {
+      "site": "Ordinance",
+      "what": "The first product that will use the framework. It has no public address yet.",
+      "status": {
+        "text": "Planned",
+        "tone": "quiet"
+      }
+    }
+  ],
+  "empty": "No site is listed yet."
+}

@@ -1,0 +1,147 @@
+<header class="ord-page__head">
+<h1>Parts</h1>
+<p class="ord-page__lede">A part is a block of HTML with a registered class. This page shows each part, and lists every registered name.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Text</h2>
+<p class="ord-clause__text">Three parts set text that is not a paragraph.</p>
+<ul class="ord-list">
+<li>A list of points has the class <code>ord-list</code>.</li>
+<li>Each point is one full sentence.</li>
+</ul>
+<ol class="ord-steps">
+<li>A list of steps has the class <code>ord-steps</code>.</li>
+<li>The browser writes the numbers.</li>
+</ol>
+<dl class="ord-terms">
+<div><dt>Term</dt><dd>A term and its meaning have the class <code>ord-terms</code>.</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Status and action</h2>
+<p class="ord-clause__text">A tag shows a status in words. The tone supports the words and never replaces them.</p>
+<div class="ord-row"><span class="ord-tag">Plain</span><span class="ord-tag" data-tone="accent">Checked</span><span class="ord-tag" data-tone="harm">Failed</span><span class="ord-tag" data-tone="quiet">Not built</span></div>
+<div class="ord-row"><button type="button" class="ord-button ord-button--primary">Example action</button><button type="button" class="ord-button">Second action</button><button type="button" class="ord-button" disabled>Not available</button></div>
+<p class="ord-notice" data-tone="accent">A notice tells the reader something that matters for the next step.</p>
+<p class="ord-notice" data-tone="harm">Error: the file could not be read. A notice about an error says so in its first word.</p>
+<p class="ord-empty">An empty state says in words that there is nothing to show.</p>
+<p class="ord-clause__text">The buttons on this page show the part. They do nothing.</p>
+<label class="ord-row"><input type="checkbox" role="switch" class="ord-switch" checked> A switch is on or off. Its thumb moves, so the state does not rely on colour.</label>
+<nav class="ord-tabs" aria-label="Example of tabs"><a class="ord-tabs__tab" href="parts.html" aria-current="page">Parts</a><a class="ord-tabs__tab" href="css.html">CSS</a><a class="ord-tabs__tab" href="plugins.html">Plugins</a></nav>
+<p class="ord-clause__text">Tabs are a row of choices. The current choice has a line under it and bold text.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Panels, figures and tables</h2>
+<p class="ord-clause__text">A panel frames one thing. A key figure has a label and a note.</p>
+<div class="ord-panel">
+<div class="ord-panel__head"><h3 class="ord-panel__title">A panel</h3><span class="ord-panel__meta">one frame around one thing</span></div>
+<div class="ord-panel__body"><p>A panel has a head, a body and a foot. Each of them is optional.</p></div>
+<div class="ord-panel__foot">The foot holds a note or a source.</div>
+</div>
+<div class="ord-metrics">
+<div class="ord-metric"><span class="ord-metric__label">Dependencies</span><span class="ord-metric__value">0</span><span class="ord-metric__note">the build and the checks need only Node.js</span></div>
+<div class="ord-metric"><span class="ord-metric__label">Requests to other servers</span><span class="ord-metric__value">0</span><span class="ord-metric__note">from the stylesheet and the pages</span></div>
+<div class="ord-metric"><span class="ord-metric__label">Smallest text</span><span class="ord-metric__value">14 px</span><span class="ord-metric__note">at the browser's standard size</span></div>
+<div class="ord-metric"><span class="ord-metric__label">Smallest target</span><span class="ord-metric__value">24 px</span><span class="ord-metric__note">for a button</span></div>
+</div>
+<p class="ord-clause__text">Every table on this site is the table part. It has a caption and a head for each column.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">Forms and dialogs</h2>
+<p class="ord-clause__text">A field is a label, a hint, a control and an error. Each control is a native element of HTML.</p>
+<div class="ord-field">
+<label class="ord-field__label" for="f-name">Name of the report</label>
+<p class="ord-field__hint" id="f-name-hint">Use the name that the register shows.</p>
+<input class="ord-input" type="text" id="f-name" aria-describedby="f-name-hint" autocomplete="off">
+</div>
+<div class="ord-field">
+<label class="ord-field__label" for="f-ref">Reference</label>
+<input class="ord-input" type="text" id="f-ref" value="2026-14" aria-invalid="true" aria-describedby="f-ref-error" autocomplete="off">
+<p class="ord-field__error" id="f-ref-error">Error: the reference needs 8 digits.</p>
+</div>
+<p class="ord-clause__text">An error has a thicker edge and a text that starts with the word Error. So it does not rely on colour.</p>
+<div class="ord-field">
+<label class="ord-field__label" for="f-kind">Kind of change</label>
+<select class="ord-select" id="f-kind"><option>Correction</option><option>New rule</option><option>Removal</option></select>
+</div>
+<div class="ord-field">
+<label class="ord-field__label" for="f-why">Reason</label>
+<textarea class="ord-input" id="f-why" rows="3"></textarea>
+</div>
+<fieldset class="ord-fieldset">
+<legend class="ord-fieldset__legend">Who gets a copy</legend>
+<label class="ord-row"><input class="ord-check" type="checkbox" checked> The owner of the rule</label>
+<label class="ord-row"><input class="ord-check" type="checkbox"> The reviewer</label>
+</fieldset>
+<fieldset class="ord-fieldset">
+<legend class="ord-fieldset__legend">When it applies</legend>
+<label class="ord-row"><input class="ord-radio" type="radio" name="demo-when" checked> From today</label>
+<label class="ord-row"><input class="ord-radio" type="radio" name="demo-when"> From the next quarter</label>
+</fieldset>
+<p class="ord-clause__text">These controls send nothing. The security policy lets no form send data until a product names where it goes.</p>
+<p class="ord-clause__text">A dialog asks one question that the reader must answer. A button opens it without a script.</p>
+<p class="ord-clause__text">The button uses the attributes <code>commandfor</code> and <code>command</code>. A browser from before 2025 does not know them, and a product for such browsers adds a small script.</p>
+<p><button class="ord-button" type="button" commandfor="demo-dialog" command="show-modal">Open the dialog</button></p>
+<dialog class="ord-dialog" id="demo-dialog" aria-labelledby="demo-dialog-title">
+<div class="ord-dialog__head"><h3 class="ord-dialog__title" id="demo-dialog-title">Remove the draft</h3></div>
+<div class="ord-dialog__body"><p>This dialog is an example, and both buttons only close it.</p></div>
+<div class="ord-dialog__foot"><button class="ord-button" type="button" commandfor="demo-dialog" command="close">Keep the draft</button><button class="ord-button ord-button--primary" type="button" commandfor="demo-dialog" command="close">Remove the draft</button></div>
+</dialog>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c5">
+<span class="ord-clause__number">5</span>
+<div class="ord-clause__body">
+<h2 id="c5">Layout and the way through a site</h2>
+<p class="ord-clause__text">Four parts set out a page. None of them has a width in pixels, so the page follows the screen.</p>
+<ul class="ord-list">
+<li>A stack, <code>ord-stack</code>, puts parts under each other with one distance.</li>
+<li>A row, <code>ord-row</code>, puts parts beside each other, and wraps them on a narrow screen.</li>
+<li>A grid, <code>ord-grid</code>, makes as many columns of equal width as the screen has room for.</li>
+<li>A split, <code>ord-split</code>, puts a narrow column beside a wide one. On a narrow screen they stand under each other.</li>
+</ul>
+<div class="ord-grid">
+<p class="ord-empty">First in the grid</p>
+<p class="ord-empty">Second in the grid</p>
+<p class="ord-empty">Third in the grid</p>
+</div>
+<p class="ord-clause__text">Crumbs show the way from the start of the site to this page.</p>
+<nav aria-label="Example of crumbs"><ol class="ord-crumbs"><li><a class="ord-link" href="index.html">Home</a></li><li><a class="ord-link" href="css.html">CSS</a></li><li><span aria-current="page">Parts</span></li></ol></nav>
+<p class="ord-clause__text">A long list has pages. The current page has a frame and bold text.</p>
+<nav aria-label="Example of pages of a list"><ul class="ord-pages"><li><a class="ord-pages__item" href="parts.html">Previous</a></li><li><a class="ord-pages__item" href="parts.html" aria-label="Page 1">1</a></li><li><a class="ord-pages__item" href="parts.html" aria-label="Page 2" aria-current="page">2</a></li><li><a class="ord-pages__item" href="parts.html" aria-label="Page 3">3</a></li><li><a class="ord-pages__item" href="parts.html">Next</a></li></ul></nav>
+<details class="ord-details">
+<summary class="ord-details__summary">A section that the reader opens</summary>
+<div class="ord-details__body"><p>It is the details element of HTML. The keyboard opens it, and it needs no script.</p></div>
+</details>
+<div class="ord-field">
+<label class="ord-field__label" for="p-done">Pages checked: 18 of 24</label>
+<progress class="ord-progress" id="p-done" value="18" max="24">18 of 24</progress>
+</div>
+<p class="ord-clause__text">Progress has its number in words, so the bar is never the only sign.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c6">
+<span class="ord-clause__number">6</span>
+<div class="ord-clause__body">
+<h2 id="c6">Registered names</h2>
+<p class="ord-clause__text">The check refuses a class that is not in this list.</p>
+<!-- ord:core names -->
+</div>
+</section>

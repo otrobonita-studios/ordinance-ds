@@ -1,0 +1,30 @@
+{
+  "id": "record",
+  "title": "Record",
+  "purpose": "The decisions with their reasons, and the changes with their dates.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "decisions.html",
+      "title": "Decisions",
+      "source": "pages/decisions.html",
+      "group": "verify",
+      "order": 5,
+      "icon": "scale"
+    },
+    {
+      "file": "changelog.html",
+      "title": "Changelog",
+      "source": "pages/changelog.html",
+      "group": "verify",
+      "order": 6,
+      "icon": "clock"
+    }
+  ],
+  "data": [
+    "decisions.json",
+    "changelog.json"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "rule-map.html": {
+    "lead": "This page maps rules from laws and standards to what Ordinance DS does.",
+    "topics": [
+      {
+        "title": "How to read a row",
+        "text": [
+          "A row says what Ordinance DS does. It does not say that a product meets the rule."
+        ]
+      },
+      {
+        "title": "Checked by",
+        "text": [
+          "The last column names rules of the check. An empty cell means that no script checks the row."
+        ]
+      }
+    ]
+  }
+}

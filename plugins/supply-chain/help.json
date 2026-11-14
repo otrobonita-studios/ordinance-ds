@@ -1,0 +1,24 @@
+{
+  "supply-chain.html": {
+    "lead": "This page says how Ordinance DS treats a file that comes from another project.",
+    "topics": [
+      {
+        "title": "A checksum",
+        "text": [
+          "A checksum is a short value that is computed from a file. A changed file gives another value."
+        ]
+      }
+    ]
+  },
+  "sbom.html": {
+    "lead": "This page explains the software bill of materials and links to the file.",
+    "topics": [
+      {
+        "title": "SBOM",
+        "text": [
+          "SBOM is short for software bill of materials: a list of every component of a piece of software."
+        ]
+      }
+    ]
+  }
+}

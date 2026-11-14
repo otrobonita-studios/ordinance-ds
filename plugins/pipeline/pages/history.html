@@ -1,0 +1,80 @@
+<header class="ord-page__head">
+<h1>History</h1>
+<p class="ord-page__lede">The history of a repository is a record of every change. A review of a regulated product reads that record, so it must be kept with care.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">What the record must answer</h2>
+<p class="ord-clause__text">A reviewer picks a change and asks four questions. The history and the code host must answer them without the help of a person.</p>
+<ul class="ord-list">
+<li>What changed, and why?</li>
+<li>Which person is responsible for it?</li>
+<li>Who approved it, and was that a second person?</li>
+<li>Which tests passed before it was merged?</li>
+</ul>
+<p class="ord-clause__text">The history answers the first two questions. The code host answers the last two, and the next clause lists its settings.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">The main branch</h2>
+<!-- ord:table host-settings.json -->
+<p class="ord-clause__text">These are settings of your code host. Ordinance DS cannot set them, and it cannot check them.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">A commit</h2>
+<ul class="ord-list">
+<li>A commit holds one change that has one reason. A reader can then review it alone, and undo it without losing other work.</li>
+<li>Each commit builds and passes the check by itself. A reviewer can then stop at any commit.</li>
+<li>A change of names or a move of files is its own commit, apart from a change of behaviour.</li>
+<li>The first line of the message says what changed, in under 72 characters. The lines after it say why.</li>
+<li>A commit names the person who is responsible for it. It names no tool and no AI agent, whatever helped to write it.</li>
+<li>A commit holds no secret, no personal data and no path of a computer.</li>
+<li>A mistake in a published commit is corrected with a new commit. The old one stays.</li>
+</ul>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">A pull request</h2>
+<p class="ord-clause__text">A pull request is read by a person, and often first by a program. Both read better when it is small and says how to read it.</p>
+<ul class="ord-list">
+<li>One pull request has one purpose, and it is small enough to read in one sitting.</li>
+<li>The description says what changes, why, and what could go wrong.</li>
+<li>It lists the commits in the order to read them, and says where to look hardest.</li>
+<li>It says what was not done, and what could not be tested. A reviewer cannot see what is missing.</li>
+</ul>
+<p class="ord-clause__text">The file <code>AGENTS.md</code> has the full rules, and the folder <code>.github</code> has the template.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c5">
+<span class="ord-clause__number">5</span>
+<div class="ord-clause__body">
+<h2 id="c5">The history check</h2>
+<p class="ord-clause__text">A file that is corrected today is still in the history as it was. So one command reads every commit.</p>
+<pre class="ord-code"><code>node scripts/history-check.mjs</code></pre>
+<!-- ord:table history-reads.json -->
+<p class="ord-clause__text">Run it before the first push, because a published history cannot be taken back. After that, run it before each release.</p>
+<p class="ord-clause__text">The command needs git. It is not a part of the rules on the page Checks, which read only the files of today.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c6">
+<span class="ord-clause__number">6</span>
+<div class="ord-clause__body">
+<h2 id="c6">The address of an author</h2>
+<p class="ord-clause__text">Every commit carries the name and the email address of its author. With the first push, they are public for good.</p>
+<p class="ord-clause__text">A code host can give each person an address that hides the real one. Set it in git before the first commit.</p>
+</div>
+</section>

@@ -1,0 +1,224 @@
+/* Parts: the blocks a page is built from. Names are registered in names.json (see NAMING.md). */
+@layer ord.parts {
+  /* The page: one centred column with room at the sides. */
+  .ord-page { display: grid; align-content: start; gap: var(--ord-space-5); width: 100%; max-width: var(--ord-size-page); margin-inline: auto; padding: var(--ord-space-5) var(--ord-space-4) var(--ord-space-7); }
+  .ord-page > * { min-width: 0; }
+  .ord-page__head { display: grid; gap: var(--ord-space-2); padding-bottom: var(--ord-space-4); border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); }
+  .ord-page__lede { color: var(--ord-color-text-secondary); font-family: var(--ord-font-family-serif); }
+  .ord-page__foot { padding-top: var(--ord-space-3); border-top: var(--ord-border-width) solid var(--ord-color-line); color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
+
+  /* A skip link: the first thing the keyboard reaches. It shows only while it has the focus. */
+  .ord-skip { position: absolute; left: var(--ord-space-3); top: var(--ord-space-3); z-index: var(--ord-z-overlay); padding: var(--ord-space-2) var(--ord-space-3); background: var(--ord-color-surface); color: var(--ord-color-text); }
+  .ord-skip:not(:focus) { width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  /* A clause: a numbered section, as in a standard. The number stands in the margin on a wide page. */
+  .ord-clause { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: var(--ord-space-2) var(--ord-space-3); align-items: baseline; }
+  .ord-clause__number { color: var(--ord-color-text-secondary); font-family: var(--ord-font-family-mono); font-size: var(--ord-font-size-sm); }
+  .ord-clause__body { display: grid; gap: var(--ord-space-3); min-width: 0; }
+  .ord-clause__text { font-family: var(--ord-font-family-serif); }
+
+  /* A panel: one frame around one thing. No shadow. */
+  .ord-panel { border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); background: var(--ord-color-surface); min-width: 0; }
+  .ord-panel__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--ord-space-1) var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4); border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface-subtle); }
+  .ord-panel__title { font-size: var(--ord-font-size-md); }
+  .ord-panel__meta { color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
+  .ord-panel__body { display: grid; gap: var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4); }
+  .ord-panel__foot { padding: var(--ord-space-3) var(--ord-space-4); border-top: var(--ord-border-width) solid var(--ord-color-line); color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
+
+  /* A table: no column lines, one line under the head, quiet row edges. A wide table scrolls inside its own frame. */
+  .ord-table-scroll { overflow-x: auto; }
+  .ord-table { width: 100%; border-collapse: collapse; font-size: var(--ord-font-size-sm); }
+  .ord-table caption { padding: var(--ord-space-2) var(--ord-space-4); color: var(--ord-color-text-secondary); text-align: start; }
+  .ord-table th, .ord-table td { padding: var(--ord-space-2) var(--ord-space-4); text-align: start; vertical-align: baseline; }
+  .ord-table thead th { border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); color: var(--ord-color-text-secondary); font-weight: var(--ord-font-weight-bold); }
+  .ord-table tbody th { font-weight: var(--ord-font-weight-regular); }
+  .ord-table tbody tr + tr > * { border-top: var(--ord-border-width) solid var(--ord-color-line); }
+  .ord-table .ord-table__num { font-variant-numeric: tabular-nums; text-align: end; white-space: nowrap; }
+
+  /* A tag: a short status. Its words carry the meaning; the tone only supports them. */
+  .ord-tag { display: inline-block; padding: 0 var(--ord-space-2); border: var(--ord-border-width) solid currentColor; border-radius: var(--ord-radius-sm); color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-xs); font-weight: var(--ord-font-weight-bold); white-space: nowrap; }
+  .ord-tag[data-tone="accent"] { color: var(--ord-color-accent); }
+  .ord-tag[data-tone="harm"] { color: var(--ord-color-harm); }
+  .ord-tag[data-tone="quiet"] { border-style: dashed; }
+
+  /* A button: at least 24 px high. The primary button is the one filled thing on a page. */
+  .ord-button { display: inline-flex; align-items: center; justify-content: center; min-height: var(--ord-size-target-min); padding: var(--ord-space-2) var(--ord-space-3); border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); background: var(--ord-color-surface); color: var(--ord-color-text); font: inherit; font-size: var(--ord-font-size-sm); font-weight: var(--ord-font-weight-bold); text-decoration: none; cursor: pointer; transition: background-color var(--ord-duration-fast); }
+  .ord-button:hover { background: var(--ord-color-surface-subtle); }
+  .ord-button--primary { border-color: var(--ord-color-accent); background: var(--ord-color-accent); color: var(--ord-color-accent-contrast); }
+  .ord-button--primary:hover { background: var(--ord-color-accent); text-decoration: underline; }
+  .ord-button:disabled, .ord-button[aria-disabled="true"] { border-style: dashed; color: var(--ord-color-text-secondary); cursor: not-allowed; }
+
+  /* A link in text: underlined always, so that it does not rely on colour. */
+  .ord-link { color: var(--ord-color-text); text-decoration: underline; text-decoration-color: var(--ord-color-line-strong); text-underline-offset: 0.2em; }
+  .ord-link:hover { color: var(--ord-color-accent); text-decoration-color: currentColor; }
+
+  /* A key figure with its label and a note. */
+  .ord-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: var(--ord-space-3); }
+  .ord-metric { display: grid; gap: var(--ord-space-1); padding: var(--ord-space-3) var(--ord-space-4); border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); }
+  .ord-metric__label { color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
+  .ord-metric__value { font-size: var(--ord-font-size-xl); font-weight: var(--ord-font-weight-bold); font-variant-numeric: tabular-nums; line-height: var(--ord-font-leading-tight); }
+  .ord-metric__note { color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-xs); }
+
+  /* A block of code on the inverse surface. */
+  .ord-code { overflow-x: auto; padding: var(--ord-space-3) var(--ord-space-4); border-radius: var(--ord-radius-sm); background: var(--ord-color-surface-inverse); color: var(--ord-color-text-inverse); font-family: var(--ord-font-family-mono); font-size: var(--ord-font-size-sm); }
+
+  /* A row of things with even gaps that wraps. */
+  .ord-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ord-space-2) var(--ord-space-3); }
+
+  @media (max-width: 40rem) {
+    .ord-page { padding-inline: var(--ord-space-3); }
+    .ord-clause { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (forced-colors: active) { .ord-button--primary { border-color: ButtonText; } }
+}
+
+/* Lists, notices and the other small parts of a page. */
+@layer ord.parts {
+  /* A list of points, and a list of steps in order. */
+  .ord-list, .ord-steps { display: grid; gap: var(--ord-space-2); padding-left: var(--ord-space-4); font-family: var(--ord-font-family-serif); }
+
+  /* Terms and their meanings. */
+  .ord-terms { display: grid; gap: var(--ord-space-3); }
+  .ord-terms dt { font-weight: var(--ord-font-weight-bold); }
+  .ord-terms dd { font-family: var(--ord-font-family-serif); }
+
+  /* An empty state: what a reader sees when there is nothing to show. It always says so in words. */
+  /* The mark of a site that is built with the framework. It stands in the foot of a page. */
+  .ord-built { color: var(--ord-color-text-secondary); font-family: var(--ord-font-family-mono); font-size: var(--ord-font-size-sm); }
+
+  .ord-empty { padding: var(--ord-space-3) var(--ord-space-4); border: var(--ord-border-width) dashed var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
+
+  /* A notice: something the reader must know. An error has the harm tone, and its text says that it is an error. */
+  .ord-notice { padding: var(--ord-space-3) var(--ord-space-4); border: var(--ord-border-width) solid var(--ord-color-line-strong); border-left-width: 0.25rem; border-radius: var(--ord-radius-sm); font-size: var(--ord-font-size-sm); }
+  .ord-notice[data-tone="harm"] { border-color: var(--ord-color-harm); color: var(--ord-color-harm); }
+  .ord-notice[data-tone="accent"] { border-color: var(--ord-color-accent); }
+
+  /* A sample of a colour token. The build writes the rule that gives each sample its colour. */
+  .ord-swatch { display: inline-block; width: var(--ord-size-target-min); height: var(--ord-size-target-min); border: var(--ord-border-width) solid var(--ord-color-line-strong); vertical-align: middle; }
+}
+
+/* Parts with a state. The state is an attribute, so the same rules style plain HTML and a component framework.
+   tests/base-ui/ proves it for Base UI: it sets data-checked, data-disabled and aria-selected, as plain HTML sets
+   :checked, :disabled and aria-current. */
+@layer ord.parts {
+  /* A switch: on or off. Plain HTML: <input type="checkbox" role="switch" class="ord-switch">. The position of the thumb
+     shows the state, so it does not rely on colour. */
+  .ord-switch { appearance: none; display: inline-flex; flex: none; align-items: center; width: 2.75rem; height: var(--ord-size-target-min); margin: 0; padding: 0.125rem; border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: 0.75rem; background: var(--ord-color-surface); vertical-align: middle; cursor: pointer; }
+  input.ord-switch::before, .ord-switch__thumb { content: ""; display: block; width: 1.125rem; height: 1.125rem; border-radius: 0.5625rem; background: var(--ord-color-text-secondary); transition: transform var(--ord-duration-fast); }
+  .ord-switch:checked, .ord-switch[data-checked] { border-color: var(--ord-color-accent); background: var(--ord-color-accent); }
+  input.ord-switch:checked::before, .ord-switch[data-checked] .ord-switch__thumb { background: var(--ord-color-accent-contrast); transform: translateX(1.25rem); }
+  .ord-switch:disabled, .ord-switch[data-disabled] { border-style: dashed; cursor: not-allowed; }
+  .ord-button[data-disabled] { border-style: dashed; color: var(--ord-color-text-secondary); cursor: not-allowed; }
+
+  /* Tabs: a row of choices with one current choice. Plain HTML: links with aria-current. A framework: tabs with aria-selected. */
+  .ord-tabs { display: flex; flex-wrap: wrap; gap: var(--ord-space-1); border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); }
+  .ord-tabs__tab { display: inline-flex; align-items: center; min-height: var(--ord-size-target-min); padding: var(--ord-space-2) var(--ord-space-3); border: 0; border-bottom: 0.1875rem solid transparent; background: none; color: var(--ord-color-text-secondary); font: inherit; font-size: var(--ord-font-size-sm); text-decoration: none; cursor: pointer; }
+  .ord-tabs__tab:hover { color: var(--ord-color-text); }
+  .ord-tabs__tab[aria-selected="true"], .ord-tabs__tab[aria-current="page"] { border-bottom-color: var(--ord-color-text); color: var(--ord-color-text); font-weight: var(--ord-font-weight-bold); }
+}
+
+/* Forms. Every control is a native element, so the keyboard, the label and the screen reader work without a script.
+   An error is shown three ways: a thicker edge, the attribute aria-invalid, and a text that starts with the word Error. */
+@layer ord.parts {
+  .ord-field { display: grid; gap: var(--ord-space-1); max-width: var(--ord-size-measure); }
+  .ord-field__label { font-size: var(--ord-font-size-sm); font-weight: var(--ord-font-weight-bold); }
+  .ord-field__hint { color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
+  .ord-field__error { color: var(--ord-color-harm); font-size: var(--ord-font-size-sm); font-weight: var(--ord-font-weight-bold); }
+
+  .ord-input, .ord-select { box-sizing: border-box; width: 100%; min-height: 2.5rem; margin: 0; padding: var(--ord-space-2) var(--ord-space-3); border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); background: var(--ord-color-surface); color: var(--ord-color-text); font: inherit; font-size: var(--ord-font-size-md); }
+  textarea.ord-input { min-height: 6rem; resize: vertical; }
+  .ord-input[aria-invalid="true"], .ord-select[aria-invalid="true"] { border-width: 0.1875rem; border-color: var(--ord-color-harm); }
+  .ord-input:disabled, .ord-select:disabled, .ord-input[data-disabled], .ord-select[data-disabled] { border-style: dashed; color: var(--ord-color-text-secondary); cursor: not-allowed; }
+  .ord-input:read-only:not(select) { background: var(--ord-color-surface-subtle); }
+
+  /* A checkbox and a radio button. The mark inside shows the state, so it does not rely on colour. */
+  .ord-check, .ord-radio { appearance: none; display: inline-grid; flex: none; place-content: center; width: var(--ord-size-target-min); height: var(--ord-size-target-min); margin: 0; border: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); vertical-align: middle; cursor: pointer; }
+  .ord-check { border-radius: var(--ord-radius-sm); }
+  .ord-radio { border-radius: 50%; }
+  .ord-check::before { content: ""; width: 0.375rem; height: 0.75rem; margin-top: -0.1875rem; border: solid var(--ord-color-accent-contrast); border-width: 0 0.1875rem 0.1875rem 0; transform: rotate(45deg) scale(0); }
+  .ord-radio::before { content: ""; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--ord-color-accent-contrast); transform: scale(0); }
+  .ord-check:checked, .ord-check[data-checked], .ord-radio:checked, .ord-radio[data-checked] { border-color: var(--ord-color-accent); background: var(--ord-color-accent); }
+  .ord-check:checked::before, .ord-check[data-checked]::before { transform: rotate(45deg) scale(1); }
+  .ord-radio:checked::before, .ord-radio[data-checked]::before { transform: scale(1); }
+  .ord-check:disabled, .ord-radio:disabled, .ord-check[data-disabled], .ord-radio[data-disabled] { border-style: dashed; cursor: not-allowed; }
+
+  .ord-fieldset { display: grid; gap: var(--ord-space-2); min-width: 0; margin: 0; padding: 0; border: 0; }
+  .ord-fieldset__legend { padding: 0; font-size: var(--ord-font-size-sm); font-weight: var(--ord-font-weight-bold); }
+
+  /* A dialog: a question that the reader must answer before the page goes on. It is the native dialog element.
+     A button opens it with the attributes commandfor and command, so it needs no script. */
+  .ord-dialog { box-sizing: border-box; width: 32rem; max-width: calc(100vw - 2 * var(--ord-space-4)); padding: 0; border: 0.125rem solid var(--ord-color-text); border-radius: var(--ord-radius-sm); background: var(--ord-color-surface); color: var(--ord-color-text); }
+  .ord-dialog::backdrop { background: var(--ord-color-surface-inverse); opacity: 0.6; }
+  .ord-dialog__head { padding: var(--ord-space-3) var(--ord-space-4); border-bottom: var(--ord-border-width) solid var(--ord-color-line); }
+  .ord-dialog__title { margin: 0; font-size: var(--ord-font-size-lg); }
+  .ord-dialog__body { display: grid; gap: var(--ord-space-3); padding: var(--ord-space-4); }
+  .ord-dialog__foot { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--ord-space-2); padding: var(--ord-space-3) var(--ord-space-4); border-top: var(--ord-border-width) solid var(--ord-color-line); }
+
+  @media (forced-colors: active) {
+    .ord-check:checked, .ord-radio:checked, .ord-check[data-checked], .ord-radio[data-checked] { background: Highlight; border-color: Highlight; }
+    .ord-check::before { border-color: HighlightText; }
+    .ord-radio::before { background: HighlightText; }
+  }
+}
+
+/* Layout. Four parts set out a page: a stack, a row (above), a grid and a split. None of them has a fixed width in
+   pixels, so a page follows the screen and the text size of the reader. */
+@layer ord.parts {
+  .ord-stack { display: grid; gap: var(--ord-space-4); min-width: 0; }
+  .ord-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--ord-space-4); }
+  .ord-split { display: grid; gap: var(--ord-space-5); align-items: start; }
+  @media (min-width: 60rem) { .ord-split { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+
+  /* Crumbs: the way from the start of the site to this page. An ordered list in a nav element. */
+  .ord-crumbs { display: flex; flex-wrap: wrap; gap: var(--ord-space-1) var(--ord-space-2); margin: 0; padding: 0; list-style: none; font-size: var(--ord-font-size-sm); }
+  .ord-crumbs > li { display: inline-flex; align-items: center; gap: var(--ord-space-2); min-height: var(--ord-size-target-min); }
+  .ord-crumbs > li + li::before { content: "/"; color: var(--ord-color-text-secondary); }
+  .ord-crumbs [aria-current="page"] { font-weight: var(--ord-font-weight-bold); }
+
+  /* Pages of a list: a row of links, and the current page is marked with a frame and bold text. */
+  .ord-pages { display: flex; flex-wrap: wrap; gap: var(--ord-space-1); margin: 0; padding: 0; list-style: none; font-size: var(--ord-font-size-sm); }
+  .ord-pages__item { display: inline-flex; align-items: center; justify-content: center; min-width: 2.5rem; min-height: 2.5rem; padding: 0 var(--ord-space-2); border: var(--ord-border-width) solid transparent; border-radius: var(--ord-radius-sm); color: var(--ord-color-text); text-decoration: underline; }
+  .ord-pages__item:hover { background: var(--ord-color-surface-subtle); }
+  .ord-pages__item[aria-current="page"] { border-color: var(--ord-color-text); font-weight: var(--ord-font-weight-bold); text-decoration: none; }
+
+  /* Details: a section that the reader opens. It is the native details element, so it needs no script. */
+  .ord-details { border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); }
+  .ord-details__summary { display: flex; align-items: center; min-height: 2.5rem; padding: var(--ord-space-2) var(--ord-space-4); font-size: var(--ord-font-size-sm); font-weight: var(--ord-font-weight-bold); cursor: pointer; }
+  .ord-details__summary::before { content: "+"; width: 1.25rem; font-family: var(--ord-font-family-mono); }
+  .ord-details[open] > .ord-details__summary::before { content: "\2212"; }
+  .ord-details__summary::-webkit-details-marker { display: none; }
+  .ord-details__body { display: grid; gap: var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4) var(--ord-space-4); border-top: var(--ord-border-width) solid var(--ord-color-line); }
+
+  /* Progress: how much of a task is done. The native progress element, with its number in words beside it. */
+  .ord-progress { appearance: none; box-sizing: border-box; display: block; width: 100%; height: 0.75rem; border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: var(--ord-radius-sm); background: var(--ord-color-surface); color: var(--ord-color-accent); }
+  .ord-progress::-webkit-progress-bar { background: var(--ord-color-surface); }
+  .ord-progress::-webkit-progress-value { background: var(--ord-color-accent); }
+  .ord-progress::-moz-progress-bar { background: var(--ord-color-accent); }
+}
+
+/* Variants of the table. A modifier on the table changes the whole table: its room, its lines, its head.
+   A class on a cell changes one column: how it breaks its text, and how wide it is. */
+@layer ord.parts {
+  .ord-table--compact th, .ord-table--compact td { padding: var(--ord-space-1) var(--ord-space-3); }
+  .ord-table--roomy th, .ord-table--roomy td { padding: var(--ord-space-4); }
+  .ord-table--lines th + th, .ord-table--lines th + td, .ord-table--lines td + td { border-inline-start: var(--ord-border-width) solid var(--ord-color-line); }
+  .ord-table--zebra tbody tr:nth-child(even) > * { background: var(--ord-color-surface-subtle); }
+  .ord-table--fixed { table-layout: fixed; }
+  .ord-table--sticky thead th { position: sticky; top: 0; z-index: var(--ord-z-raised); background: var(--ord-color-surface); box-shadow: 0 var(--ord-border-width) 0 var(--ord-color-line-strong); }
+  .ord-table-scroll--tall { max-height: 20rem; overflow-y: auto; }
+
+  .ord-table__nowrap { white-space: nowrap; }
+  .ord-table__break { min-width: 12rem; overflow-wrap: anywhere; }
+  .ord-table__narrow { width: 1%; white-space: nowrap; }
+  .ord-table__wide { width: 45%; }
+
+  .ord-table tfoot th, .ord-table tfoot td { border-top: var(--ord-border-width) solid var(--ord-color-line-strong); font-weight: var(--ord-font-weight-bold); }
+  /* a chosen row: a line at its start and a tint, so it does not rely on colour alone */
+  .ord-table tr[aria-selected="true"] > * { background: var(--ord-color-surface-subtle); }
+  .ord-table tr[aria-selected="true"] > :first-child { box-shadow: inset 0.25rem 0 0 var(--ord-color-text); }
+  /* a head that sorts its column: a button in the head cell, and the cell says the order with aria-sort */
+  .ord-table__sort { display: inline-flex; align-items: center; gap: var(--ord-space-1); min-height: var(--ord-size-target-min); padding: 0; border: 0; background: none; color: inherit; font: inherit; font-weight: inherit; text-decoration: underline; cursor: pointer; }
+  .ord-table__sort::after { content: "\2195"; }
+  [aria-sort="ascending"] > .ord-table__sort::after { content: "\2191"; }
+  [aria-sort="descending"] > .ord-table__sort::after { content: "\2193"; }
+}

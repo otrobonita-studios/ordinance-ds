@@ -1,0 +1,84 @@
+<header class="ord-page__head">
+<h1>CSS</h1>
+<p class="ord-page__lede">The stylesheet is one file that the build writes. Its values come from tokens, and its names follow one contract.</p>
+</header>
+
+<section class="ord-clause" aria-labelledby="c1">
+<span class="ord-clause__number">1</span>
+<div class="ord-clause__body">
+<h2 id="c1">Layers</h2>
+<p class="ord-clause__text">The stylesheet has five layers, in this order.</p>
+<pre class="ord-code"><code>@layer ord.reset, ord.tokens, ord.base, ord.parts, ord.utilities;</code></pre>
+<p class="ord-clause__text">A later layer wins over an earlier one. So no rule needs <code>!important</code>, and the check refuses it.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c2">
+<span class="ord-clause__number">2</span>
+<div class="ord-clause__body">
+<h2 id="c2">Colour tokens</h2>
+<p class="ord-clause__text">A colour is named by its role. The system of the reader chooses the light or the dark theme.</p>
+<!-- ord:core tokens-color -->
+<p class="ord-clause__text">A page can fix one theme with the attribute <code>data-theme</code> on the <code>html</code> element.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c3">
+<span class="ord-clause__number">3</span>
+<div class="ord-clause__body">
+<h2 id="c3">Other tokens</h2>
+<p class="ord-clause__text">Sizes are in rem, so the page follows the text size that the reader has chosen.</p>
+<!-- ord:core tokens-other -->
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c4">
+<span class="ord-clause__number">4</span>
+<div class="ord-clause__body">
+<h2 id="c4">Typefaces</h2>
+<p class="ord-clause__text">The three typeface tokens name Noto Sans, Noto Serif and Noto Sans Mono. Their files are in the folder <code>third-party/fonts</code>, so the pages ask no other server for a typeface.</p>
+<ul class="ord-list">
+<li>The file <code>tokens/fonts.json</code> lists each file with the characters that it covers.</li>
+<li>The build writes one <code>@font-face</code> rule for each file. The browser loads a file only when a page uses its characters.</li>
+<li>Each token ends with a typeface of the system. The page uses it until the file has loaded, and when the file does not load.</li>
+</ul>
+<p class="ord-clause__text">A product changes the three tokens and the list of files to use its own typefaces.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c5">
+<span class="ord-clause__number">5</span>
+<div class="ord-clause__body">
+<h2 id="c5">A theme</h2>
+<p class="ord-clause__text">A product gets its own look from one file, <code>tokens/theme.json</code>. The file holds only the tokens that the product changes.</p>
+<pre class="ord-code"><code>{
+  "color": {
+    "accent": { "$value": { "colorSpace": "srgb", "components": [0, 0.35, 0.3], "hex": "#00594d" } }
+  },
+  "radius": {
+    "sm": { "$value": { "value": 0.375, "unit": "rem" } }
+  }
+}</code></pre>
+<ul class="ord-list">
+<li>The file <code>tokens/theme.dark.json</code> does the same for the colours of the dark theme.</li>
+<li>A theme can change a token. It cannot add one, and the build stops when it tries.</li>
+<li>The check measures the colours of the theme. A theme with too little contrast does not pass.</li>
+</ul>
+<p class="ord-clause__text">Ordinance DS has no theme file of its own. The pages that you read show the tokens as they are.</p>
+</div>
+</section>
+
+<section class="ord-clause" aria-labelledby="c6">
+<span class="ord-clause__number">6</span>
+<div class="ord-clause__body">
+<h2 id="c6">Utilities</h2>
+<p class="ord-clause__text">The check refuses a <code>style</code> attribute, and the security policy blocks it. A utility class does the same small job with a name.</p>
+<!-- ord:table utilities.json -->
+<p class="ord-row"><span class="ord-u-bold">Bold</span><span class="ord-u-quiet ord-u-small">small and quiet</span><span class="ord-u-mono ord-u-end">at the end, in the typeface for code</span></p>
+<ul class="ord-list">
+<li>A utility does one thing, and its value is a token. So a utility cannot bring in a colour or a size that the check does not know.</li>
+<li>The utilities are the last layer. A utility wins over a part, and no rule needs <code>!important</code>.</li>
+<li>The set is small on purpose. When a page uses the same utilities together again and again, make a part with a name.</li>
+</ul>
+</div>
+</section>

@@ -1,0 +1,79 @@
+{
+  "caption": "What the history check reads",
+  "columns": [
+    {
+      "key": "what",
+      "label": "In every commit"
+    },
+    {
+      "key": "result",
+      "label": "Result",
+      "kind": "tag"
+    }
+  ],
+  "rows": [
+    {
+      "what": "A private key, a token or a password with a value",
+      "result": {
+        "text": "Fails",
+        "tone": "harm"
+      }
+    },
+    {
+      "what": "A path of someone's computer",
+      "result": {
+        "text": "Fails",
+        "tone": "harm"
+      }
+    },
+    {
+      "what": "The address of a person in a file",
+      "result": {
+        "text": "Fails",
+        "tone": "harm"
+      }
+    },
+    {
+      "what": "A file of more than 1 MB",
+      "result": {
+        "text": "Fails",
+        "tone": "harm"
+      }
+    },
+    {
+      "what": "A message that is empty, or that does not say what changed",
+      "result": {
+        "text": "Fails",
+        "tone": "harm"
+      }
+    },
+    {
+      "what": "A message or an author that names a tool or an AI agent",
+      "result": {
+        "text": "Fails",
+        "tone": "harm"
+      }
+    },
+    {
+      "what": "How many commits are signed",
+      "result": {
+        "text": "Reported",
+        "tone": "quiet"
+      }
+    },
+    {
+      "what": "The names and addresses of the authors",
+      "result": {
+        "text": "Reported",
+        "tone": "quiet"
+      }
+    },
+    {
+      "what": "A commit with more than 40 files or 800 added lines",
+      "result": {
+        "text": "Reported",
+        "tone": "quiet"
+      }
+    }
+  ]
+}

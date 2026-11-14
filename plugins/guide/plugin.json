@@ -1,0 +1,140 @@
+{
+  "id": "guide",
+  "title": "Guide",
+  "purpose": "The pages that explain the core: what Ordinance DS is, how to start, and what each rule means.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "Home",
+      "source": "pages/index.html",
+      "group": "start",
+      "order": 1,
+      "icon": "home"
+    },
+    {
+      "file": "get-started.html",
+      "title": "Get started",
+      "source": "pages/get-started.html",
+      "group": "start",
+      "order": 2,
+      "icon": "rocket-launch"
+    },
+    {
+      "file": "core.html",
+      "title": "Core",
+      "source": "pages/core.html",
+      "group": "start",
+      "order": 3,
+      "icon": "cpu-chip"
+    },
+    {
+      "file": "excluded.html",
+      "title": "Excluded",
+      "source": "pages/excluded.html",
+      "group": "start",
+      "order": 4,
+      "icon": "no-symbol"
+    },
+    {
+      "file": "css.html",
+      "title": "CSS",
+      "source": "pages/css.html",
+      "group": "build",
+      "order": 1,
+      "icon": "swatch"
+    },
+    {
+      "file": "parts.html",
+      "title": "Parts",
+      "source": "pages/parts.html",
+      "group": "build",
+      "order": 2,
+      "icon": "squares-2x2"
+    },
+    {
+      "file": "tables.html",
+      "title": "Tables",
+      "source": "pages/tables.html",
+      "group": "build",
+      "order": 2.25,
+      "icon": "queue-list"
+    },
+    {
+      "file": "patterns.html",
+      "title": "Patterns",
+      "source": "pages/patterns.html",
+      "group": "build",
+      "order": 2.5,
+      "icon": "rectangle-group"
+    },
+    {
+      "file": "plugins.html",
+      "title": "Plugins",
+      "source": "pages/plugins.html",
+      "group": "build",
+      "order": 3,
+      "icon": "puzzle-piece"
+    },
+    {
+      "file": "secure-by-default.html",
+      "title": "Secure by default",
+      "source": "pages/secure-by-default.html",
+      "group": "assure",
+      "order": 2,
+      "icon": "shield-check"
+    },
+    {
+      "file": "privacy.html",
+      "title": "Privacy",
+      "source": "pages/privacy.html",
+      "group": "assure",
+      "order": 3,
+      "icon": "eye-slash"
+    },
+    {
+      "file": "resilience.html",
+      "title": "Resilience",
+      "source": "pages/resilience.html",
+      "group": "assure",
+      "order": 4,
+      "icon": "lifebuoy"
+    },
+    {
+      "file": "accessibility.html",
+      "title": "Accessibility",
+      "source": "pages/accessibility.html",
+      "group": "assure",
+      "order": 5,
+      "icon": "user"
+    },
+    {
+      "file": "checks.html",
+      "title": "Checks",
+      "source": "pages/checks.html",
+      "group": "verify",
+      "order": 1,
+      "icon": "clipboard-document-check"
+    }
+  ],
+  "data": [
+    "not-built.json",
+    "core-parts.json",
+    "tests.json",
+    "resilience.json",
+    "permissions.json",
+    "excluded.json",
+    "pattern-list.json",
+    "tables/compact.json",
+    "tables/standard.json",
+    "tables/roomy.json",
+    "tables/zebra.json",
+    "tables/lines.json",
+    "tables/columns.json",
+    "tables/tall.json",
+    "tables/options.json",
+    "utilities.json"
+  ]
+}
