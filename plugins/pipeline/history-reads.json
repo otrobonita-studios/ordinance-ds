@@ -55,7 +55,7 @@
       }
     },
     {
-      "what": "How many commits are signed",
+      "what": "How many commits carry a signature",
       "result": {
         "text": "Reported",
         "tone": "quiet"

@@ -12,7 +12,7 @@ import { root } from './lib.mjs';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
 const range = process.argv[2] ? [process.argv[2]] : ['--all'];
 let commits;
-try { commits = git('log', ...range, '--format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%G?%x1f%P%x1f%s%x1f%b%x1e').split('\x1e').map((c) => c.trim()).filter(Boolean).map((c) => { const [hash, an, ae, cn, ce, sig, parents, subject, body] = c.split('\x1f'); return { hash, an, ae, cn, ce, sig, parents: parents ? parents.split(' ') : [], subject, body: body || '' }; }); } catch (e) { console.error('This folder has no git history that can be read.'); process.exit(2); }
+try { commits = git('log', ...range, '--format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%x1f%P%x1f%s%x1f%b%x1e').split('\x1e').map((c) => c.trim()).filter(Boolean).map((c) => { const [hash, an, ae, cn, ce, sig, parents, subject, body] = c.split('\x1f'); return { hash, an, ae, cn, ce, sig, parents: parents ? parents.split(' ') : [], subject, body: body || '' }; }); } catch (e) { console.error('This folder has no git history that can be read.'); process.exit(2); }
 
 // What must never be in a commit. Each pattern is written so that this file does not match itself.
 const SECRETS = [
@@ -76,13 +76,13 @@ for (const s of sizes) { const [type, size, id] = s.split(' '); if (type === 'bl
 // facts for a reader of the history. They are not failures: the owner decides what the code host must require.
 const people = new Map();
 for (const c of commits) for (const [n, e] of [[c.an, c.ae], [c.cn, c.ce]]) people.set(`${n} <${e}>`, (people.get(`${n} <${e}>`) || 0) + 1);
-const signed = commits.filter((c) => c.sig === 'G' || c.sig === 'U').length;
+const signed = commits.filter((c) => /^gpgsig /m.test(git('cat-file', 'commit', c.hash).split('\n\n')[0])).length;
 const personal = [...people.keys()].filter((p) => !MAIL_OK.test(p.slice(p.indexOf('<') + 1, -1)));
 
 for (const p of [...new Set(problems)]) console.log(`FAIL  ${p}`);
 for (const n of notes) console.log(`NOTE  ${n}`);
 console.log(`\n${commits.length} commits read.`);
-console.log(`Signed commits: ${signed} of ${commits.length}.`);
+console.log(`Commits that carry a signature: ${signed} of ${commits.length}. This command does not verify a signature; the code host does.`);
 console.log(`Names and addresses in the history (they become public with the first push):`);
 for (const [p, n] of people) console.log(`  ${p.replace(/<(.).*(@.*)>/, '<$1…$2>')}${MAIL_OK.test(p.slice(p.indexOf('<') + 1, -1)) ? '' : '  (a personal address)'}`);
 if (personal.length) console.log('A personal address in the history cannot be removed after a push. Your code host can give you an address that hides it.');
