@@ -33,6 +33,9 @@
   .ord-table thead th { border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); color: var(--ord-color-text-secondary); font-weight: var(--ord-font-weight-bold); }
   .ord-table tbody th { font-weight: var(--ord-font-weight-regular); }
   .ord-table tbody tr + tr > * { border-top: var(--ord-border-width) solid var(--ord-color-line); }
+  /* code in a table breaks only where its column says so: a short key or a reference stays whole */
+  .ord-table code { overflow-wrap: normal; }
+  .ord-table .ord-table__break code { overflow-wrap: anywhere; }
   .ord-table .ord-table__num { font-variant-numeric: tabular-nums; text-align: end; white-space: nowrap; }
 
   /* A tag: a short status. Its words carry the meaning; the tone only supports them. */

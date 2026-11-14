@@ -33,6 +33,8 @@ test('a column gets classes for its kind, its wrap and its width', () => {
   const html = table({}, { kind: 'num', wrap: 'nowrap', width: 'narrow' });
   assert.match(html, /<th scope="col" class="ord-table__num ord-table__nowrap ord-table__narrow">B<\/th>/);
   assert.match(html, /<td class="ord-table__num ord-table__nowrap ord-table__narrow">y<\/td>/);
+  // the first cell of a row is a head cell, and it gets the classes of its column too
+  assert.match(renderTable({ columns: [{ key: 'a', label: 'A', width: 'narrow' }], rows: [{ a: 'x' }] }), /<th scope="row" class="ord-table__narrow">x<\/th>/);
   assert.throws(() => table({}, { wrap: 'clip' }), /wrap clip/);
   assert.throws(() => table({}, { width: 'huge' }), /width huge/);
 });

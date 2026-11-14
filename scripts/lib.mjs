@@ -112,7 +112,7 @@ export function renderTable(table) {
   const head = table.columns.map((c) => `<th scope="col"${cls(c)}>${esc(c.label)}</th>`).join('');
   const rows = table.rows.map((r) => `<tr>${table.columns.map((c, i) => {
     const inner = cell(c, r[c.key]);
-    if (i === 0) return `<th scope="row">${inner}</th>`;
+    if (i === 0) return `<th scope="row"${cls(c)}>${inner}</th>`;
     return `<td${cls(c)}>${inner}</td>`;
   }).join('')}</tr>`).join('\n');
   const foot = table.foot ? `<tfoot><tr>${table.columns.map((c, i) => (i === 0 ? `<th scope="row">${cell(c, table.foot[c.key])}</th>` : `<td${cls(c)}>${cell(c, table.foot[c.key])}</td>`)).join('')}</tr></tfoot>\n` : '';
