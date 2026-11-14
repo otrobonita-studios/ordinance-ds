@@ -49,7 +49,7 @@ export function applyTheme(base, theme) {
     const from = base[key], to = theme[key];
     if (!from || typeof from !== 'object') throw new Error(`the theme changes ${key}, which is not a token`);
     if ('$value' in from) { if (!to || typeof to !== 'object' || !('$value' in to)) throw new Error(`the theme must give ${key} a $value`); base[key] = { ...from, $value: to.$value }; }
-    else { try { applyTheme(from, to); } catch (e) { throw new Error(e.message.replace(/(changes|give) /, `$1 ${key}.`)); } }
+    else { try { applyTheme(from, to); } catch (e) { throw new Error(e.message.replace(/(changes|give) /, `$1 ${key}.`), { cause: e }); } }
   }
   return base;
 }

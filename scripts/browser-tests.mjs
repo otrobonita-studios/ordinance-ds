@@ -28,7 +28,7 @@ const proc = spawn(browser, ['--headless=new', '--no-first-run', `--remote-debug
 
 const results = [];
 const check = (name, pass, extra) => results.push({ name, pass: !!pass, extra });
-let code = 1;
+let code;
 try {
   let list = null;
   for (let i = 0; i < 60 && !list; i++) { await sleep(200); try { list = await (await fetch(`http://127.0.0.1:${debugPort}/json/list`)).json(); } catch { /* not up yet */ } }
