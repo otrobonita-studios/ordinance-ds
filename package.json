@@ -11,7 +11,7 @@
     "check": "node scripts/check.mjs",
     "test": "node --test",
     "serve": "node scripts/serve.mjs",
-    "browser-test": "node scripts/browser-test.mjs"
+    "browser-tests": "node scripts/browser-tests.mjs"
   },
   "license": "MIT"
 }

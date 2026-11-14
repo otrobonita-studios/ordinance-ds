@@ -10,7 +10,7 @@ It is a draft. The built site in `dist/` documents it: open `dist/index.html`.
 node scripts/build.mjs
 node scripts/check.mjs
 node --test
-node scripts/browser-test.mjs
+node scripts/browser-tests.mjs
 Start-Process .\dist\index.html
 ```
 
@@ -38,7 +38,7 @@ node scripts/serve.mjs
 | `scripts/build.mjs` | Writes `dist/` from the sources. The same sources give the same bytes. |
 | `scripts/check.mjs`, `scripts/rules.mjs` | The checks, and the list of their rules |
 | `scripts/serve.mjs`, `scripts/headers.mjs` | The local server, and the security headers that it sends |
-| `scripts/browser-test.mjs` | The test in a browser without a window |
+| `scripts/browser-tests.mjs` | The test in a browser without a window |
 | `scripts/history-check.mjs` | Reads every commit for secrets, personal addresses, paths of a computer and large files |
 | `CONTRIBUTING.md`, `.github/pull_request_template.md` | How a change is made, and what a pull request must say |
 | `tests/` | The unit tests |

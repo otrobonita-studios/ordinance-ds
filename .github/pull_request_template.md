@@ -21,7 +21,7 @@
 - [ ] Each commit is one change, and builds and passes the check by itself
 - [ ] `node scripts/build.mjs` and `node scripts/check.mjs` pass
 - [ ] `node --test` passes
-- [ ] `node scripts/browser-test.mjs` passes (when a page, the stylesheet or a script changed)
+- [ ] `node scripts/browser-tests.mjs` passes (when a page, the stylesheet or a script changed)
 - [ ] `node scripts/history-check.mjs main..HEAD` passes
 - [ ] The change holds no secret, no personal data and no path of a computer
 - [ ] No commit and no text here names a tool or an AI agent. I am responsible for this change.

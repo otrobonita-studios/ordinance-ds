@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// The browser test: `node scripts/browser-test.mjs`. No dependencies, but it needs Chrome or Edge.
+// The browser test: `node scripts/browser-tests.mjs`. No dependencies, but it needs Chrome or Edge.
 // It serves dist/ with scripts/serve.mjs, so every page runs under the security headers, and it opens the pages in a
 // browser without a window. It writes nothing to this folder and removes its own temporary profile.
 //   CHROME_PATH=<path to the browser>   when no browser is found
