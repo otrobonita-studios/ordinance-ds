@@ -1,0 +1,23 @@
+{
+  "id": "audit",
+  "title": "Before an audit",
+  "purpose": "Advice for a team that will be audited: habits to start on the first day, and how to judge a tool before it is added.",
+  "permissions": [
+    "page"
+  ],
+  "pages": [
+    {
+      "file": "before-an-audit.html",
+      "title": "Before an audit",
+      "source": "pages/before-an-audit.html",
+      "group": "assure",
+      "order": 7,
+      "icon": "check-badge"
+    }
+  ],
+  "data": [
+    "habits.json",
+    "hard.json",
+    "easy.json"
+  ]
+}

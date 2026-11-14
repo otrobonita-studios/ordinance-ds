@@ -21,6 +21,12 @@
   ],
   "rows": [
     {
+      "no": "D-29",
+      "decision": "Advice about tools is a plugin of its own, and it names a tool only as an example of a kind.",
+      "why": "Advice gets old faster than the core. A team can then take the page away, or change it, without touching a rule.",
+      "date": "14 Nov 2026"
+    },
+    {
       "no": "D-28",
       "decision": "The scripts are read by a well-known linter, which lives in a folder of its own with its own packages.",
       "why": "A reviewer looks for a linter by name. In its own folder, it adds no package to the build, the check or the site.",

@@ -1,0 +1,77 @@
+{
+  "caption": "Seven habits, and where Ordinance DS stands on each",
+  "columns": [
+    {
+      "key": "habit",
+      "label": "Habit",
+      "width": "wide"
+    },
+    {
+      "key": "why",
+      "label": "Why it matters in an audit"
+    },
+    {
+      "key": "here",
+      "label": "In Ordinance DS",
+      "kind": "tag"
+    }
+  ],
+  "rows": [
+    {
+      "habit": "Keep every secret in a secrets manager from the first day.",
+      "why": "A key in a file or in a chat has no owner, no log and no end date.",
+      "here": {
+        "text": "Your team",
+        "tone": "quiet"
+      }
+    },
+    {
+      "habit": "Treat every value that is built into browser code as public.",
+      "why": "Every reader of the page can read it, whatever the variable is called.",
+      "here": {
+        "text": "Your team",
+        "tone": "quiet"
+      }
+    },
+    {
+      "habit": "Use the strict security policy from the first commit.",
+      "why": "Inline code that is found late forces a rewrite just before the audit.",
+      "here": {
+        "text": "Checked",
+        "tone": "accent"
+      }
+    },
+    {
+      "habit": "Keep every file from others pinned, listed and on your own server.",
+      "why": "A file that loads from another server at run time is in no bill of materials.",
+      "here": {
+        "text": "Checked",
+        "tone": "accent"
+      }
+    },
+    {
+      "habit": "Remove personal data before a log or a measurement leaves your system.",
+      "why": "A user id or an address in a tool of another company is a transfer of personal data.",
+      "here": {
+        "text": "Your team",
+        "tone": "quiet"
+      }
+    },
+    {
+      "habit": "Pin every step of the pipeline, and run no install script.",
+      "why": "A step that follows a moving tag runs code that nobody reviewed, with your keys.",
+      "here": {
+        "text": "Checked",
+        "tone": "accent"
+      }
+    },
+    {
+      "habit": "Judge every tool with the six questions, also a well-known one.",
+      "why": "A sound tool that is used in an unsound way still gives a finding.",
+      "here": {
+        "text": "Your team",
+        "tone": "quiet"
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "caption": "Patterns that make an audit hard",
+  "columns": [
+    {
+      "key": "pattern",
+      "label": "Pattern"
+    },
+    {
+      "key": "example",
+      "label": "For example"
+    },
+    {
+      "key": "why",
+      "label": "Why a reviewer stops at it",
+      "width": "wide"
+    }
+  ],
+  "rows": [
+    {
+      "pattern": "Styles that a script writes into the page",
+      "example": "A CSS-in-JS library in its standard setup",
+      "why": "The security policy must then allow inline styles, which weakens it."
+    },
+    {
+      "pattern": "Files from another server",
+      "example": "A typeface, a script or an icon set from a public CDN",
+      "why": "The other server learns the address of each reader. The file can also change without a review."
+    },
+    {
+      "pattern": "Code that is fetched at run time",
+      "example": "A plugin, a template or a skill for an agent that loads from an address",
+      "why": "It is in no bill of materials, and no change was approved for it."
+    },
+    {
+      "pattern": "Measurement and replay in the browser",
+      "example": "An analytics script, or a tool that records the screen of the reader",
+      "why": "It can take what a reader types, with no filter and no recorded reason."
+    },
+    {
+      "pattern": "Code that is built from text in the browser",
+      "example": "A template engine that needs eval",
+      "why": "The security policy must then allow it, and a scanner reports that at once."
+    },
+    {
+      "pattern": "A pipeline that follows moving tags",
+      "example": "A step named by a version tag, or a package that runs a script when it is installed",
+      "why": "Whoever controls the tag or the package runs code with the keys of the pipeline."
+    },
+    {
+      "pattern": "Secrets in plain files",
+      "example": "An .env file with real keys that is shared or committed",
+      "why": "There is no record of who read the key, and no way to change it for one person."
+    }
+  ]
+}

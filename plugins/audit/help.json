@@ -1,0 +1,19 @@
+{
+  "before-an-audit.html": {
+    "lead": "This page gives advice to a team whose product will be audited.",
+    "topics": [
+      {
+        "title": "Advice, not a rule",
+        "text": [
+          "Nothing on this page is a rule of the check, except the habits with the status Checked. The rest is for your team to do."
+        ]
+      },
+      {
+        "title": "Names of tools",
+        "text": [
+          "A tool is named as an example of a kind. Ordinance DS has not tested it, and does not recommend one tool over another."
+        ]
+      }
+    ]
+  }
+}
