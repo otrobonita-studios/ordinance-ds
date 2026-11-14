@@ -1,6 +1,10 @@
 # Ordinance DS
 
-A web starter pack and a minimal design system for regulated products. It has a strict security policy, self-hosted assets, components built to WCAG 2.2, conventions that an AI agent can follow, and defaults that an auditor can check.
+**Build for a future audit from the first commit. Because in an audit, every commit counts.**
+
+Use Ordinance DS as a web starter pack with a minimal design system. It is meant as the start of a regulated product, and you and your agents will build much more on top of it.
+
+It has a strict security policy, self-hosted assets, components built to WCAG 2.2, conventions that an AI agent can follow, and defaults that an auditor can check.
 
 It is a draft. The built site in `dist/` documents it: open `dist/index.html`.
 

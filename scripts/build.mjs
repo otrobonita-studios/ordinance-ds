@@ -15,8 +15,8 @@ import { root, read, readJson, exists, esc, walk, cssName, cssValue, lightTokens
 import { RULES } from './rules.mjs';
 import { HEADERS } from './headers.mjs';
 
-const LAYERS = '@layer ord.reset, ord.tokens, ord.base, ord.parts, ord.utilities;';
-const CSS_SOURCES = ['base.css', 'parts.css', 'shell.css', 'utilities.css'];
+const LAYERS = '@layer ord.reset, ord.tokens, ord.base, ord.components, ord.utilities;';
+const CSS_SOURCES = ['base.css', 'components.css', 'shell.css', 'utilities.css'];
 
 /* ---------------------------------------------------------------- the stylesheet */
 export function fontFaces() {
@@ -46,7 +46,7 @@ export function tokensCss() {
     `  @media (prefers-reduced-motion: reduce) { :root { ${still} } }`,
     '}',
     '/* One rule for each colour token, so that a page can show the colour without a style attribute. */',
-    '@layer ord.parts {',
+    '@layer ord.components {',
     ...swatches,
     '}',
   ].join('\n');
@@ -187,9 +187,20 @@ function menuHtml(site, strings, pages, current, langs) {
     // page in the menu, set in. When the page above is not built, it is an item of its own group like any other.
     const above = (p) => (p.under && pages.some((x) => x.file === p.under && !x.under) ? p.under : null);
     const byOrder = (a, b) => a.order - b.order || (a.title < b.title ? -1 : 1);
-    const items = pages.filter((p) => p.group === group.id && !above(p)).sort(byOrder)
-      .flatMap((p) => [p, ...pages.filter((x) => above(x) === p.file).sort(byOrder)])
-      .map((p) => `<li><a class="ord-menu__item${above(p) ? ' ord-menu__sub' : ''}" href="${esc(p.file)}"${p.file === current.file ? ' aria-current="page"' : ''}>${above(p) ? '' : iconHtml(p.icon)}${esc(p.local.title)}</a></li>`);
+    const link = (p, sub) => `<a class="ord-menu__item${sub ? ' ord-menu__sub' : ''}" href="${esc(p.file)}"${p.file === current.file ? ' aria-current="page"' : ''}>${sub ? '' : iconHtml(p.icon)}${esc(p.local.title)}</a>`;
+    // The pages under a page are in a details element, so the reader can open and close them without a script.
+    // They are open on the page above and on each of the pages under it, and closed on every other page.
+    const items = pages.filter((p) => p.group === group.id && !above(p)).sort(byOrder).map((p) => {
+      const under = pages.filter((x) => above(x) === p.file).sort(byOrder);
+      if (!under.length) return `<li>${link(p)}</li>`;
+      const open = p.file === current.file || under.some((x) => x.file === current.file);
+      return `<li class="ord-menu__branch">${link(p)}
+<details class="ord-menu__more"${open ? ' open' : ''}><summary class="ord-menu__toggle" aria-label="${esc(strings['menu-under'])}: ${esc(p.local.title)}"></summary>
+<ul class="ord-menu__list">
+${under.map((x) => `<li>${link(x, true)}</li>`).join('\n')}
+</ul>
+</details></li>`;
+    });
     for (const label of group.planned || []) items.push(`<li><span class="ord-menu__item" data-status="planned">${esc(label)} <span class="ord-menu__note">${esc(strings.planned)}</span></span></li>`);
     if (!items.length) return '';
     return `<div class="ord-menu__group" role="group" aria-labelledby="menu-${i + 1}">

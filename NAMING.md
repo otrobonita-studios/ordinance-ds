@@ -15,7 +15,7 @@ The prefix is `ord`.
 
 - Tokens: `--ord-color-text`
 - Classes: `.ord-table`
-- Cascade layers: `ord.reset`, `ord.tokens`, `ord.base`, `ord.parts`, `ord.utilities`
+- Cascade layers: `ord.reset`, `ord.tokens`, `ord.base`, `ord.components`, `ord.utilities`
 - Utilities: `.ord-u-nowrap`. A utility does one thing, and its value is a token.
 
 ## 2. Structure: block, element, modifier
@@ -37,7 +37,7 @@ A state that can change while the page is open is an attribute.
 - Native attributes first: `disabled`, `open`, `aria-current`, `aria-pressed`, `aria-selected`.
 - Then data attributes: `data-tone="harm"`, `data-theme="dark"`.
 
-Base UI sets state the same way, so one stylesheet can style plain HTML and Base UI parts.
+Base UI sets state the same way, so one stylesheet can style plain HTML and Base UI components.
 
 ## 4. Tokens: the Design Tokens format
 

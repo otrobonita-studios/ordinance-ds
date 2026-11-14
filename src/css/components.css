@@ -1,5 +1,5 @@
-/* Parts: the blocks a page is built from. Names are registered in names.json (see NAMING.md). */
-@layer ord.parts {
+/* Components: the blocks a page is built from. Names are registered in names.json (see NAMING.md). */
+@layer ord.components {
   /* The page: one centred column with room at the sides. */
   .ord-page { display: grid; align-content: start; gap: var(--ord-space-5); width: 100%; max-width: var(--ord-size-page); margin-inline: auto; padding: var(--ord-space-5) var(--ord-space-4) var(--ord-space-7); }
   .ord-page > * { min-width: 0; }
@@ -33,6 +33,9 @@
   .ord-table thead th { border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); color: var(--ord-color-text-secondary); font-weight: var(--ord-font-weight-bold); }
   .ord-table tbody th { font-weight: var(--ord-font-weight-regular); }
   .ord-table tbody tr + tr > * { border-top: var(--ord-border-width) solid var(--ord-color-line); }
+  /* code in a table breaks only where its column says so: a short key or a reference stays whole */
+  .ord-table code { overflow-wrap: normal; }
+  .ord-table .ord-table__break code { overflow-wrap: anywhere; }
   .ord-table .ord-table__num { font-variant-numeric: tabular-nums; text-align: end; white-space: nowrap; }
 
   /* A tag: a short status. Its words carry the meaning; the tone only supports them. */
@@ -72,8 +75,8 @@
   @media (forced-colors: active) { .ord-button--primary { border-color: ButtonText; } }
 }
 
-/* Lists, notices and the other small parts of a page. */
-@layer ord.parts {
+/* Lists, notices and the other small components of a page. */
+@layer ord.components {
   /* A list of points, and a list of steps in order. */
   .ord-list, .ord-steps { display: grid; gap: var(--ord-space-2); padding-left: var(--ord-space-4); font-family: var(--ord-font-family-serif); }
 
@@ -97,10 +100,10 @@
   .ord-swatch { display: inline-block; width: var(--ord-size-target-min); height: var(--ord-size-target-min); border: var(--ord-border-width) solid var(--ord-color-line-strong); vertical-align: middle; }
 }
 
-/* Parts with a state. The state is an attribute, so the same rules style plain HTML and a component framework.
+/* Components with a state. The state is an attribute, so the same rules style plain HTML and a component framework.
    tests/base-ui/ proves it for Base UI: it sets data-checked, data-disabled and aria-selected, as plain HTML sets
    :checked, :disabled and aria-current. */
-@layer ord.parts {
+@layer ord.components {
   /* A switch: on or off. Plain HTML: <input type="checkbox" role="switch" class="ord-switch">. The position of the thumb
      shows the state, so it does not rely on colour. */
   .ord-switch { appearance: none; display: inline-flex; flex: none; align-items: center; width: 2.75rem; height: var(--ord-size-target-min); margin: 0; padding: 0.125rem; border: var(--ord-border-width) solid var(--ord-color-line-strong); border-radius: 0.75rem; background: var(--ord-color-surface); vertical-align: middle; cursor: pointer; }
@@ -119,7 +122,7 @@
 
 /* Forms. Every control is a native element, so the keyboard, the label and the screen reader work without a script.
    An error is shown three ways: a thicker edge, the attribute aria-invalid, and a text that starts with the word Error. */
-@layer ord.parts {
+@layer ord.components {
   .ord-field { display: grid; gap: var(--ord-space-1); max-width: var(--ord-size-measure); }
   .ord-field__label { font-size: var(--ord-font-size-sm); font-weight: var(--ord-font-weight-bold); }
   .ord-field__hint { color: var(--ord-color-text-secondary); font-size: var(--ord-font-size-sm); }
@@ -161,9 +164,9 @@
   }
 }
 
-/* Layout. Four parts set out a page: a stack, a row (above), a grid and a split. None of them has a fixed width in
+/* Layout. Four components set out a page: a stack, a row (above), a grid and a split. None of them has a fixed width in
    pixels, so a page follows the screen and the text size of the reader. */
-@layer ord.parts {
+@layer ord.components {
   .ord-stack { display: grid; gap: var(--ord-space-4); min-width: 0; }
   .ord-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--ord-space-4); }
   .ord-split { display: grid; gap: var(--ord-space-5); align-items: start; }
@@ -198,7 +201,7 @@
 
 /* Variants of the table. A modifier on the table changes the whole table: its room, its lines, its head.
    A class on a cell changes one column: how it breaks its text, and how wide it is. */
-@layer ord.parts {
+@layer ord.components {
   .ord-table--compact th, .ord-table--compact td { padding: var(--ord-space-1) var(--ord-space-3); }
   .ord-table--roomy th, .ord-table--roomy td { padding: var(--ord-space-4); }
   .ord-table--lines th + th, .ord-table--lines th + td, .ord-table--lines td + td { border-inline-start: var(--ord-border-width) solid var(--ord-color-line); }

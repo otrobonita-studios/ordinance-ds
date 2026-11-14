@@ -1,7 +1,7 @@
 {
   "name": "ordinance-ds",
   "private": true,
-  "description": "A web starter pack and minimal design system for regulated products. The build and the checks have no dependency.",
+  "description": "Build for a future audit from the first commit. A web starter pack with a minimal design system for regulated products.",
   "type": "module",
   "engines": {
     "node": ">=20"

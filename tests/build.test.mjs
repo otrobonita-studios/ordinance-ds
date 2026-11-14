@@ -20,6 +20,11 @@ test('a page with "under" follows that page in the menu, and stands alone when t
   const items = [...menu(buildAll()).matchAll(/<a class="(ord-menu__item[^"]*)" href="([^"]+)"/g)].map((m) => [m[2], m[1]]);
   const at = items.findIndex(([file]) => file === 'plugins.html');
   assert.deepEqual(items[at + 1], ['example-plugin.html', 'ord-menu__item ord-menu__sub']);
+  // the pages under a page are open on that page and on each of them, and closed on every other page
+  const more = (file) => /<details class="ord-menu__more"( open)?><summary class="ord-menu__toggle" aria-label="Pages under: Plugins">/.exec(String(buildAll().files[file]))[1];
+  assert.equal(more('example-plugin.html'), ' open');
+  assert.equal(more('plugins.html'), ' open');
+  assert.equal(more('index.html'), undefined);
   const alone = menu(buildAll({ without: ['guide'] }));
   assert.ok(!alone.includes('ord-menu__sub') && alone.includes('class="ord-menu__item" href="example-plugin.html" aria-current="page"'));
 });

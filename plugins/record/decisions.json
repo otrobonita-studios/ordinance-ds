@@ -21,6 +21,18 @@
   ],
   "rows": [
     {
+      "no": "D-31",
+      "decision": "The line under the name is: Build for a future audit from the first commit. Because in an audit, every commit counts.",
+      "why": "An audit reads the history of a product, change by change. So the work for it starts with the first commit, and not in the month before.",
+      "date": "14 Nov 2026"
+    },
+    {
+      "no": "D-30",
+      "decision": "A block of the interface is called a component.",
+      "why": "It is the word that designers and developers search for. The word part is kept for a part of anything else.",
+      "date": "14 Nov 2026"
+    },
+    {
       "no": "D-29",
       "decision": "Advice about tools is a plugin of its own, and it names a tool only as an example of a kind.",
       "why": "Advice gets old faster than the core. A team can then take the page away, or change it, without touching a rule.",
@@ -58,7 +70,7 @@
     },
     {
       "no": "D-23",
-      "decision": "Ordinance DS is a base to build on, with parts, layout and patterns. It is not a library of finished screens.",
+      "decision": "Ordinance DS is a base to build on, with components, layout and patterns. It is not a library of finished screens.",
       "why": "An organisation and its AI agents build the product. The framework keeps the rules that a test can measure.",
       "date": "14 Nov 2026"
     },
@@ -88,7 +100,7 @@
     },
     {
       "no": "D-18",
-      "decision": "Under the strict security policy, Base UI parts are rendered in the browser.",
+      "decision": "Under the strict security policy, Base UI components are rendered in the browser.",
       "why": "On a server, Base UI writes style attributes, and the policy blocks them.",
       "date": "14 Nov 2026"
     },

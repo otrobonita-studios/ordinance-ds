@@ -1,7 +1,7 @@
 /* The shell: the menu beside a centred page. It needs no script.
    The menu is a native popover. On a narrow screen the Menu button opens it over the page, and Escape or a click
    outside closes it. On a wide screen the same element stands beside the page and the button is not shown. */
-@layer ord.parts {
+@layer ord.components {
   .ord-shell { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 100dvh; }
   .ord-shell__side { border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); }
   .ord-shell__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ord-space-3); padding: var(--ord-space-2) var(--ord-space-3); }
@@ -18,6 +18,15 @@
   .ord-menu__item { display: flex; align-items: center; gap: var(--ord-space-1); min-height: var(--ord-size-target-min); padding: var(--ord-space-1) var(--ord-space-2); border-left: 0.1875rem solid transparent; color: var(--ord-color-text); font-size: var(--ord-font-size-sm); text-decoration: none; }
   /* A page that stands under another page: it follows that page, set in to the line of its text. */
   .ord-menu__sub { padding-left: calc(1.25rem + 2 * var(--ord-space-2) + var(--ord-space-1)); }
+  /* A page with pages under it: a small button beside its item opens and closes them. It is the summary of a details
+     element, so it works with the keyboard and without a script. A plus and a minus show its state. */
+  .ord-menu__branch { position: relative; }
+  .ord-menu__branch > .ord-menu__item { padding-right: calc(var(--ord-size-target-min) + var(--ord-space-2)); }
+  .ord-menu__toggle { position: absolute; top: var(--ord-space-1); right: 0; color: var(--ord-color-text); display: grid; place-content: center; width: var(--ord-size-target-min); height: var(--ord-size-target-min); font-family: var(--ord-font-family-mono); font-size: var(--ord-font-size-sm); list-style: none; cursor: pointer; }
+  .ord-menu__toggle::-webkit-details-marker { display: none; }
+  .ord-menu__toggle::before { content: "+"; }
+  .ord-menu__more[open] > .ord-menu__toggle::before { content: "\2212"; }
+  .ord-menu__toggle:hover { background: var(--ord-color-surface-subtle); }
   a.ord-menu__item:hover { background: var(--ord-color-surface-subtle); text-decoration: underline; }
   /* the current page: a bar at the edge and bold text, so that it does not rely on colour */
   .ord-menu__item[aria-current="page"] { border-left-color: var(--ord-color-text); background: var(--ord-color-surface-subtle); font-weight: var(--ord-font-weight-bold); }
@@ -37,7 +46,7 @@
 
 /* The help of a page: a panel at the right edge. It is a native popover that stays open while the reader works,
    and its Close button closes it. On a wide screen the page makes room for it, so the help covers nothing. */
-@layer ord.parts {
+@layer ord.components {
   .ord-menu__icon { flex: none; width: 1.25rem; height: 1.25rem; margin-right: var(--ord-space-2); }
   .ord-help { position: fixed; inset: 0 0 0 auto; width: min(24rem, 100vw); height: 100dvh; max-height: none; margin: 0; padding: 0; overflow-y: auto; border: 0; border-left: var(--ord-border-width) solid var(--ord-color-line-strong); background: var(--ord-color-surface); color: var(--ord-color-text); }
   .ord-help__head { display: flex; align-items: center; justify-content: space-between; gap: var(--ord-space-3); padding: var(--ord-space-3) var(--ord-space-4); border-bottom: var(--ord-border-width) solid var(--ord-color-line-strong); }
@@ -56,7 +65,7 @@
   @media print { .ord-help { display: none; } }
 }
 
-@layer ord.parts {
+@layer ord.components {
   .ord-shell__help { margin-left: auto; }
   .ord-help__close { flex: none; }
 }

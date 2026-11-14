@@ -47,9 +47,9 @@
       "icon": "swatch"
     },
     {
-      "file": "parts.html",
-      "title": "Parts",
-      "source": "pages/parts.html",
+      "file": "components.html",
+      "title": "Components",
+      "source": "pages/components.html",
       "group": "build",
       "order": 2,
       "icon": "squares-2x2"
@@ -60,7 +60,8 @@
       "source": "pages/tables.html",
       "group": "build",
       "order": 2.25,
-      "icon": "queue-list"
+      "icon": "queue-list",
+      "under": "components.html"
     },
     {
       "file": "patterns.html",
@@ -68,7 +69,8 @@
       "source": "pages/patterns.html",
       "group": "build",
       "order": 2.5,
-      "icon": "rectangle-group"
+      "icon": "rectangle-group",
+      "under": "components.html"
     },
     {
       "file": "plugins.html",

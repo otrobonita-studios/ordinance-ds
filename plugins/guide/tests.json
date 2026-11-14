@@ -33,7 +33,7 @@
     },
     {
       "command": "npm test",
-      "what": "Base UI parts with the class names of Ordinance DS. Run it in the folder tests/base-ui, after npm ci --ignore-scripts.",
+      "what": "Base UI components with the class names of Ordinance DS. Run it in the folder tests/base-ui, after npm ci --ignore-scripts.",
       "needs": "Node.js and the packages of the test"
     },
     {

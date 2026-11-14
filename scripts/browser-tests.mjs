@@ -125,7 +125,7 @@ try {
   }
 
   // forms: a label belongs to its control, an error shows without colour, and the keyboard changes a checkbox
-  await size(1280, 900); await open('parts.html');
+  await size(1280, 900); await open('components.html');
   const form = await value(`(() => { const name = document.getElementById('f-name'), ref = document.getElementById('f-ref'); const a = getComputedStyle(name), b = getComputedStyle(ref);
     return { label: document.querySelector('label[for="f-name"]').control === name, hint: !!document.getElementById(name.getAttribute('aria-describedby')),
       error: document.getElementById(ref.getAttribute('aria-describedby')).textContent.startsWith('Error:'), thicker: parseFloat(b.borderTopWidth) > parseFloat(a.borderTopWidth), text: parseFloat(a.fontSize) >= 16 }; })()`);
@@ -141,13 +141,13 @@ try {
   await key('Escape', 'Escape', 27); await sleep(300);
   const d2 = await value(`({ open: document.getElementById('demo-dialog').open, back: document.activeElement.getAttribute('command') === 'show-modal' })`);
   check('dialog: a button opens it with no script, the focus moves into it, and Escape closes it and returns the focus', d1.open && d1.modal && d1.focusInside && d1.fits && !d2.open && d2.back, { ...d1, after: d2 });
-  await size(320, 800); await open('parts.html');
+  await size(320, 800); await open('components.html');
   await value(`document.querySelector('[commandfor="demo-dialog"][command="show-modal"]').click()`); await sleep(300);
   const d3 = await value(`(() => { const r = document.getElementById('demo-dialog').getBoundingClientRect(); return { open: document.getElementById('demo-dialog').open, left: Math.round(r.left), right: Math.round(r.right), width: innerWidth }; })()`);
   check('dialog: it fits a screen of 320 px', d3.open && d3.left >= 0 && d3.right <= d3.width, d3);
 
   // keyboard: Tab reaches every control of a page, each one shows its focus, and nothing covers it
-  for (const [w, h, label, file] of [[1280, 900, 'wide', 'parts.html'], [320, 800, 'narrow', 'index.html']]) {
+  for (const [w, h, label, file] of [[1280, 900, 'wide', 'components.html'], [320, 800, 'narrow', 'index.html']]) {
     await size(w, h); await open(file);
     const expected = await value(`[...document.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select, textarea, summary, [tabindex="0"]')].filter((e) => e.getClientRects().length && !e.closest('[popover]:not(:popover-open)')).length`);
     const seen = []; const wrong = [];
@@ -179,7 +179,7 @@ try {
   // forced colours (the high-contrast mode of the system): a control keeps an edge, and the focus keeps its outline
   await size(1280, 900);
   await call('Emulation.setEmulatedMedia', { features: [{ name: 'forced-colors', value: 'active' }] });
-  await open('parts.html');
+  await open('components.html');
   const forced = await value(`(() => { const on = matchMedia('(forced-colors: active)').matches; const edge = (e) => { const c = getComputedStyle(e); return c.borderTopStyle !== 'none' && parseFloat(c.borderTopWidth) >= 1; };
     const noEdge = [...document.querySelectorAll('.ord-button, .ord-switch, .ord-tag, .ord-notice, .ord-panel, .ord-input, .ord-select, .ord-check, .ord-radio')].filter((e) => !edge(e)).map((e) => e.className);
     const tab = document.querySelector('.ord-tabs__tab[aria-current="page"]'); const c = getComputedStyle(tab);

@@ -8,7 +8,7 @@
 <div class="ord-clause__body">
 <h2 id="c1">Layers</h2>
 <p class="ord-clause__text">The stylesheet has five layers, in this order.</p>
-<pre class="ord-code"><code>@layer ord.reset, ord.tokens, ord.base, ord.parts, ord.utilities;</code></pre>
+<pre class="ord-code"><code>@layer ord.reset, ord.tokens, ord.base, ord.components, ord.utilities;</code></pre>
 <p class="ord-clause__text">A later layer wins over an earlier one. So no rule needs <code>!important</code>, and the check refuses it.</p>
 </div>
 </section>
@@ -77,8 +77,8 @@
 <p class="ord-row"><span class="ord-u-bold">Bold</span><span class="ord-u-quiet ord-u-small">small and quiet</span><span class="ord-u-mono ord-u-end">at the end, in the typeface for code</span></p>
 <ul class="ord-list">
 <li>A utility does one thing, and its value is a token. So a utility cannot bring in a colour or a size that the check does not know.</li>
-<li>The utilities are the last layer. A utility wins over a part, and no rule needs <code>!important</code>.</li>
-<li>The set is small on purpose. When a page uses the same utilities together again and again, make a part with a name.</li>
+<li>The utilities are the last layer. A utility wins over a component, and no rule needs <code>!important</code>.</li>
+<li>The set is small on purpose. When a page uses the same utilities together again and again, make a component with a name.</li>
 </ul>
 </div>
 </section>

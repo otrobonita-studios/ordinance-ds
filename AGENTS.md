@@ -25,7 +25,7 @@ A framework of HTML and CSS for teams that work under rules. It is a set of toke
   node --test
   ```
 
-- When you change the shell, a part, the help or a script, also run the browser test. It needs Chrome or Edge:
+- When you change the shell, a component, the help or a script, also run the browser test. It needs Chrome or Edge:
 
   ```powershell
   node scripts/browser-tests.mjs
@@ -47,7 +47,7 @@ Work on a branch, never on `main`. A reviewer, a person or a program, reads one 
 - One commit is one change that has one reason. If the message needs the word "and", make two commits.
 - Each commit builds and passes the check by itself. Do not leave a fix for an earlier commit of the same branch: change that commit.
 - A change of names, a move of files or a new format is its own commit, apart from a change of behaviour. A reader can then skip what did not change.
-- A rule and its code, a part and its registered name, a page and its help go in the same commit. They do not pass the check apart.
+- A rule and its code, a component and its registered name, a page and its help go in the same commit. They do not pass the check apart.
 - Never commit `dist/` or `node_modules/`.
 - The first line of the message says what changed, in under 72 characters, and starts with a verb: "Add the compact variant of the table". The lines after it say why, and what a reviewer should look at.
 - A commit and a pull request name no tool and no AI agent: no `Co-Authored-By` line for one, and no "generated with" line. The person who commits is responsible for the change, and the history names that person only.
