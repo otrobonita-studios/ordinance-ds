@@ -14,6 +14,10 @@
   "rows": [
     {
       "date": "14 Nov 2026",
+      "what": "The browser tests are their own command and their own step in the pipeline. Before, the unit tests ran them without saying so."
+    },
+    {
+      "date": "14 Nov 2026",
       "what": "The pipeline sends its token as a header, never in an address. It also reads every script, checks the history of a pull request, and tests the Base UI packages for known weaknesses."
     },
     {
