@@ -10,3 +10,5 @@ Ordinance DS contains files from the projects below. Each file is listed in `thi
 When a file from another project is added, it is listed here with its copyright line and its licence.
 
 The test in `tests/base-ui` installs React and Base UI (both MIT) from the npm registry. They are not in this folder and not in the built site.
+
+The linter in `tools/lint` installs ESLint (MIT) from the npm registry, in the same way.

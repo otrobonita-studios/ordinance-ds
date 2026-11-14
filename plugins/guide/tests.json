@@ -1,5 +1,5 @@
 {
-  "caption": "The four ways to test",
+  "caption": "The five ways to test",
   "columns": [
     {
       "key": "command",
@@ -35,6 +35,11 @@
       "command": "npm test",
       "what": "Base UI parts with the class names of Ordinance DS. Run it in the folder tests/base-ui, after npm ci --ignore-scripts.",
       "needs": "Node.js and the packages of the test"
+    },
+    {
+      "command": "npm run lint",
+      "what": "Every script, for names that are not used, values that should not change, and risky ways to run code. Run it in the folder tools/lint, after npm ci --ignore-scripts.",
+      "needs": "Node.js and the packages of the linter"
     }
   ]
 }

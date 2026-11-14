@@ -39,6 +39,7 @@ node scripts/serve.mjs
 | `scripts/check.mjs`, `scripts/rules.mjs` | The checks, and the list of their rules |
 | `scripts/serve.mjs`, `scripts/headers.mjs` | The local server, and the security headers that it sends |
 | `scripts/browser-tests.mjs` | The test in a browser without a window |
+| `tools/lint/`, `eslint.config.mjs` | The linter for the scripts, with its own packages: run `npm ci --ignore-scripts` and then `npm run lint` in `tools/lint` |
 | `scripts/history-check.mjs` | Reads every commit for secrets, personal addresses, paths of a computer and large files |
 | `CONTRIBUTING.md`, `.github/pull_request_template.md` | How a change is made, and what a pull request must say |
 | `tests/` | The unit tests |

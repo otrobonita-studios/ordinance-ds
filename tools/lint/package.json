@@ -1,0 +1,13 @@
+{
+  "name": "ordinance-ds-lint",
+  "private": true,
+  "description": "The linter for the scripts of Ordinance DS. Its packages are for the pipeline and for a developer; they are not part of the site, and the build and the checks do not use them.",
+  "type": "module",
+  "scripts": {
+    "lint": "cd ../.. && node tools/lint/node_modules/eslint/bin/eslint.js ."
+  },
+  "dependencies": {
+    "@eslint/js": "10.0.1",
+    "eslint": "10.15.0"
+  }
+}
