@@ -7,7 +7,15 @@
 <span class="ord-clause__number">1</span>
 <div class="ord-clause__body">
 <h2 id="c1">The template</h2>
-<p class="ord-clause__text">The template is a workflow for GitHub Actions. It runs the build, the check and the unit tests. <a class="ord-link" href="github-actions.yml">Open the template</a></p>
+<p class="ord-clause__text">The template is a workflow for GitHub Actions. It runs on every push and on every pull request. <a class="ord-link" href="github-actions.yml">Open the template</a></p>
+<ul class="ord-list">
+<li>It reads every script for mistakes of syntax.</li>
+<li>It runs the build, the check and the unit tests.</li>
+<li>For a pull request, it runs the history check on the commits of that pull request.</li>
+<li>A second job installs the packages of the Base UI test without their scripts.</li>
+<li>That job asks the registry for known weaknesses in the packages, and then runs the test.</li>
+</ul>
+<p class="ord-clause__text">The token of the pipeline is sent as a header for one command, and it is never part of an address. A name from the event, such as the name of a branch, is never written into a command.</p>
 <p class="ord-clause__text">Every step of the template is a command. It uses no action from another project, so the pipeline has no third-party code to review.</p>
 <p class="ord-clause__text">Ordinance DS uses a copy of the template as its own pipeline. The check fails when the two files differ.</p>
 <p class="ord-clause__text">The template has not run in a live pipeline yet. Test it in your repository before you rely on it.</p>

@@ -1,6 +1,11 @@
-# A workflow for GitHub Actions that runs the build, the check and the unit tests on every change.
+# A workflow for GitHub Actions that checks every change.
 # It uses no action from another project: every step is a command. So the pipeline has no third-party code to review.
 # Copy this file to .github/workflows/check.yml in your repository.
+#
+# Two rules keep the token of the pipeline safe:
+# - The token is never part of an address. It is sent as a header, for one command only, and nothing stores it.
+# - A value from the event, such as the name of a branch, is never written into a command. It reaches a step as an
+#   environment variable, so a branch with a harmful name cannot run code.
 name: Check
 on: [push, pull_request]
 permissions:
@@ -8,15 +13,63 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      TOKEN: ${{ github.token }}
+      REPOSITORY: ${{ github.repository }}
+      REF: ${{ github.ref }}
+      BASE: ${{ github.base_ref }}
     steps:
       - name: Get the change
         run: |
+          header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          echo "::add-mask::$header"
           git init --quiet .
-          git fetch --quiet --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" "${{ github.ref }}"
+          git -c "http.extraheader=$header" fetch --quiet --depth 100 "https://github.com/$REPOSITORY" "$REF"
           git checkout --quiet FETCH_HEAD
+          if [ -n "$BASE" ]; then
+            git -c "http.extraheader=$header" fetch --quiet --depth 100 "https://github.com/$REPOSITORY" "refs/heads/$BASE:refs/remotes/origin/base"
+          fi
+      - name: Node.js is version 20 or later
+        run: |
+          node --version
+          node -e "if (+process.versions.node.split('.')[0] < 20) { console.error('Node.js 20 or later is needed.'); process.exit(1); }"
+      - name: Every script can be read
+        run: |
+          for file in $(git ls-files '*.mjs' '*.js'); do node --check "$file"; done
       - name: Build
         run: node scripts/build.mjs
       - name: Check
         run: node scripts/check.mjs
       - name: Unit tests
         run: node --test
+      - name: History of the pull request
+        if: github.event_name == 'pull_request'
+        run: node scripts/history-check.mjs "origin/base..HEAD^2"
+
+  # The one test that uses packages from a registry. It is a job of its own, so that the registry cannot stop the job
+  # above. The packages are installed without their install scripts, and a known weakness in one of them fails the job.
+  base-ui:
+    runs-on: ubuntu-latest
+    env:
+      TOKEN: ${{ github.token }}
+      REPOSITORY: ${{ github.repository }}
+      REF: ${{ github.ref }}
+    steps:
+      - name: Get the change
+        run: |
+          header="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)"
+          echo "::add-mask::$header"
+          git init --quiet .
+          git -c "http.extraheader=$header" fetch --quiet --depth 1 "https://github.com/$REPOSITORY" "$REF"
+          git checkout --quiet FETCH_HEAD
+      - name: Build
+        run: node scripts/build.mjs
+      - name: Install the packages of the test, without their scripts
+        working-directory: tests/base-ui
+        run: npm ci --ignore-scripts
+      - name: Known weaknesses in the packages
+        working-directory: tests/base-ui
+        run: npm audit --audit-level=moderate
+      - name: Test with Base UI
+        working-directory: tests/base-ui
+        run: npm test
