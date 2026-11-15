@@ -5,7 +5,7 @@ export const RULES = [
   { id: 'contrast', rule: 'Text reaches a contrast of 7:1, and the edge of a control 3:1', does: 'It measures every listed colour pair in the light theme and in the dark theme. Each pair has its own least value in the list.' },
   { id: 'tokens', rule: 'Colours and sizes come from tokens', does: 'It refuses a colour value, a pixel size above one, and an unknown token in the source of the stylesheet.' },
   { id: 'no-inline', rule: 'A page has no inline style or script', does: 'It refuses a style attribute, a style element, a script that is written into a page, and an event attribute.' },
-  { id: 'same-origin', rule: 'Nothing loads from another server', does: 'It refuses an import and a remote address in the stylesheet, and a remote file in a page.' },
+  { id: 'same-origin', rule: 'Nothing loads from another server', does: 'It refuses an import and a remote address in the stylesheet, and a remote file in a page. It requires that each page carries the same security policy and referrer rule in a meta tag as the server sends.' },
   { id: 'scripts', rule: 'A script is a declared file', does: 'It allows a script only on a page that declares it, from a plugin that may ship one. It refuses code that writes HTML from data.' },
   { id: 'menu', rule: 'The menu is written from one list', does: 'It compares every link with the built pages, and it requires that each menu marks exactly one current page.' },
   { id: 'structure', rule: 'Every page has the same sound structure', does: 'It requires a language, a title, one main heading, headings in order, a help text, and ids that are used once.' },

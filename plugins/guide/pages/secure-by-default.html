@@ -23,6 +23,13 @@
 <p class="ord-clause__text">A server sends these headers with every page. The first one is the Content-Security-Policy.</p>
 <!-- ord:core headers -->
 <p class="ord-clause__text">The policy has no exception for inline styles or inline scripts, because the pages have none.</p>
+<p class="ord-clause__text">Each page also carries the same policy in a meta tag, and the referrer rule. A static host may send no headers at all, so the page protects the reader on its own. The check fails when a page differs from the server.</p>
+<p class="ord-clause__text">A meta tag cannot set every header. These are not in the page, so the server must send them:</p>
+<ul class="ord-list">
+<li><code>frame-ancestors</code>, which stops another site from showing this one in a frame.</li>
+<li><code>X-Content-Type-Options</code>, <code>Cross-Origin-Opener-Policy</code>, <code>Permissions-Policy</code> and <code>Cache-Control</code>.</li>
+</ul>
+<p class="ord-clause__text">A host that sends none of them leaves those protections open. The product must check its host for them.</p>
 </div>
 </section>
 
