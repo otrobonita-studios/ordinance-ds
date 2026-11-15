@@ -6,7 +6,7 @@ Use Ordinance DS as a web starter pack with a minimal design system. It is meant
 
 It has a strict security policy, self-hosted assets, components built to WCAG 2.2, conventions that an AI agent can follow, and defaults that an auditor can check.
 
-It is a draft. The built site in `dist/` documents it: open `dist/index.html`.
+It is stable: its names and tokens change only with a release that says so. The built site in `dist/` documents it: open `dist/index.html`.
 
 ## Build, check and test (PowerShell)
 
