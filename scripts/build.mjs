@@ -13,7 +13,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { root, read, readJson, exists, esc, walk, cssName, cssValue, lightTokens, darkTokens, measuredPairs, loadPlugins, renderTable } from './lib.mjs';
 import { RULES } from './rules.mjs';
-import { HEADERS } from './headers.mjs';
+import { HEADERS, META_CSP } from './headers.mjs';
 
 const LAYERS = '@layer ord.reset, ord.tokens, ord.base, ord.components, ord.utilities;';
 const CSS_SOURCES = ['base.css', 'components.css', 'shell.css', 'utilities.css'];
@@ -273,6 +273,8 @@ export function buildPages(plugins, options = {}, assetNames = []) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="${esc(META_CSP)}">
+<meta name="referrer" content="no-referrer">
 <title>${esc(page.local.title)} · ${esc(site.name)}</title>
 <link rel="icon" href="${up}favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="${up}ordinance.css">

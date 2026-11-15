@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { root, read, readJson, exists, walk, cssName, lightTokens, darkTokens, measuredPairs, loadPlugins } from './lib.mjs';
 import { buildAll, sameBytes, thirdParty, coreTableNames } from './build.mjs';
+import { META_CSP } from './headers.mjs';
 import { RULES } from './rules.mjs';
 import { accessProblems } from './a11y.mjs';
 
@@ -144,6 +145,11 @@ function pageProblems(build) {
       if (!(srcName in build.files)) script(file, `the script ${src} is not built`);
       if (!/\sdefer\b/.test(m[1])) script(file, `the script ${src} must be deferred, so that the page shows first`);
     }
+    // the policy is also in each page, because a static host may send no headers: the same policy, and the same referrer rule
+    const meta = (/<meta http-equiv="Content-Security-Policy" content="([^"]*)">/.exec(html) || [])[1];
+    if (meta === undefined) origin(file, 'the page has no Content-Security-Policy meta tag');
+    else if (meta !== META_CSP.replace(/"/g, '&quot;')) origin(file, 'the Content-Security-Policy meta tag differs from scripts/headers.mjs');
+    if (!/<meta name="referrer" content="no-referrer">/.test(html)) origin(file, 'the page has no referrer meta tag');
     // nothing from another server
     for (const m of html.matchAll(/<(?:script|link|img|iframe|source|video|audio|object|embed)\b[^>]*?\s(?:src|href|data)="([^"]+)"/gi)) if (/^(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(m[1]) || /^data:/i.test(m[1])) origin(file, `${m[1].slice(0, 60)}: a file from another server, or a data address`);
     // names

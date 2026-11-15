@@ -12,6 +12,11 @@ export const CSP = [
   "frame-ancestors 'none'",
 ].join('; ');
 
+// A page can carry the policy itself, in a meta tag, when the host sends no headers. A meta tag cannot set
+// frame-ancestors, and it cannot set the other headers below. So those are named, and not claimed.
+export const META_CSP = CSP.split('; ').filter((d) => !d.startsWith('frame-ancestors')).join('; ');
+export const NOT_IN_META = ['frame-ancestors', 'X-Content-Type-Options', 'Cross-Origin-Opener-Policy', 'Permissions-Policy', 'Cache-Control'];
+
 export const HEADERS = [
   { name: 'Content-Security-Policy', value: CSP, why: 'The browser loads styles, scripts, images and fonts from the site itself only, and runs no code that is written into a page.' },
   { name: 'X-Content-Type-Options', value: 'nosniff', why: 'The browser does not guess the type of a file.' },
