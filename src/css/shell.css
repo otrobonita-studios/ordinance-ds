@@ -38,6 +38,11 @@
     .ord-shell__side { position: sticky; top: 0; align-self: start; height: 100dvh; overflow-y: auto; border-bottom: 0; border-right: var(--ord-border-width) solid var(--ord-color-line-strong); }
     .ord-shell__bar { padding: var(--ord-space-4) var(--ord-space-4) var(--ord-space-2); }
     .ord-shell__open, .ord-menu__close { display: none; }
+    /* the Help button is in the top-right corner of the page, where the help panel opens; the panel has its own Close button there, so the button steps aside while the panel is open */
+    .ord-shell__help { position: fixed; top: var(--ord-space-3); right: var(--ord-space-3); z-index: var(--ord-z-raised); }
+    /* the page starts below the row where the Help button sits, so its heading never runs under the button */
+    .ord-page { padding-top: var(--ord-space-7); }
+    .ord-shell:has(.ord-help:popover-open) .ord-shell__help { display: none; }
     /* the same element, now in the page's flow */
     .ord-menu { display: block; position: static; width: auto; height: auto; padding: var(--ord-space-2) var(--ord-space-3) var(--ord-space-5); overflow: visible; border-right: 0; background: none; }
   }

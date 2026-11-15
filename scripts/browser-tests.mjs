@@ -100,6 +100,18 @@ try {
   await value(`document.querySelector('.ord-help__close').click()`); await sleep(200);
   check('help: its Close button closes it', !(await value(`document.getElementById('help').matches(':popover-open')`)));
 
+  // the Help button sits in the top-right corner of the page on a wide screen, clear of the text, and steps aside while the panel is open
+  for (const w of [1280, 1440, 1920]) {
+    await size(w, 900); await open('index.html');
+    const corner = await value(`(() => { const b = document.querySelector('.ord-shell__help').getBoundingClientRect(); const hit = (r) => !(b.right <= r.left || b.left >= r.right || b.bottom <= r.top || b.top >= r.bottom);
+      const text = [...document.querySelectorAll('.ord-page h1, .ord-page h2, .ord-page p, .ord-page li, .ord-page td, .ord-page th')].filter((e) => e.getClientRects().length && hit(e.getBoundingClientRect()));
+      return { right: Math.round(document.documentElement.clientWidth - b.right), top: Math.round(b.top), clear: text.length === 0, hits: text.slice(0, 3).map((e) => e.tagName + ' ' + (e.textContent || '').trim().slice(0, 40)), shown: getComputedStyle(document.querySelector('.ord-shell__help')).display !== 'none' }; })()`);
+    await value(`document.querySelector('.ord-shell__help').click()`); await sleep(250);
+    const hidden = await value(`getComputedStyle(document.querySelector('.ord-shell__help')).display === 'none'`);
+    await value(`document.querySelector('.ord-help__close').click()`); await sleep(200);
+    check(`help button: at ${w} px it sits in the top-right corner, clear of the page, and hides while the panel is open`, corner.shown && corner.clear && corner.right <= 24 && corner.top <= 24 && hidden, { w, corner, hidden });
+  }
+
   // narrow: the menu opens from its button, and Escape closes it
   await size(390, 800); await open('excluded.html');
   const n0 = await value(`(() => { const m = document.getElementById('menu'), b = document.querySelector('.ord-shell__open'); return { closed: getComputedStyle(m).display === 'none', height: Math.round(b.getBoundingClientRect().height) }; })()`);
