@@ -26,6 +26,12 @@ The prefix is `ord`.
 
 Names use lower-case letters, digits and single hyphens. An element belongs to one block, and there is no element of an element.
 
+The rule covers the names that a page and its stylesheet use: classes, data attributes, tokens and the names of the CSS that the build writes. Other names follow the convention of their language or their standard:
+
+- JavaScript follows its own convention, which is camel case for functions and variables, and upper case with underscores for constants.
+- A JSON key that a standard defines keeps the spelling of that standard, such as `colorSpace` in the Design Tokens format, and `bomFormat` in CycloneDX.
+- A JSON key of the framework's own is lower case with single hyphens, as in `unicode-range`, and it names the CSS property that it stands for.
+
 A block may style its native children by tag: `.ord-table th` is allowed, so that a table does not need a class on every cell.
 
 The cascade layers keep specificity flat. The naming only says what belongs together.
