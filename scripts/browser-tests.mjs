@@ -24,15 +24,20 @@ await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const origin = `http://127.0.0.1:${server.address().port}`;
 const profile = mkdtempSync(join(tmpdir(), 'ordinance-test-'));
 const debugPort = 9300 + Math.floor(Math.random() * 600);
-const proc = spawn(browser, ['--headless=new', '--no-first-run', `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`, '--window-size=1280,900', 'about:blank'], { stdio: 'ignore' });
+// the browser's own messages are kept, so that a browser which does not start says why
+let browserLog = '';
+const proc = spawn(browser, ['--headless=new', '--no-first-run', `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`, '--window-size=1280,900', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+proc.stderr.on('data', (d) => { browserLog = (browserLog + d).slice(-4000); });
+proc.on('error', (e) => { browserLog += String(e); });
 
 const results = [];
 const check = (name, pass, extra) => results.push({ name, pass: !!pass, extra });
 let code;
 try {
   let list = null;
-  for (let i = 0; i < 60 && !list; i++) { await sleep(200); try { list = await (await fetch(`http://127.0.0.1:${debugPort}/json/list`)).json(); } catch { /* not up yet */ } }
-  if (!list) throw new Error('The browser did not start.');
+  // a slow machine can take longer than a fast one to open the port: wait up to 60 seconds
+  for (let i = 0; i < 300 && !list && proc.exitCode === null; i++) { await sleep(200); try { list = await (await fetch(`http://127.0.0.1:${debugPort}/json/list`)).json(); } catch { /* not up yet */ } }
+  if (!list) throw new Error(`The browser did not start (${browser}, exit ${proc.exitCode}). Its messages: ${browserLog.trim().slice(-1500) || 'none'}`);
   const ws = new WebSocket(list.find((t) => t.type === 'page').webSocketDebuggerUrl);
   await new Promise((r) => { ws.onopen = r; });
   let n = 0; const pending = new Map(); const requests = []; const errors = [];
