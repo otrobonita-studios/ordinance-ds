@@ -21,7 +21,7 @@ const CSS_SOURCES = ['base.css', 'components.css', 'shell.css', 'utilities.css']
 /* ---------------------------------------------------------------- the stylesheet */
 export function fontFaces() {
   const faces = exists('tokens', 'fonts.json') ? readJson('tokens', 'fonts.json').faces : [];
-  return faces.map((f) => `@font-face { font-family: "${f.family}"; src: url("fonts/${f.file.split('/').pop()}") format("woff2"); font-weight: ${f.weight}; font-style: ${f.style || 'normal'}; font-display: swap;${f.unicodeRange ? ` unicode-range: ${f.unicodeRange};` : ''} }`);
+  return faces.map((f) => `@font-face { font-family: "${f.family}"; src: url("fonts/${f.file.split('/').pop()}") format("woff2"); font-weight: ${f.weight}; font-style: ${f.style || 'normal'}; font-display: swap;${f["unicode-range"] ? ` unicode-range: ${f["unicode-range"]};` : ''} }`);
 }
 export function tokensCss() {
   const light = lightTokens();
